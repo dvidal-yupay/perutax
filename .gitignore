@@ -8,3 +8,4 @@
 /.idea/dataSources.local.xml
 .~lock.*
 *.mwb.bak
+/build
