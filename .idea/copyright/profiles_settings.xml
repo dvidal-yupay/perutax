@@ -1,0 +1,7 @@
+<component name="CopyrightManager">
+  <settings default="gpl3_perutax">
+    <module2copyright>
+      <element module="All" copyright="gpl3_perutax" />
+    </module2copyright>
+  </settings>
+</component>
