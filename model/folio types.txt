@@ -1,0 +1,61 @@
+00;OTROS;(\d|\w){0,20};(\d|\w){1,20};true;false;true;false
+01;FACTURA;(\d){4}|E001|F(\d|\w){3};\d{1,8};true;true;false;true
+02;R. HONOR.;E001;\d{1,7};true;false;false;false
+03;BOLETA;(\d){4}|EB01|E(\d|\w){3};\d{1,8};true;true;false;false
+04;LIQ COMPRA;\d{4}|E001;\d{1,8};true;false;false;true
+05;AEREO REG;[1-5];\d{1,11};true;false;false;true
+06;PORTE AERO;\d{4};\d{1,8};true;false;false;true
+07;NOTA CRED.;(\d){4}|E001|EB01|[E,B](\d|\w){3};\d{1,8};true;true;false;true
+08;NOTA DEB.;(\d){4}|E001|EB01|[E,B](\d|\w){3};\d{1,8};true;true;false;true
+09;GUIA RTE.;(\d|\w){4};\d{1,8};false;false;false;false
+10;ARRENDAM.;1683;\d{1,20};true;false;false;false
+11;SMV;(\d|\w){0,20};\d{15};true;false;false;false
+12;TICKET;(\d|\w){1,20};\d{1,20};true;false;false;false
+13;SBS;(\d|\w){0,20};\d{1,20};true;false;false;true
+14;RECIBO SRV;(\d|\w){0,20};\d{1,20};true;false;false;true
+15;TRANS URB.;(\d|\w){0,20};\d{1,20};true;false;false;false
+16;TRANS PROV;(\d|\w){0,20};\d{1,20};true;false;false;true
+17;IGLESIA;(\d|\w){0,20};\d{1,20};true;false;false;false
+18;AFP;(\d|\w){0,20};\d{1,20};true;false;false;true
+19;ESPECTAC.;(\d|\w){0,20};\d{1,20};true;false;false;false
+20;RETEN IGV;(\d|\w){4};(\d|\w){1,8};false;false;false;false
+21;BL MAR;(\d|\w){0,20};\d{1,20};true;false;false;true
+22;OP NO HAB;0820;\d{1,20};true;false;false;false
+23;PÓLIZA ADJ;\d{1,4};\d{1,7};true;false;false;true
+24;PERUPETRO;(\d|\w){0,20};(\d|\w){1,20};true;false;false;true
+25;ATRIB IGV;\d{1,4};\d{1,7};true;false;false;false
+26;USO AGUA;(\d|\w){0,20};(\d|\w){1,20};true;false;false;false
+27;SCTR;(\d|\w){0,20};\d{1,20};true;false;false;true
+28;TUUA;(\d|\w){0,20};\d{1,20};true;false;false;false
+29;COFOPRI;(\d|\w){0,20};\d{1,20};true;false;false;false
+30;POS ADQ.;(\d|\w){0,20};\d{1,20};true;false;false;true
+31;GUIA TRNS.;\d{4};(\d|\w){1,8};false;false;false;false
+32;RED PRINC;(\d|\w){0,20};\d{1,20};true;false;false;true
+33;MAN PASAJ;(\d|\w){4};(\d|\w){1,8};false;false;false;false
+34;DOC OPERAD;\d{4};\d{1,7};true;false;false;true
+35;DOC PARTIC;\d{4};\d{1,7};true;false;false;true
+36;GAS NATURA;\d{4};\d{1,8};true;false;false;true
+37;REV TECNIC;(\d|\w){0,20};\d{1,20};true;false;false;true
+40;PERCEPCION;\d{4};(\d|\w){1,8};false;false;true;false
+41;PERCEP INT;\d{4};(\d|\w){1,8};false;false;false;false
+42;ADQ POS MI;(\d|\w){0,20};\d{1,20};true;false;false;true
+43;AEREO NO R;(\d|\w){0,20};\d{1,20};true;false;false;true
+44;LOTERIA;(\d|\w){0,20};\d{1,20};true;false;false;false
+45;EDU CULTUR;(\d|\w){0,20};\d{1,20};true;false;false;false
+46;FORM SUNAT;\d{4};\d{1,20};true;false;false;false
+48;LEY 29972;\d{4};\d{1,7};true;false;false;false
+49;IVAP;(\d|\w){0,20};\d{1,20};true;false;false;false
+50;DUA;\d{4};\d{1,6};true;false;true;false
+51;DUI;\d{4};\d{1,6};true;false;true;false
+52;DSI;\d{4};\d{1,6};true;false;true;false
+53;DJC;\d{4};\d{1,6};true;false;true;false
+54;L/C;\d{4};\d{1,20};true;false;true;false
+55;BVME;1|2;\d{1,11};true;false;false;false
+56;SEAE;\d{4};\d{1,11};true;false;false;false
+87;N CRE ESP;(\d|\w){0,20};\d{1,20};true;false;false;false
+88;N DEB ESP;(\d|\w){0,20};\d{1,20};true;false;false;false
+89;AJUSTE OP;\d{4};\d{1,7};true;false;false;false
+91;NO DOM;(\d|\w){0,20};\d{1,20};false;false;true;false
+96;EXCESO CF;(\d|\w){0,20};\d{1,20};true;false;false;false
+97;CRED. NO D;(\d|\w){0,20};\d{1,20};false;false;true;false
+98;DEBI NO D;(\d|\w){0,20};\d{1,20};false;false;true;false

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Scene?>
+<?import javafx.stage.Stage?>
+<Stage title="Maestra de Tipos de DOI" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+       fx:controller="com.yupay.perutax.forms.TDoiView" fx:id="top" onShown="#stageShown">
+    <scene>
+        <Scene>
+            <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+                <ToolBar maxWidth="1.7976931348623157E308" VBox.vgrow="NEVER">
+                    <Button contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity"
+                            minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#refreshAction"
+                            prefHeight="32.0" prefWidth="32.0">
+                        <tooltip>
+                            <Tooltip maxWidth="300.0" text="Refrescar desde la base de datos." wrapText="true">
+                                <graphic>
+                                    <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@png/icons8-sync-64.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@png/icons8-sync-24.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator orientation="VERTICAL"/>
+                    <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity"
+                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                            onAction="#addAction" prefHeight="32.0" prefWidth="32.0">
+                        <tooltip>
+                            <Tooltip maxWidth="300.0" text="Crear un nuevo tipo de documento." wrapText="true">
+                                <graphic>
+                                    <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@png/icons8-add-row-64.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@png/icons8-add-row-24.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button contentDisplay="GRAPHIC_ONLY" layoutX="46.0" layoutY="10.0" maxHeight="-Infinity"
+                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                            onAction="#editAction" prefHeight="32.0" prefWidth="32.0">
+                        <tooltip>
+                            <Tooltip maxWidth="300.0" text="Editar el tipo de documento seleccionado." wrapText="true">
+                                <graphic>
+                                    <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@png/icons8-edit-row-64.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@png/icons8-edit-row-24.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator layoutX="46.0" layoutY="10.0" orientation="VERTICAL"/>
+                    <CheckBox fx:id="chkFilter" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false"
+                              prefHeight="32.0" text="Filtrar:"/>
+                    <TextField fx:id="txtFilter" maxHeight="-Infinity" minHeight="-Infinity" prefColumnCount="15"
+                               prefHeight="32.0" promptText="Ingrese el texto a buscar..."/>
+                </ToolBar>
+                <TableView fx:id="tblData" VBox.vgrow="ALWAYS" onMouseClicked="#tableClicked">
+                    <columns>
+                        <TableColumn fx:id="colID" prefWidth="75.0" text="Código"/>
+                        <TableColumn fx:id="colTitle" prefWidth="125.0" text="Título"/>
+                        <TableColumn fx:id="colRegex" prefWidth="200.0" text="Regex"/>
+                        <TableColumn fx:id="colTrash" prefWidth="75.0" text="Basurero"/>
+                    </columns>
+                    <contextMenu>
+                        <ContextMenu>
+                            <items>
+                                <MenuItem fx:id="mniRegexCheck" mnemonicParsing="false" onAction="#regexCheckAction"
+                                          text="Verificar RegEx"/>
+                            </items>
+                        </ContextMenu>
+                    </contextMenu>
+                </TableView>
+            </VBox>
+        </Scene>
+    </scene>
+</Stage>

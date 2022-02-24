@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.*?>
+<DialogPane fx:id="top" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="175.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.yupay.perutax.forms.JournalDtFolioDialog">
+    <content>
+        <GridPane hgap="5.0" vgap="5.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" minWidth="10.0"/>
+                <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="250.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+            </rowConstraints>
+            <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                   text="Tipo:"/>
+            <ComboBox fx:id="cboType" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                      prefHeight="32.0" promptText="F3 para buscar..." GridPane.columnIndex="1">
+                <contextMenu>
+                    <ContextMenu>
+                        <items>
+                            <MenuItem fx:id="mniSearchType" mnemonicParsing="false" onAction="#searchTypeAction"
+                                      text="Buscar y seleccionar">
+                                <accelerator>
+                                    <KeyCodeCombination alt="UP" code="F3" control="ANY" meta="UP" shift="UP"
+                                                        shortcut="UP"/>
+                                </accelerator>
+                            </MenuItem>
+                        </items>
+                    </ContextMenu>
+                </contextMenu>
+            </ComboBox>
+            <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                   text="Serie:" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtSerie" maxHeight="-Infinity" maxWidth="1.7976931348623157E308"
+                       minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                   text="Número:" GridPane.rowIndex="2"/>
+            <TextField fx:id="txtNumber" maxHeight="-Infinity" maxWidth="1.7976931348623157E308"
+                       minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        </GridPane>
+    </content>
+    <ButtonType fx:constant="APPLY"/>
+    <ButtonType fx:constant="CANCEL"/>
+</DialogPane>

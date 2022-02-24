@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<DialogPane fx:id="top" headerText="Ingrese o modifique la información del país:" xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yupay.perutax.forms.CountryCard">
+    <content>
+        <GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                  prefHeight="200.0" prefWidth="400.0" vgap="5.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" minWidth="10.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+            </rowConstraints>
+            <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                   text="Código:"/>
+            <TextField fx:id="txtID" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0"
+                       promptText="Código alfanumérico de 2 caracteres" GridPane.columnIndex="1"/>
+            <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                   text="Nombre:" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtName" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0"
+                       promptText="Nombre del país." GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                   text="Código 3:" GridPane.rowIndex="2"/>
+            <TextField fx:id="txtID3" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0"
+                       promptText="Código de 3 dígitos" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                   text="Código 4:" GridPane.rowIndex="3"/>
+            <TextField fx:id="txtID4" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0"
+                       promptText="Código de 4 dígitos" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            <CheckBox fx:id="chkTrash" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false"
+                      prefHeight="32.0" text="Basurero" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        </GridPane>
+    </content>
+    <graphic>
+        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@png/icons8-edit-row-64.png"/>
+        </ImageView>
+    </graphic>
+    <ButtonType fx:constant="APPLY"/>
+    <ButtonType fx:constant="CANCEL"/>
+</DialogPane>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.yupay.perutax.entities.validation.RUCValidationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-24T20:12:16" hostname="david-hp240g7" time="0.017">
+  <properties/>
+  <testcase name="testRUC()" classname="com.yupay.perutax.entities.validation.RUCValidationTest" time="0.017"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

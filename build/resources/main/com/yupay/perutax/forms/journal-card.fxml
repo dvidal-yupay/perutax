@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.*?>
+<DialogPane fx:id="top" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="675.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yupay.perutax.forms.JournalCard">
+
+    <content>
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+            <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                     tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                <Tab text="Detalle">
+                    <TableView fx:id="tblDetail" prefHeight="200.0" prefWidth="200.0" editable="true">
+                        <columns>
+                            <TableColumn fx:id="colLine" editable="false" prefWidth="50.0" text="#"/>
+                            <TableColumn fx:id="colAccount" prefWidth="225.0" sortable="false" text="Cuenta"/>
+                            <TableColumn prefWidth="75.0" sortable="false" text="Monto (ME)">
+                                <columns>
+                                    <TableColumn fx:id="colDebitFC" prefWidth="125.0" sortable="false"
+                                                 style="-fx-alignment: CENTER_RIGHT;" text="Debe"
+                                                 onEditCommit="#commitDebitFC"/>
+                                    <TableColumn fx:id="colCreditFC" prefWidth="125.0" sortable="false"
+                                                 style="-fx-alignment: CENTER_RIGHT;" text="Haber"
+                                                 onEditCommit="#commitCreditFC"/>
+                                </columns>
+                            </TableColumn>
+                            <TableColumn prefWidth="75.0" sortable="false" text="Monto (MN)">
+                                <columns>
+                                    <TableColumn fx:id="colDebitSC" prefWidth="125.0" sortable="false"
+                                                 style="-fx-alignment: CENTER_RIGHT;" text="Debe"
+                                                 editable="false"/>
+                                    <TableColumn fx:id="colCreditSC" prefWidth="125.0" sortable="false"
+                                                 style="-fx-alignment: CENTER_RIGHT;" text="Haber"
+                                                 editable="false"/>
+                                </columns>
+                            </TableColumn>
+                            <TableColumn fx:id="colRemark" prefWidth="275.0" sortable="false" text="Comentario"/>
+                            <TableColumn fx:id="colCostCenter" prefWidth="150.0" sortable="false" text="C. Costo"/>
+                            <TableColumn fx:id="colPerson" prefWidth="275.0" sortable="false" text="Persona"/>
+                            <TableColumn fx:id="colFolio" prefWidth="175.0" sortable="false" text="Folio"/>
+                        </columns>
+                        <contextMenu>
+                            <ContextMenu>
+                                <items>
+                                    <MenuItem fx:id="mniAddLine" mnemonicParsing="false" onAction="#addLineAction"
+                                              text="Agregar Línea">
+                                        <accelerator>
+                                            <KeyCodeCombination alt="UP" code="INSERT" control="DOWN" meta="UP"
+                                                                shift="UP" shortcut="UP"/>
+                                        </accelerator>
+                                    </MenuItem>
+                                    <MenuItem fx:id="mniRemoveLine" mnemonicParsing="false"
+                                              onAction="#removeLineAction" text="Eliminar Línea">
+                                        <accelerator>
+                                            <KeyCodeCombination alt="UP" code="DELETE" control="DOWN" meta="UP"
+                                                                shift="UP" shortcut="UP"/>
+                                        </accelerator>
+                                    </MenuItem>
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                    </TableView>
+                </Tab>
+                <Tab fx:id="tabLinked" disable="true" text="Vinculado">
+                    <GridPane hgap="5.0" vgap="5.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="NEVER" minWidth="10.0"/>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="32.0" vgrow="NEVER"/>
+                            <RowConstraints minHeight="32.0" vgrow="NEVER"/>
+                            <RowConstraints minHeight="32.0" vgrow="NEVER"/>
+                            <RowConstraints minHeight="32.0" vgrow="NEVER"/>
+                        </rowConstraints>
+                        <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                               prefHeight="32.0" text="Libro:"/>
+                        <Label fx:id="lblExtBook" maxHeight="-Infinity" maxWidth="1.7976931348623157E308"
+                               minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="1"/>
+                        <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                               prefHeight="32.0" text="Período:" GridPane.rowIndex="1"/>
+                        <Label fx:id="lblExtPeriod" maxHeight="-Infinity" maxWidth="1.7976931348623157E308"
+                               minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="1"
+                               GridPane.rowIndex="1"/>
+                        <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                               prefHeight="32.0" text="Operación:" GridPane.rowIndex="2"/>
+                        <Label fx:id="lblExtCUO" maxHeight="-Infinity" maxWidth="1.7976931348623157E308"
+                               minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="1"
+                               GridPane.rowIndex="2"/>
+                        <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                               prefHeight="32.0" text="Correlativo:" GridPane.rowIndex="3"/>
+                        <Label fx:id="lblExtCorrelative" maxHeight="-Infinity" maxWidth="1.7976931348623157E308"
+                               minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="1"
+                               GridPane.rowIndex="3"/>
+                    </GridPane>
+                </Tab>
+            </TabPane>
+            <GridPane hgap="5.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" minWidth="10.0"/>
+                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0"/>
+                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0"/>
+                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0"/>
+                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="SOMETIMES"/>
+                    <RowConstraints minHeight="32.0" vgrow="SOMETIMES"/>
+                </rowConstraints>
+                <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                       text="Totales:" GridPane.rowSpan="2"/>
+                <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                       text="Debe (ME)" GridPane.columnIndex="1"/>
+                <TextField fx:id="txtDebitFC" alignment="CENTER_RIGHT" editable="false" maxHeight="-Infinity"
+                           maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" promptText="0.00"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                       text="Haber (ME)" GridPane.columnIndex="2"/>
+                <TextField fx:id="txtCreditFC" alignment="CENTER_RIGHT" editable="false" maxHeight="-Infinity"
+                           maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" promptText="0.00"
+                           GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                       text="Debe (MN)" GridPane.columnIndex="3"/>
+                <TextField fx:id="txtDebitSC" alignment="CENTER_RIGHT" editable="false" maxHeight="-Infinity"
+                           maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" promptText="0.00"
+                           GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                       text="Haber (MN)" GridPane.columnIndex="4"/>
+                <TextField fx:id="txtCreditSC" alignment="CENTER_RIGHT" editable="false" maxHeight="-Infinity"
+                           maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" promptText="0.00"
+                           GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+            </GridPane>
+        </VBox>
+    </content>
+    <header>
+        <GridPane hgap="5.0" vgap="5.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" minWidth="10.0"/>
+                <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="140.0"/>
+                <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="140.0"/>
+                <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="140.0"/>
+                <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="140.0"/>
+                <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="140.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="32.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="32.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="32.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="32.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="32.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="32.0" vgrow="NEVER"/>
+            </rowConstraints>
+            <HBox maxWidth="1.7976931348623157E308" spacing="5.0" GridPane.columnSpan="2147483647">
+                <MenuButton contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" minHeight="-Infinity"
+                            mnemonicParsing="false" popupSide="RIGHT" prefHeight="32.0">
+                    <items>
+                        <MenuItem fx:id="mniLink" mnemonicParsing="false" onAction="#linkAction"
+                                  text="Vincular asiento externo"/>
+                        <MenuItem fx:id="mniRevert" mnemonicParsing="false" onAction="#revertAction" text="Revertir"/>
+                        <SeparatorMenuItem/>
+                        <RadioMenuItem fx:id="mniOptPrch" mnemonicParsing="false" text="Usar Cambio Compra">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="grpRate"/>
+                            </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="mniOptSale" mnemonicParsing="false" text="Usar Cambio Venta"
+                                       toggleGroup="$grpRate"/>
+                    </items>
+                    <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@png/icons8-xbox-menu-24.png"/>
+                        </ImageView>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip maxWidth="300.0" text="Menú de opciones adicionales." wrapText="true">
+                            <graphic>
+                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@png/icons8-xbox-menu-64.png"/>
+                                </ImageView>
+                            </graphic>
+                        </Tooltip>
+                    </tooltip>
+                </MenuButton>
+                <Label maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" text="Código Único de Operación:">
+                    <HBox.margin>
+                        <Insets left="10.0"/>
+                    </HBox.margin>
+                </Label>
+                <Hyperlink fx:id="lnkID" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                           prefHeight="32.0" HBox.hgrow="ALWAYS">
+                    <contextMenu>
+                        <ContextMenu>
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Copiar CUO" onAction="#copyCUO"/>
+                            </items>
+                        </ContextMenu>
+                    </contextMenu>
+                </Hyperlink>
+            </HBox>
+            <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                   text="Período:" GridPane.rowIndex="1"/>
+            <ComboBox fx:id="cboPeriod" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                      prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308"
+                   minHeight="-Infinity"
+                   prefHeight="32.0" text="Correlativo:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <Hyperlink fx:id="lnkCorrelative" maxHeight="-Infinity" maxWidth="1.7976931348623157E308"
+                       minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                <contextMenu>
+                    <ContextMenu>
+                        <items>
+                            <MenuItem mnemonicParsing="false" text="Copiar correlativo" onAction="#copyCorrelative"/>
+                        </items>
+                    </ContextMenu>
+                </contextMenu>
+            </Hyperlink>
+            <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308"
+                   minHeight="-Infinity"
+                   prefHeight="32.0" text="Subdiario:" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+            <ComboBox fx:id="cboSubdiary" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                      prefHeight="32.0" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+            <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                   text="Fecha:" GridPane.rowIndex="2" GridPane.rowSpan="2"/>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                   prefHeight="32.0" text="Tributaria" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <DatePicker fx:id="dtpTax" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                        prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                   prefHeight="32.0" text="Emisión" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+            <DatePicker fx:id="dtpDoc" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                        prefHeight="32.0" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                   prefHeight="32.0" text="Vencimiento" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+            <DatePicker fx:id="dtpDue" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                        prefHeight="32.0" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                   prefHeight="32.0" text="Registro" GridPane.columnIndex="4" GridPane.columnSpan="2147483647"
+                   GridPane.rowIndex="2"/>
+            <Label fx:id="lblStamp" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308"
+                   minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="4" GridPane.columnSpan="2147483647"
+                   GridPane.rowIndex="3"/>
+            <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                   text="Moneda:" GridPane.rowIndex="4"/>
+            <ComboBox fx:id="cboCurrency" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                      prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308"
+                   minHeight="-Infinity"
+                   prefHeight="32.0" text="Tipo de Cambio:" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+            <TextField fx:id="txtXRate" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308"
+                       minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+            <CheckBox fx:id="chkReverted" alignment="CENTER_RIGHT" maxHeight="-Infinity"
+                      maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" prefHeight="32.0"
+                      text="Revertido" GridPane.columnIndex="5" GridPane.rowIndex="4" disable="true"/>
+            <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                   text="Glosa:" GridPane.rowIndex="5"/>
+            <TextField fx:id="txtBriefing" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                       prefHeight="32.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647"
+                       GridPane.rowIndex="5"/>
+        </GridPane>
+    </header>
+    <opaqueInsets>
+        <Insets/>
+    </opaqueInsets>
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+    </padding>
+    <ButtonType fx:constant="APPLY"/>
+    <ButtonType fx:constant="CANCEL"/>
+
+</DialogPane>

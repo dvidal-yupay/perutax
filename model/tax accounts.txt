@@ -1,0 +1,823 @@
+10000000|Efectivo y equivalentes de efectivo|DEBIT|PEN||false
+10100000|Caja|DEBIT|PEN||false
+10100100|Caja – MN|DEBIT|PEN||true
+10100200|Caja – ME|DEBIT|USD||true
+10200000|Fondos Fijos|DEBIT|PEN||false
+10300000|Efectivo en tránsito|DEBIT|PEN||false
+10400000|Cuentas Corrientes en Instituciones Financieras|DEBIT|PEN||false
+10410000|Cuentas Corrientes Operativas|DEBIT|PEN||false
+10410100|Banco BBVA|DEBIT|PEN||false
+10410101|Cuenta BBVA – MN|DEBIT|PEN||true
+10410102|Cuenta BBVA – ME|DEBIT|USD||true
+10420000|Cuentas Corrientes para Fines Específicos|DEBIT|PEN||false
+10420100|Cuenta de Detracciones – BN|DEBIT|PEN||true
+11000000|Inversiones Financieras|DEBIT|PEN||false
+12000000|Cuentas por Cobrar Comerciales – Terceros|DEBIT|PEN||false
+12100000|Facturas, boletas y otros comprobantes por cobrar|DEBIT|PEN||false
+12110000|Por cobrar – Terceros – No Emitidas|DEBIT|PEN||false
+12110100|Por cobrar – Terceros – N.E. - MN|DEBIT|PEN||true
+12110200|Por cobrar – Terceros – N.E. - ME|DEBIT|USD||true
+12120000|Por cobrar – Terceros – En Cartera|DEBIT|PEN||false
+12120100|Por cobrar – Terceros – Cartera - MN|DEBIT|PEN||true
+12120200|Por cobrar – Terceros – Cartera - ME|DEBIT|USD||true
+12130000|Por cobrar – Terceros – En Cobranza|DEBIT|PEN||false
+12130100|Por cobrar – Terceros – Cobranza - MN|DEBIT|PEN||true
+12130200|Por cobrar – Terceros – Cobranza - ME|DEBIT|USD||true
+12140000|Por cobrar – Terceros – En Descuento|DEBIT|PEN||false
+12140100|Por cobrar – Terceros – Descuento - MN|DEBIT|PEN||true
+12140200|Por cobrar – Terceros – Descuento - ME|DEBIT|USD||true
+12200000|Anticipos de Clientes|DEBIT|PEN||false
+12200100|Anticipos de Clientes – MN|DEBIT|PEN||true
+12200200|Anticipos de Clientes – ME|DEBIT|USD||true
+12300000|Letras por Cobrar|DEBIT|PEN||false
+13000000|Cuentas por Cobrar Comerciales – Relacionadas|DEBIT|PEN||false
+14000000|Cuentas por Cobrar al Personal, Accionistas (Socios) y Directores|DEBIT|PEN||false
+14100000|Cuentas por Cobrar – Personal|DEBIT|PEN||false
+14110000|Cuentas por Cobrar – Personal – Préstamos|DEBIT|PEN||true
+14120000|Cuentas por Cobrar – Personal – Adelantos Remuneraciones|DEBIT|PEN||true
+14130000|Cuentas por Cobrar – Personal – A rendir Cuenta|DEBIT|PEN||false
+14130100|Cuentas por Cobrar – Personal – A rendir Cuenta MN|DEBIT|PEN||true
+14130200|Cuentas por Cobrar – Personal – A rendir Cuenta ME|DEBIT|USD||true
+14190000|Cuentas por Cobrar – Personal – Otras|DEBIT|PEN||true
+14200000|Accionistas (o Socios)|DEBIT|PEN||false
+14210000|Suscripciones por cobrar a socios o accionistas|DEBIT|PEN||false
+14220000|Préstamos por cobrar a socios|DEBIT|PEN||false
+14220100|Préstamos por cobrar a socios – MN|DEBIT|PEN||true
+14220200|Préstamos por cobrar a socios – ME|DEBIT|USD||true
+14300000|Cuentas por Cobrar – Directores|DEBIT|PEN||false
+14900000|Cuentas por cobrar diversas al personal, socios y directores|DEBIT|PEN||false
+16000000|Cuentas por Cobrar Diversas – Terceros|DEBIT|PEN||false
+16100000|Préstamos por cobrar – Terceros|DEBIT|PEN||false
+16110000|Préstamos por cobrar – Terceros – Con Garantía|DEBIT|PEN||false
+16120000|Préstamos por cobrar – Terceros – Sin Garantía|DEBIT|PEN||false
+16120100|Préstamos por cobrar – Terceros – Sin Garantía MN|DEBIT|PEN||true
+16120200|Préstamos por cobrar – Terceros – Sin Garantía ME|DEBIT|USD||true
+16200000|Reclamaciones a Terceros|DEBIT|PEN||false
+16210000|Reclamaciones a Compañías Aseguradoras|DEBIT|PEN||true
+16220000|Reclamaciones a Compañías Transportadoras|DEBIT|PEN||true
+16230000|Reclamaciones por Servicios Públicos|DEBIT|PEN||true
+16240000|Reclamaciones por Tributos|DEBIT|PEN||false
+16240001|Reclamaciones a SUNAT|DEBIT|PEN||true
+16290000|Otras Reclamaciones a Terceros|DEBIT|PEN||true
+16300000|Intereses, regalías y dividendos|DEBIT|PEN||false
+16310000|Intereses por cobrar|DEBIT|PEN||true
+16320000|Regalías por cobrar|DEBIT|PEN||true
+16330000|Dividendos por cobrar|DEBIT|PEN||true
+16400000|Depósitos otorgados en garantía|DEBIT|PEN||true
+16500000|Venta de activo inmobilizado|DEBIT|PEN||true
+16600000|Activos por Instrumentos financieros|DEBIT|PEN||true
+16700000|Tributos por Acreditar|DEBIT|PEN||false
+16710000|Tributos por Acreditar – Pagos a cuenta del Impto Renta|DEBIT|PEN||true
+16720000|Tributos por Acreditar – Pagos a cuenta del ITAN|DEBIT|PEN||true
+16730000|Tributos por Acreditar – IGV por acreditar en compras|DEBIT|PEN||true
+16740000|Tributos por Acreditar – IGV por acreditar no domiciliados|DEBIT|PEN||true
+16750000|Tributos por Acreditar – Obras por impuestos|DEBIT|PEN||true
+16900000|Otras cuentas por cobrar Diversas|DEBIT|PEN||true
+17000000|Cuentas por Cobrar Diversas – Relacionadas|DEBIT|PEN||false
+17100000|Préstamos por Cobrar – Relacionadas|DEBIT|PEN||false
+17110000|Préstamos por Cobrar – Relacionadas – Con Garantía|DEBIT|PEN||false
+17120000|Préstamos por Cobrar – Relacionadas – Sin Garantía|DEBIT|PEN||false
+18000000|Servicios y otros contratados por anticipado|DEBIT|PEN||false
+18100000|Anticipados – Costo Financiero|DEBIT|PEN||true
+18200000|Anticipados – Seguros|DEBIT|PEN||true
+18300000|Anticipados – Alquileres|DEBIT|PEN||true
+18400000|Anticipados – Primas pagadas por opciones|DEBIT|PEN||true
+18500000|Anticipados – Mantenimiento de activos inmovilizados|DEBIT|PEN||true
+18900000|Anticipados – Otros gastos|DEBIT|PEN||false
+18900001|Anticipados – Peajes|DEBIT|PEN||true
+19000000|Estimación de Cuentas de Cobranza Dudosa|DEBIT|PEN||false
+20000000|Mercaderías|DEBIT|PEN||false
+21000000|Productos Terminados|DEBIT|PEN||false
+22000000|Subrpoductos, desechos y desperdicios|DEBIT|PEN||false
+23000000|Productos en Proceso|DEBIT|PEN||false
+24000000|Materias Primas|DEBIT|PEN||false
+25000000|Materiales Auxiliares, Suministros y Repuestos|DEBIT|PEN||false
+26000000|Envases y Embalajes|DEBIT|PEN||false
+27000000|Activos no Corrientes Mantenidos para la Venta|DEBIT|PEN||false
+28000000|Existencias por Recibir|DEBIT|PEN||false
+29000000|Desvalorización de Existencias|DEBIT|PEN||false
+30000000|Inversiones Mobiliarias|DEBIT|PEN||false
+31000000|Inversiones Inmobiliarias|DEBIT|PEN||false
+32000000|Activos Adquiridos en Arrendamiento Financiero|DEBIT|PEN||false
+33000000|Planta Productora|DEBIT|PEN||false
+33100000|Terrenos|DEBIT|PEN||true
+33200000|Edificaciones|DEBIT|PEN||true
+33300000|Maquinarias y equipos de explotación|DEBIT|PEN||true
+33400000|IME – Unidades de Transporte|DEBIT|PEN||false
+33410000|IME – Vehículos Motorizados|DEBIT|PEN||false
+33411000|IME – Vehículos – Costo|DEBIT|PEN||false
+33411002|IME – Vehículos – Costo – ME|DEBIT|USD||true
+33412000|IME – Vehículos – Revaluación|DEBIT|PEN||false
+33412002|IME – Vehículos – Revaluación – ME|DEBIT|USD||true
+33500000|IME – Muebles y Enseres|DEBIT|PEN||false
+33510000|IME – Muebles|DEBIT|PEN||false
+33511000|IME – Muebles – Costo|DEBIT|PEN||true
+33512000|IME – Muebles – Revaluación|DEBIT|PEN||true
+33520000|IME – Enseres|DEBIT|PEN||false
+33521000|IME – Enseres – Costo|DEBIT|PEN||true
+33522000|IME – Enseres – Revaluación|DEBIT|PEN||true
+33600000|IME – Equipos Diversos|DEBIT|PEN||false
+33610000|IME – Diversos – Equipos de Cómputo|DEBIT|PEN||false
+33611000|IME – Equipos de Cómputo – Costo|DEBIT|PEN||true
+33612000|IME – Equipos de Cómputo – Revaluación|DEBIT|PEN||true
+33620000|IME – Diversos – Equipos de Comunicación|DEBIT|PEN||false
+33621000|IME – Equipos de Comunicación – Costo|DEBIT|PEN||true
+33622000|IME – Equipos de Comunicación – Revaluación|DEBIT|PEN||true
+33690000|IME – Otros Equipos|DEBIT|PEN||false
+33691000|IME – Otros Equipos – Costo|DEBIT|PEN||true
+33692000|IME – Otros Equipos – Revaluación|DEBIT|PEN||true
+33700000|IME – Herramientas y Unidades de Reemplazo|DEBIT|PEN||false
+33710000|IME – Herramientas|DEBIT|PEN||false
+33711000|IME – Herramientas – Costo|DEBIT|PEN||true
+33712000|IME – Herramientas – Revaluación|DEBIT|PEN||true
+34000000|Intangibles|DEBIT|PEN||false
+34300000|Intangibles – Programas de Computadora (Software)|DEBIT|PEN||false
+34310000|Intangibles – Aplicaciones Informáticas|DEBIT|PEN||false
+34311000|Intangibles – Aplicaciones – Costo|DEBIT|PEN||false
+34311100|Intangibles – Aplicaciones – Costo MN|DEBIT|PEN||true
+34311200|Intangibles – Aplicaciones – Costo ME|DEBIT|USD||true
+34312000|Intangibles – Aplicaciones – Revaluación|DEBIT|PEN||false
+34312100|Intangibles – Revaluación – Costo MN|DEBIT|PEN||true
+34312200|Intangibles – Revaluación – Costo ME|DEBIT|USD||true
+35000000|Activos Biológicos|DEBIT|PEN||false
+36000000|Desvalorización de Activo Inmovilizado|DEBIT|PEN||false
+37000000|Activo Diferido|DEBIT|PEN||false
+37100000|Impuesto a la renta diferido|DEBIT|PEN||false
+37110000|Impuesto a la renta diferido – Patrimonio|DEBIT|PEN||true
+37120000|Impuesto a la renta diferido – Resultados|DEBIT|PEN||true
+37200000|Participaciones de los trabajadores diferidas|DEBIT|PEN||false
+37210000|Participaciones de los trabajadores diferidas – Patrimonio|DEBIT|PEN||true
+37220000|Participaciones de los trabajadores diferidas – Resultados|DEBIT|PEN||true
+37300000|Intereses Diferidos|DEBIT|PEN||false
+37310000|Intereses no devengados en operaciones con terceros|DEBIT|PEN||true
+37320000|Intereses no devengados en medición a valor descontado|DEBIT|PEN||true
+38000000|Otros Activos|DEBIT|PEN||false
+39000000|Depreciación y Amortización Acumulados|DEBIT|PEN||false
+39500000|Depreciación Acumulada – Propeidad Planta y Equipo|DEBIT|PEN||false
+39520000|Depreciación – IME – Costo|DEBIT|PEN||false
+39524000|Depreciación – IME – Costo – Maquinarias y equipos de Explotación|DEBIT|PEN||true
+39525000|Depreciación – IME – Costo – Equipo de Transporte|DEBIT|PEN||true
+39526000|Depreciación – IME – Costo – Muebles y Enseres|DEBIT|PEN||true
+39527000|Depreciación – IME – Costo – Equipos Diversos|DEBIT|PEN||true
+39528000|Depreciación – IME – Costo – Herramientas|DEBIT|PEN||true
+39529000|Depreciación – IME – Costo – Unidades de Reemplazo|DEBIT|PEN||true
+39530000|Depreciación – IME – Revaluación|DEBIT|PEN||false
+39534000|Depreciación – IME – Revaluación – Maquinarias y equipos de Explotación|DEBIT|PEN||true
+39535000|Depreciación – IME – Revaluación – Equipo de Transporte|DEBIT|PEN||true
+39536000|Depreciación – IME – Revaluación – Muebles y Enseres|DEBIT|PEN||true
+39537000|Depreciación – IME – Revaluación – Equipos Diversos|DEBIT|PEN||true
+39538000|Depreciación – IME – Revaluación – Herramientas|DEBIT|PEN||true
+39539000|Depreciación – IME – Revaluación – Unidades de Reemplazo|DEBIT|PEN||true
+39600000|Amortización Acumulada|DEBIT|PEN||false
+39610000|Amortización – Intangibles – Costo|DEBIT|PEN||false
+39613000|Amortización – Intangibles – Costo – Software|DEBIT|PEN||true
+39620000|Amortización – Intangibles – Revaluación|DEBIT|PEN||false
+39623000|Amortización – Intangibles – Revaluación – Software|DEBIT|PEN||true
+40000000|Tributos, Contraprestaciones y Aportes al Sistema de Pensiones y Salud por Pagar|CREDIT|PEN||false
+40100000|Tributos por Pagar – Gobierno Central|CREDIT|PEN||false
+40110000|Tributos por Pagar – IGV|CREDIT|PEN||false
+40111000|Tributos por Pagar – IGV – Cuenta propia|CREDIT|PEN||true
+40112000|Tributos por Pagar – IGV – No Domiciliados|CREDIT|PEN||true
+40113000|Tributos por Pagar – IGV – Percepciones|CREDIT|PEN||true
+40114000|Tributos por Pagar – IGV – Retenciones|CREDIT|PEN||true
+40115000|Tributos por Pagar – IGV – Importaciones|CREDIT|PEN||true
+40116000|Tributos por Pagar – IGV – Destinado a Op. Gravadas|CREDIT|PEN||true
+40117000|Tributos por Pagar – IGV – Destinado a Op. Comunes|CREDIT|PEN||true
+40120000|Tributos por Pagar – ISC|CREDIT|PEN||true
+40150000|Tributos por Pagar – Derechos Aduaneros|CREDIT|PEN||true
+40151000|Tributos por Pagar – Aranceles|CREDIT|PEN||true
+40152000|Tributos por Pagar – Derechos aduaneros por ventas|CREDIT|PEN||true
+40170000|Tributos por Pagar – Impuesto a la Renta|CREDIT|PEN||true
+40171000|Tributos por Pagar – Renta 3ra cat|CREDIT|PEN||true
+40172000|Tributos por Pagar – Renta 4ta cat|CREDIT|PEN||true
+40173000|Tributos por Pagar – Renta 5ta cat|CREDIT|PEN||true
+40174000|Tributos por Pagar – Renta No Domiciliados|CREDIT|PEN||true
+40175000|Tributos por Pagar – Otras Retenciones|CREDIT|PEN||true
+40180000|Tributos por Pagar – Otros impuestos y contraprestaciones|CREDIT|PEN||true
+40181000|Tributos por Pagar – ITF|CREDIT|PEN||true
+40183000|Tributos por Pagar – Tasa por Prestación de Servicios Públicos|CREDIT|PEN||true
+40189000|Tributos por Pagar – Gobierno Central – Otros|CREDIT|PEN||true
+40200000|Tributos por Pagar – Certificados Tributarios|CREDIT|PEN||true
+40300000|Tributos por Pagar – Instituciones Públicas|CREDIT|PEN||false
+40310000|Tributos por Pagar – EsSalud|CREDIT|PEN||true
+40320000|Tributos por Pagar – ONP|CREDIT|PEN||true
+40390000|Tributos por Pagar – Otras Instituciones|CREDIT|PEN||false
+40600000|Tributos por Pagar – Gobiernos Locales|CREDIT|PEN||false
+40610000|Tributos por Pagar – Gobiernos Locales – Impuestos|CREDIT|PEN||false
+40611000|Tributos por Pagar – Impuesto Vehicular|CREDIT|PEN||true
+40620000|Tributos por Pagar – Gobiernos Locales – Contribuciones|CREDIT|PEN||true
+40630000|Tributos por Pagar – Gobiernos Locales – Tasas|CREDIT|PEN||true
+40633000|Tributos por Pagar – Gobiernos Locales – Estacionamiento de Vehículos|CREDIT|PEN||true
+40900000|Tributos por Pagar – Otros Costos Administrativos e Intereses|CREDIT|PEN||false
+40900100|Tributos por Pagar – Otros Costos|CREDIT|PEN||false
+40900101|Tributos por Pagar – Fraccionamiento|CREDIT|PEN||true
+40900102|Tributos por Pagar – Refinanciamiento|CREDIT|PEN||true
+40900110|Tributos por Pagar – Multas|CREDIT|PEN||false
+40900111|Tributos por Pagar – Multas – SUNAT|CREDIT|PEN||true
+40900112|Tributos por Pagar – Multas – Tránsito|CREDIT|PEN||true
+40900200|Tributos por Pagar – Intereses|CREDIT|PEN||false
+40900201|Tributos por Pagar – Intereses Moratorios|CREDIT|PEN||true
+41000000|Remuneraciones y Participaciones por Pagar|CREDIT|PEN||false
+41100000|Remuneraciones por Pagar|CREDIT|PEN||false
+41110000|Sueldos y salarios por pagar|CREDIT|PEN||true
+41120000|Comisiones por pagar|CREDIT|PEN||true
+41130000|Remuneraciones en especie por pagar|CREDIT|PEN||true
+41140000|Gratificaciones por pagar|CREDIT|PEN||true
+41150000|Vacaciones por pagar|CREDIT|PEN||true
+41300000|Participaciones de los trabajadores por pagar|CREDIT|PEN||true
+41500000|Beneficios sociales de los trabajadores por pagar|CREDIT|PEN||false
+41510000|CTS por pagar|CREDIT|PEN||true
+41520000|Adelanto de CTS por pagar|CREDIT|PEN||true
+41530000|Pensiones y jubilaciones por pagar|CREDIT|PEN||true
+41700000|Administradoras de Fondos de Pensiones|CREDIT|PEN||false
+41700100|Por pagar AFP – Aportaciones y Retenciones|CREDIT|PEN||true
+41700200|Por pagar AFP – Fondos|CREDIT|PEN||true
+41700300|Por pagar AFP – Intereses Moratorios|CREDIT|PEN||true
+41900000|Otras remuneraciones y participaciones por pagar|CREDIT|PEN||false
+42000000|Cuentas por Pagar Comerciales – Terceros|CREDIT|PEN||false
+42100000|Facturas, boletas y otros comprobantes por pagar|CREDIT|PEN||false
+42110000|Por pagar terceros – No Emitidas|CREDIT|PEN||false
+42110001|Por pagar terceros – No Emitidas MN|CREDIT|PEN||true
+42110002|Por pagar terceros – No Emitidas ME|CREDIT|USD||true
+42120000|Por pagar terceros – Emitidas|CREDIT|PEN||false
+42120001|Por pagar terceros – Emitidas MN|CREDIT|PEN||true
+42120002|Por pagar terceros – Emitidas ME|CREDIT|USD||true
+42200000|Anticipos a proveedores|CREDIT|PEN||false
+42200100|Anticipos a Proveedores – MN|CREDIT|PEN||true
+42200200|Anticipos a Proveedores – ME|CREDIT|USD||true
+42300000|Letras por Pagar|CREDIT|PEN||false
+42300100|Letras por Pagar – MN|CREDIT|PEN||true
+42300200|Letras por Pagar – ME|CREDIT|USD||true
+42400000|Honorarios por Pagar|CREDIT|PEN||false
+42400100|Honorarios por Pagar – MN|CREDIT|PEN||true
+42400200|Honorarios por Pagar – ME|CREDIT|USD||true
+43000000|Cuentas por Pagar Comerciales – Relacionadas|CREDIT|PEN||false
+43100000|Facturas, boletas y otros comprobantes por pagar – Relacionadas|CREDIT|PEN||false
+43110000|No Emitidas – Por Pagar – Relacionadas|CREDIT|PEN||false
+43110100|No Emitidas – Por Pagar – Relacionadas – MN|CREDIT|PEN||true
+43110200|No Emitidas – Por Pagar – Relacionadas – ME|CREDIT|USD||true
+43120000|Emitidas – Por Pagar – Relacionadas|CREDIT|PEN||false
+43120100|Emitidas – Por Pagar – Relacionadas – MN|CREDIT|PEN||true
+43120200|Emitidas – Por Pagar – Relacionadas – ME|CREDIT|USD||true
+43200000|Anticipos Otorgados – Relacionadas|CREDIT|PEN||false
+43210000|Anticipos Otorgados – Relacionadas|CREDIT|PEN||false
+43210100|Anticipos Otorgados – Relacionadas – MN|CREDIT|PEN||true
+43210200|Anticipos Otorgados – Relacionadas – ME|CREDIT|USD||true
+43400000|Honorarios por Pagar – Relacionadas|CREDIT|PEN||false
+43410000|Honorarios por Pagar – Relacionadas|CREDIT|PEN||false
+43410100|Honorarios por Pagar – Relacionadas – MN|CREDIT|PEN||true
+43410200|Honorarios por Pagar – Relacionadas – ME|CREDIT|USD||true
+44000000|Cuentas por Pagar a los Socios y Directores|CREDIT|PEN||false
+44100000|Cuentas por Pagar a los Socios|CREDIT|PEN||false
+44110000|Socios – Préstamos por pagar|CREDIT|PEN||false
+44110100|Socios – Préstamos por pagar MN|CREDIT|PEN||true
+44110200|Socios – Préstamos por pagar ME|CREDIT|USD||true
+44120000|Socios – Dividendos por pagar|CREDIT|PEN||false
+44120100|Socios – Dividendos por pagar MN|CREDIT|PEN||true
+44120200|Socios – Dividendos por pagar ME|CREDIT|USD||true
+44190000|Socios – Otras por pagar|CREDIT|PEN||false
+45000000|Obligaciones Financieras|CREDIT|PEN||false
+45100000|Préstamos de Instituciones financieras y otras entidades|CREDIT|PEN||false
+45110000|Préstamos de Instituciones Financieras|CREDIT|PEN||false
+45110100|Préstamos de Instituciones Financieras – MN|CREDIT|PEN||true
+45110200|Préstamos de Instituciones Financieras – ME|CREDIT|USD||true
+45500000|Costos de Financiación por Pagar|CREDIT|PEN||false
+45510000|Costos por Pagar – Préstamos de Instituciones financieras y otras|CREDIT|PEN||false
+45511000|Costos por Pagar – Préstmos de Instituciones Financieras|CREDIT|PEN||false
+45511100|Costos por Pagar – Préstmos de Instituciones Financieras – MN|CREDIT|PEN||true
+45511200|Costos por Pagar – Préstmos de Instituciones Financieras – ME|CREDIT|USD||true
+46000000|Cuentas por Pagar Diversas – Terceros|CREDIT|PEN||false
+46100000|Reclamos por Pagar – Terceros|CREDIT|PEN||false
+46100100|Reclamos por Pagar – Terceros – MN|CREDIT|PEN||true
+46100200|Reclamos por Pagar – Terceros – ME|CREDIT|USD||true
+47000000|Cuentas por pagar diversas – Relacionadas|CREDIT|PEN||false
+47100000|Préstamos por Pagar – Relacionadas|CREDIT|PEN||false
+47100100|Préstamos por Pagar – Relacionadas – MN|CREDIT|PEN||true
+47100200|Préstamos por Pagar – Relacionadas – ME|CREDIT|USD||true
+48000000|Provisiones|CREDIT|PEN||false
+49000000|Pasivo Diferido|CREDIT|PEN||false
+49100000|Pasivo diferido – Impuesto a la renta|CREDIT|PEN||false
+49110000|Pasivo diferido – Impuesto a la renta – Patrimonio|CREDIT|PEN||true
+49120000|Pasivo diferido – Impuesto a la renta – Resultados|CREDIT|PEN||true
+49200000|Pasivo diferido – Participaciones de los trabajadores|CREDIT|PEN||false
+49210000|Pasivo diferido – Participaciones de los trabajadores – Patrimonio|CREDIT|PEN||true
+49220000|Pasivo diferido – Participaciones de los trabajadores – Resultado|CREDIT|PEN||true
+49300000|Pasivo Diferido – Intereses|CREDIT|PEN||false
+49310000|Pasivo Diferido – Intereses – Transacciones con terceros|CREDIT|PEN||true
+49320000|Pasivo Diferido – Intereses – En medición a valor descontado|CREDIT|PEN||true
+49400000|Pasivo Diferido – Ganancia en venta con arrendamiento financiero paralelo|CREDIT|PEN||true
+49500000|Pasivo Diferido – Subsidios recibidos diferidos|CREDIT|PEN||true
+49600000|Pasivo Diferido – Ingresos Diferidos|CREDIT|PEN||true
+49700000|Pasivo Diferido – Costos Diferidos|CREDIT|PEN||true
+50000000|Capital|CREDIT|PEN||false
+50100000|Capital Social|CREDIT|PEN||false
+50110000|Capital – Acciones|CREDIT|PEN||true
+50120000|Capital – Participaciones|CREDIT|PEN||true
+50200000|Capital – Acciones en tesorería|CREDIT|PEN||true
+51000000|Acciones de Inversión|CREDIT|PEN||false
+51100000|Acciones de Inversión|CREDIT|PEN||false
+51110000|Acciones de Inversión en tesorería|CREDIT|PEN||true
+52000000|Capital Adicional|CREDIT|PEN||false
+52100000|Primas (descuentos) de acciones|CREDIT|PEN||true
+52200000|Capitalizaciones en trámite|CREDIT|PEN||false
+52210000|Capitalizaciones en trámite – Aportes|CREDIT|PEN||true
+52220000|Capitalizaciones en trámite – Reservas|CREDIT|PEN||true
+52230000|Capitalizaciones en trámite – Acreencias|CREDIT|PEN||true
+52240000|Capitalizaciones en trámite – Utilidades|CREDIT|PEN||true
+52300000|Reducciones de capital pendientes de formalización|CREDIT|PEN||true
+56000000|Resultados no realizados|CREDIT|PEN||false
+57000000|Excedente de Revaluación|CREDIT|PEN||false
+57100000|Excedente de Revaluación|CREDIT|PEN||false
+57110000|Excedente de Revaluación – Inversiones inmobiliarias|CREDIT|PEN||true
+57120000|Excedente de Revaluación – IME|CREDIT|PEN||true
+57130000|Excedente de Revaluación – Intangibles|CREDIT|PEN||true
+57200000|Excedente de Revaluación – Acciones liberadas recibidas|CREDIT|PEN||true
+57300000|Participación en excedente de revaluación – Inversiones en relacionadas|CREDIT|PEN||true
+58000000|Reservas|CREDIT|PEN||false
+58100000|Reinversión|CREDIT|PEN||true
+58200000|Legal|CREDIT|PEN||true
+58300000|Contractuales|CREDIT|PEN||true
+58400000|Estatutarias|CREDIT|PEN||true
+58500000|Facultativas|CREDIT|PEN||true
+58900000|Otras reservas|CREDIT|PEN||true
+59000000|Resultados Acumulados|CREDIT|PEN||false
+59100000|Utilidades no distribuidas|CREDIT|PEN||false
+59110000|Utilidades acumuladas|CREDIT|PEN||true
+59120000|Ingresos de años anteriores|CREDIT|PEN||true
+59200000|Pérdidas acumuladas|CREDIT|PEN||false
+59210000|Pérdidas acumuladas|CREDIT|PEN||true
+59220000|Gastos de años anteriores|CREDIT|PEN||true
+60000000|Compras|DEBIT|PEN||false
+60100000|Compras – Mercaderías|DEBIT|PEN||false
+60200000|Compras – Materias primas|DEBIT|PEN||true
+60300000|Compras – Materiales auxiliares, suministros y repuestos|DEBIT|PEN||false
+60310000|Compras – Materiales auxiliares|DEBIT|PEN||true
+60320000|Compras – Suministros|DEBIT|PEN||true
+60330000|Compras – Repuestos|DEBIT|PEN||true
+60400000|Compras – Envases y embalajes|DEBIT|PEN||false
+60410000|Compras – Envases|DEBIT|PEN||true
+60420000|Compras – Embalajes|DEBIT|PEN||true
+60900000|Costos Vinculados con las compras|DEBIT|PEN||false
+60910000|Costos de Compras – de Mercaderías|DEBIT|PEN||true
+60920000|Costos de Compras – de Materias Primas|DEBIT|PEN||true
+60930000|Costos de Compras – Materiales auxiliares, suministros y repuestos|DEBIT|PEN||false
+60931000|Costos de Materiales, suministros y repuestos – Transporte|DEBIT|PEN||true
+60932000|Costos de Materiales, suministros y repuestos – Seguros|DEBIT|PEN||true
+60933000|Costos de Materiales, suministros y repuestos – Derechos aduaneros|DEBIT|PEN||true
+60934000|Costos de Materiales, suministros y repuestos – Comisiones|DEBIT|PEN||true
+60935000|Costos de Materiales, suministros y repuestos – Otros|DEBIT|PEN||true
+60940000|Costo de Compras – Envases y embalajes|DEBIT|PEN||false
+60941000|Costo de Envases y Embalajes – Transporte|DEBIT|PEN||true
+60942000|Costo de Envases y Embalajes – Seguros|DEBIT|PEN||true
+60943000|Costo de Envases y Embalajes – Derechos aduaneros|DEBIT|PEN||true
+60944000|Costo de Envases y Embalajes – Comisiones|DEBIT|PEN||true
+60945000|Costo de Envases y Embalajes – Otros|DEBIT|PEN||true
+61000000|Variación de Existencias|DEBIT|PEN||false
+61100000|Variación – Mercaderías|DEBIT|PEN||true
+61200000|Variación – Materias Primas|DEBIT|PEN||true
+61300000|Variación – Materiales Auxiliares, Suministros y repuestos|DEBIT|PEN||false
+61310000|Variación – Materiales Auxiliares|DEBIT|PEN||true
+61320000|Variación – Suministros|DEBIT|PEN||true
+61330000|Variación – Repuestos|DEBIT|PEN||true
+61400000|Variación – Envases y embalajes|DEBIT|PEN||false
+61410000|Variación – Envases|DEBIT|PEN||true
+61420000|Variación – Embalajes|DEBIT|PEN||true
+62000000|Gastos de Personal y Directores|DEBIT|PEN||false
+62100000|Gastos – Remuneraciones|DEBIT|PEN||false
+62110000|Gastos – Sueldos y Salarios|DEBIT|PEN||true
+62120000|Gastos – Comisiones|DEBIT|PEN||true
+62130000|Gastos – Remuneraciones en especie|DEBIT|PEN||true
+62140000|Gastos – Gratificaciones|DEBIT|PEN||true
+62150000|Gastos – Vacaciones|DEBIT|PEN||true
+62200000|Gastos – Otras Remuneraciones|DEBIT|PEN||true
+62300000|Gastos – Indemnizaciones al personal|DEBIT|PEN||true
+62400000|Gastos – Capacitación del Personal|DEBIT|PEN||true
+62500000|Gastos – Atención al personal|DEBIT|PEN||true
+62700000|Gastos – Seguridad, previsión social y contribuciones|DEBIT|PEN||false
+62710000|Gastos – Régimen de prestación de salud|DEBIT|PEN||true
+62720000|Gastos – Régimen de pensiones|DEBIT|PEN||true
+62730000|Gastos – SCTR|DEBIT|PEN||true
+62740000|Gastos – Seguro de Vida|DEBIT|PEN||true
+62750000|Gastos – Seguros particulares y EPS|DEBIT|PEN||true
+62760000|Gastos – Caja del pescador|DEBIT|PEN||true
+62770000|Gastos – contribuciones a SENCICO y SENATI|DEBIT|PEN||true
+62800000|Gastos – Retribuciones al directorio|DEBIT|PEN||true
+62900000|Gastos – Beneficios sociales de los trabajadores|DEBIT|PEN||false
+62910000|Gastos – CTS|DEBIT|PEN||true
+62920000|Gastos – Pensiones y jubilaciones|DEBIT|PEN||true
+62930000|Gastos – Otros beneficios post-empleo|DEBIT|PEN||true
+63000000|Gastos de Servicios prestados por Terceros|DEBIT|PEN||false
+63100000|Gastos – Transporte, correos y gastos de viaje|DEBIT|PEN||false
+63110000|Gastos – Transporte|DEBIT|PEN||false
+63111000|Gastos – Transporte – Carga|DEBIT|PEN||true
+63112000|Gastos – Transporte – Pasajeros|DEBIT|PEN||true
+63120000|Gastos – Correos|DEBIT|PEN||false
+63120100|Gastos – Correos – Courier|DEBIT|PEN||true
+63130000|Gastos – Alojamiento|DEBIT|PEN||true
+63140000|Gastos – Alimentación|DEBIT|PEN||true
+63150000|Gastos – Otros gastos de Viaje|DEBIT|PEN||true
+63200000|Gastos – Asesoría y Consultoría|DEBIT|PEN||false
+63210000|Gastos – Asesoría y Consultoría – Administrativa|DEBIT|PEN||true
+63220000|Gastos – Asesoría y Consultoría – Legal y tributaria|DEBIT|PEN||true
+63230000|Gastos – Asesoría y Consultoría – Auditoría y Contable|DEBIT|PEN||true
+63240000|Gastos – Asesoría y Consultoría – Mercadotecnia|DEBIT|PEN||true
+63250000|Gastos – Asesoría y Consultoría – Medioambiental|DEBIT|PEN||true
+63260000|Gastos – Asesoría y Consultoría – Investigación y desarrollo|DEBIT|PEN||true
+63270000|Gastos – Asesoría y Consultoría – Producción|DEBIT|PEN||true
+63290000|Gastos – Asesoría y Consultoría – Otros|DEBIT|PEN||true
+63300000|Gastos – Producción Encargada a terceros|DEBIT|PEN||true
+63400000|Gastos – Mantenimiento y reparaciones|DEBIT|PEN||false
+63410000|Gastos – Manto. Y Rep. - Propiedades de inversión|DEBIT|PEN||true
+63420000|Gastos – Manto. Y Rep. - Activos por derecho de uso|DEBIT|PEN||false
+63421000|Gastos – Manto. Y Rep. - Activos por derecho de uso – Financiero|DEBIT|PEN||true
+63422000|Gastos – Manto. Y Rep. - Activos por derecho de uso – Operativo|DEBIT|PEN||true
+63430000|Gastos – Manto. Y Rep. - IME|DEBIT|PEN||true
+63440000|Gastos – Manto. Y Rep. - Intangibles|DEBIT|PEN||true
+63450000|Gastos – Manto. Y Rep. - Activos Biológicos|DEBIT|PEN||true
+63500000|Gastos – Alquileres|DEBIT|PEN||false
+63510000|Gastos – Alquileres – Terrenos|DEBIT|PEN||true
+63520000|Gastos – Alquileres – Edificaciones|DEBIT|PEN||true
+63530000|Gastos – Alquileres – Maquinarias y equipos|DEBIT|PEN||true
+63540000|Gastos – Alquileres – Equipos de Transporte|DEBIT|PEN||true
+63560000|Gastos – Alquileres – Equipos Diversos|DEBIT|PEN||true
+63600000|Gastos – Servicios Básicos|DEBIT|PEN||false
+63610000|Gastos – Servicios Básicos – Electricidad|DEBIT|PEN||true
+63620000|Gastos – Servicios Básicos – Gas|DEBIT|PEN||true
+63630000|Gastos – Servicios Básicos – Agua|DEBIT|PEN||true
+63640000|Gastos – Servicios Básicos – Teléfono|DEBIT|PEN||true
+63650000|Gastos – Servicios Básicos – Internet|DEBIT|PEN||true
+63660000|Gastos – Servicios Básicos – Radio|DEBIT|PEN||true
+63670000|Gastos – Servicios Básicos – Cable|DEBIT|PEN||true
+63700000|Gastos – Publicidad, publicaciones, relaciones públicas|DEBIT|PEN||false
+63710000|Gastos – Publicidad|DEBIT|PEN||true
+63720000|Gastos – Publicaciones|DEBIT|PEN||true
+63730000|Gastos – Relaciones Públicas|DEBIT|PEN||true
+63800000|Gastos – Servicios de Contratistas|DEBIT|PEN||false
+63800100|Gastos – Servicios de Contratistas – Certificaciones y Verificaciones|DEBIT|PEN||true
+63900000|Gastos – Otros Servicios prestados por Terceros|DEBIT|PEN||false
+63910000|Gastos – Otros Servicios – Bancarios|DEBIT|PEN||true
+63920000|Gastos – Otros Servicios – Laboratorios|DEBIT|PEN||true
+64000000|Gastos por Tributos|DEBIT|PEN||false
+64100000|Gastos – Tributos – Gobierno Central|DEBIT|PEN||false
+64110000|Gastos – Tributos – Gobierno Central – IGV e ISC|DEBIT|PEN||true
+64120000|Gastos – Tributos – Gobierno Central – ITF|DEBIT|PEN||true
+64130000|Gastos – Tributos – Gobierno Central – ITAN|DEBIT|PEN||true
+64140000|Gastos – Tributos – Gobierno Central – Juegos de casino|DEBIT|PEN||true
+64150000|Gastos – Tributos – Gobierno Central – Regalías mineras|DEBIT|PEN||true
+64160000|Gastos – Tributos – Gobierno Central – Cánones|DEBIT|PEN||true
+64190000|Gastos – Tributos – Gobierno Central – Otros|DEBIT|PEN||true
+64200000|Gastos – Tributos – Gobierno Regional|DEBIT|PEN||false
+64300000|Gastos – Tributos – Gobierno Local|DEBIT|PEN||false
+64310000|Gastos – Tributos – Impuesto Predial|DEBIT|PEN||true
+64320000|Gastos – Tributos – Arbitrios|DEBIT|PEN||true
+64330000|Gastos – Tributos – Patrimonio Vehicular|DEBIT|PEN||true
+64340000|Gastos – Tributos – Licencia de Funcionamiento|DEBIT|PEN||true
+64390000|Gastos – Tributos – Otros|DEBIT|PEN||true
+64400000|Gastos – Otros Tributos|DEBIT|PEN||false
+64420000|Gastos – Otros Tributos – SENCICO|DEBIT|PEN||true
+64430000|Gastos – Otros Tributos – Otros|DEBIT|PEN||true
+65000000|Otros Gastos de Gestión|DEBIT|PEN||false
+65100000|Gastos – Seguros|DEBIT|PEN||true
+65200000|Gastos – Regalías|DEBIT|PEN||true
+65300000|Gastos – Suscripciones|DEBIT|PEN||true
+65400000|Gastos – Licencias y Derechos de Vigencia|DEBIT|PEN||true
+65600000|Gastos – Suministros|DEBIT|PEN||true
+65800000|Gastos – Gestión Medioambiental|DEBIT|PEN||true
+65900000|Gastos – Otros gastos de gestión|DEBIT|PEN||false
+65910000|Gastos – Otros gastos de gestión – Donaciones|DEBIT|PEN||true
+65920000|Gastos – Otros gastos de gestión – Sanciones Administrativas|DEBIT|PEN||true
+66000000|Pérdida por Medición de Activos no Financieros al Valor Razonable|DEBIT|PEN||false
+66100000|Pérdida por Medición – Activo Realizable|DEBIT|PEN||false
+66110000|Pérdida por Medición – Activo Realizable – Mercaderías|DEBIT|PEN||true
+66120000|Pérdida por Medición – Activo Realizable – Productos Terminados|DEBIT|PEN||true
+66130000|Pérdida por Medición – Activo Realizable – Activos No Corrientes mant. P venta|DEBIT|PEN||false
+66131000|Pérdida por Medición – Activo Realizable – Inversión Inmobiliaria|DEBIT|PEN||true
+66132000|Pérdida por Medición – Activo Realizable – IME|DEBIT|PEN||true
+66133000|Pérdida por Medición – Activo Realizable – Intangibles|DEBIT|PEN||true
+66134000|Pérdida por Medición – Activo Realizable – Activos Biológicos|DEBIT|PEN||true
+66200000|Pérdida por Medición – Activo Inmovilizado|DEBIT|PEN||false
+66210000|Pérdida por Medición – Activo Inmovilizado – Inversiones Inmobiliarias|DEBIT|PEN||true
+66220000|Pérdida por Medición – Activo Inmovilizado – Activos Biológicos|DEBIT|PEN||true
+67000000|Gastos Financieros|DEBIT|PEN||false
+67100000|Gastos Financieros – Operaciones de endeudamiento y otros|DEBIT|PEN||false
+67110000|Gastos Financieros – Préstamos de Instituciones Financieras y otras|DEBIT|PEN||true
+67120000|Gastos Financieros – Arrendamiento financiero|DEBIT|PEN||true
+67130000|Gastos Financieros – Emisión y colocación de instrumentos|DEBIT|PEN||true
+67140000|Gastos Financieros – Documentos vendidos o descontados|DEBIT|PEN||true
+67200000|Gastos Financieros – Pérdida por Instrumentos Financieros Derivados|DEBIT|PEN||true
+67300000|Gastos Financieros – Intereses por préstamos y otras obligaciones|DEBIT|PEN||false
+67310000|Gastos Financieros – Intereses – Préstamos de instituciones financieras y otras|DEBIT|PEN||false
+67311000|Gastos Financieros – Intereses – Préstamos – Instituciones Financieras|DEBIT|PEN||true
+67312000|Gastos Financieros – Intereses – Préstamos – Otras Entidades|DEBIT|PEN||true
+67320000|Gastos Financieros – Intereses – Contratos de Arrendamiento Financiero|DEBIT|PEN||true
+67330000|Gastos Financieros – Intereses – Otros IF por pagar|DEBIT|PEN||true
+67340000|Gastos Financieros – Intereses – Documentos vendidos o descontados|DEBIT|PEN||true
+67350000|Gastos Financieros – Intereses – Obligaciones Emitidas|DEBIT|PEN||true
+67360000|Gastos Financieros – Intereses – Obligaciones Comerciales|DEBIT|PEN||true
+67400000|Gastos Financieros – Factoring|DEBIT|PEN||false
+67410000|Gastos Financieros – Factoring – Pérdida en instrumentos vendidos|DEBIT|PEN||true
+67500000|Gastos Financieros – Descuentos concedidos por pronto pago|DEBIT|PEN||true
+67600000|Gastos Financieros – Diferencia de cambio|DEBIT|PEN||true
+67700000|Gastos Financieros – Pérdida por medición de activos y pasivos financieros a VR|DEBIT|PEN||false
+67710000|Gastos Financieros – Medición – Inversiones para negociación|DEBIT|PEN||true
+67720000|Gastos Financieros – Medición – Inversiones disponibles para venta|DEBIT|PEN||true
+67730000|Gastos Financieros – Medición – Otros|DEBIT|PEN||true
+67800000|Gastos Financieros – Participación en utilidades de relacionadas|DEBIT|PEN||false
+67810000|Gastos Financieros – Participación en subsidiarias y asociadas – Valor Patrimonial|DEBIT|PEN||true
+67820000|Gastos Financieros – Participaciones en negocios conjuntos|DEBIT|PEN||true
+67900000|Gastos Financieros – Otros|DEBIT|PEN||false
+67910000|Gastos Financieros – Otros – Primas por opciones|DEBIT|PEN||true
+67920000|Gastos Financieros – Otros – En medición a valor descontado|DEBIT|PEN||true
+68000000|Valuación y Deterioro de Activos y Provisiones|DEBIT|PEN||false
+68400000|Gastos – Depreciación de Propiedad Planta y Equipo|DEBIT|PEN||false
+68410000|Gastos – Depreciación – IME – Costo|DEBIT|PEN||false
+68412000|Gastos – Depreciación – IME – Costo – Maquinarias y equipos explotación|DEBIT|PEN||true
+68413000|Gastos – Depreciación – IME – Costo – Equipo de transporte|DEBIT|PEN||true
+68414000|Gastos – Depreciación – IME – Costo – Muebles y enseres|DEBIT|PEN||true
+68415000|Gastos – Depreciación – IME – Costo – Equipos diversos|DEBIT|PEN||true
+68416000|Gastos – Depreciación – IME – Costo – Herramientas y unidades de reemplazo|DEBIT|PEN||true
+68420000|Gastos – Depreciación – IME – Revaluación|DEBIT|PEN||false
+68422000|Gastos – Depreciación – IME – Revaluación – Maquinarias y equipos explotación|DEBIT|PEN||true
+68423000|Gastos – Depreciación – IME – Revaluación – Equipo de transporte|DEBIT|PEN||true
+68424000|Gastos – Depreciación – IME – Revaluación – Muebles y enseres|DEBIT|PEN||true
+68425000|Gastos – Depreciación – IME – Revaluación – Equipos diversos|DEBIT|PEN||true
+68426000|Gastos – Depreciación – IME – Revaluación – Herramientas y unds de reemplazo|DEBIT|PEN||true
+68600000|Gastos – Amortización de Intangibles|DEBIT|PEN||false
+68610000|Gastos – Amortización – Costo|DEBIT|PEN||false
+68613000|Gastos – Amortización – Costo – Software|DEBIT|PEN||true
+68620000|Gastos – Amortización – Revaluación|DEBIT|PEN||false
+68623000|Gastos – Amortización – Revaluación – Software|DEBIT|PEN||true
+69000000|Costo de Ventas|DEBIT|PEN||false
+69100000|Costo de Ventas – Mercadería|DEBIT|PEN||true
+69200000|Costo de Ventas – Productos Terminados|DEBIT|PEN||true
+69300000|Costo de Ventas – Servicios Terminados|DEBIT|PEN||false
+69310000|Costo de Ventas – Servicios – Exportación|DEBIT|PEN||false
+69311000|Costo de Ventas – Servicios – Exportación – Terceros|DEBIT|PEN||true
+69312000|Costo de Ventas – Servicios – Exportación – Relacionadas|DEBIT|PEN||true
+69320000|Costo de Ventas – Servicios – Local|DEBIT|PEN||false
+69321000|Costo de Ventas – Servicios – Local – Terceros|DEBIT|PEN||true
+69322000|Costo de Ventas – Servicios – Local – Relacionadas|DEBIT|PEN||true
+69400000|Costo de Ventas – Subproductos, desechos y desperdicios|DEBIT|PEN||true
+69500000|Costo de Ventas – Desvalorización de inventarios al costo|DEBIT|PEN||true
+70000000|Ventas|CREDIT|PEN||false
+70300000|Ventas – Servicios Terminados|CREDIT|PEN||false
+70310000|Ventas – Servicios – Exportación|CREDIT|PEN||false
+70311000|Ventas – Servicios – Exportación – Terceros|CREDIT|PEN||true
+70312000|Ventas – Servicios – Exportación – Relacionadas|CREDIT|PEN||true
+70320000|Ventas – Servicios – Local|CREDIT|PEN||false
+70321000|Ventas – Servicios – Local – Terceros|CREDIT|PEN||true
+70322000|Ventas – Servicios – Local – Relacionadas|CREDIT|PEN||true
+70900000|Devoluciones sobre Ventas|CREDIT|PEN||false
+70950000|Devolución – Servicios Rechazados|CREDIT|PEN||false
+70951000|Devolución – Servicios Rechazados – Terceros|CREDIT|PEN||true
+70952000|Devolución – Servicios Rechazados – Relacionadas|CREDIT|PEN||true
+71000000|Variación de la Producción Almacenada|CREDIT|PEN||false
+71500000|Variación de Inventarios de Servicios|CREDIT|PEN||false
+71510000|Inventarios de Servicios en Proceso|CREDIT|PEN||true
+72000000|Producción de Activo Inmovilizado|CREDIT|PEN||false
+73000000|Descuentos, Rebajas y Bonificaciones obtenidos|CREDIT|PEN||false
+73100000|Descuentos, Rebajas y Bonificaciones obtenidos|CREDIT|PEN||false
+73110000|Descuentos, Rebajas y Bonificaciones obtenidos – Terceros|CREDIT|PEN||true
+73120000|Descuentos, Rebajas y Bonificaciones obtenidos – Relacionadas|CREDIT|PEN||true
+74000000|Descuentos, Rebajas y Bonificaciones concedidos|CREDIT|PEN||false
+74100000|Descuentos, Rebajas y Bonificaciones concedidos|CREDIT|PEN||false
+74110000|Descuentos, Rebajas y Bonificaciones concedidos – Terceros|CREDIT|PEN||true
+74120000|Descuentos, Rebajas y Bonificaciones concedidos – Relacionadas|CREDIT|PEN||true
+75000000|Otros Ingresos de Gestión|CREDIT|PEN||false
+75910000|Otros Ingresos – Subsidios Gubernamentales|CREDIT|PEN||true
+75920000|Otros Ingresos – Reclamos al seguro|CREDIT|PEN||true
+75930000|Otros Ingresos – Donaciones|CREDIT|PEN||true
+75940000|Otros Ingresos – Devoluciones Tributarias|CREDIT|PEN||true
+75990000|Otros Ingresos – Otros|CREDIT|PEN||false
+76000000|Ganancia por Medición de Activos no Financieros al Valor Razonable|CREDIT|PEN||false
+77000000|Ingresos Financieros|CREDIT|PEN||false
+77200000|Ingresos Financieros – Rendimientos Ganados|CREDIT|PEN||false
+77210000|Ingresos Financieros – Rendimiento – Depósitos en instituciones financieras|CREDIT|PEN||true
+77220000|Ingresos Financieros – Rendimiento – Cuentas por cobrar comerciales|CREDIT|PEN||true
+77230000|Ingresos Financieros – Rendimiento – Préstamos otorgados|CREDIT|PEN||true
+77400000|Ingresos Financieros – Factoring|CREDIT|PEN||true
+77500000|Ingresos Financieros – Descuentos obtenidos por Pronto pago|CREDIT|PEN||true
+77600000|Ingresos Financieros – Diferencia en Cambio (Ganancia)|CREDIT|PEN||true
+78000000|Cargas cubiertas por provisiones|CREDIT|PEN||false
+78100000|Cargas cubiertas por provisiones|CREDIT|PEN||true
+79000000|Cargas Imputables a Cuentas de Costos y Gastos|CREDIT|PEN||false
+79100000|Cargas Imputables a Cuentas de Costos y Gastos|CREDIT|PEN||true
+79200000|Gastos financieros imputables a cuentas de inventarios|CREDIT|PEN||true
+80000000|Margen Comercial|DEBIT|PEN||false
+80100000|Margen Comercial|DEBIT|PEN||true
+81000000|Producción del Ejercicio|DEBIT|PEN||false
+81200000|Producción de Servicios|DEBIT|PEN||true
+82000000|Valor Agregado|DEBIT|PEN||false
+82100000|Valor Agregado|DEBIT|PEN||true
+83000000|Excedente bruto (insuficiencia bruta) de explotación|DEBIT|PEN||false
+83100000|Excedente bruto (insuficiencia bruta) de explotación|DEBIT|PEN||true
+84000000|Resultado de Explotación|DEBIT|PEN||false
+84100000|Resultado de Explotación|DEBIT|PEN||true
+85000000|Resultado Antes de Impuesto a las Ganancias|DEBIT|PEN||false
+85100000|Resultado Antes de Impuesto a las Ganancias|DEBIT|PEN||true
+88000000|Impuesto a las ganancias|DEBIT|PEN||false
+88100000|Impuesto a las ganancias – Corriente|DEBIT|PEN||true
+88200000|Impuesto a las ganancias – Diferido|DEBIT|PEN||true
+89000000|Determinación del Resultado del Ejercicio|DEBIT|PEN||false
+89100000|Determinación del Resultado del Ejercicio – Utilidad|DEBIT|PEN||true
+89200000|Determinación del Resultado del Ejercicio – Pérdida|DEBIT|PEN||true
+90000000|Gastos Operativos|DEBIT|PEN||false
+90100000|Gastos Operativos – Personal|DEBIT|PEN||false
+90110000|Gastos Operativos – Personal – Salarios y remuneraciones|DEBIT|PEN|DIRECT_HWORK|true
+90120000|Gastos Operativos – Personal – Gratificaciones|DEBIT|PEN|DIRECT_HWORK|true
+90130000|Gastos Operativos – Personal – Seguro de salud|DEBIT|PEN|DIRECT_HWORK|true
+90140000|Gastos Operativos – Personal – Movilidad|DEBIT|PEN|DIRECT_HWORK|true
+90150000|Gastos Operativos – Personal – Viáticos|DEBIT|PEN||false
+90151000|Gastos Operativos – Personal – Viáticos – Nacional|DEBIT|PEN|DIRECT_HWORK|true
+90152000|Gastos Operativos – Personal – Viáticos – Internacional|DEBIT|PEN|DIRECT_HWORK|true
+90160000|Gastos Operativos – Personal – Atención al personal|DEBIT|PEN|DIRECT_HWORK|true
+90170000|Gastos Operativos – Personal – Beneficios|DEBIT|PEN|DIRECT_HWORK|true
+90180000|Gastos Operativos – Personal – Capacitación|DEBIT|PEN|DIRECT_HWORK|true
+90190000|Gastos Operativos – Personal – Diversos|DEBIT|PEN||false
+90191000|Gastos Operativos – Personal – Diversos – Dotación|DEBIT|PEN|DIRECT_HWORK|true
+90200000|Gastos Operativos – Servicios de Terceros|DEBIT|PEN||false
+90210000|Gastos Operativos – Servicios – Transporte|DEBIT|PEN||false
+90211000|Gastos Operativos – Servicios – Transporte – Pasajeros|DEBIT|PEN|DIRECT_OTH|true
+90212000|Gastos Operativos – Servicios – Transporte – Carga|DEBIT|PEN|DIRECT_OTH|true
+90213000|Gastos Operativos – Servicios – Transporte – Courier|DEBIT|PEN|DIRECT_OTH|true
+90214000|Gastos Operativos – Servicios – Transporte – Peajes|DEBIT|PEN|DIRECT_OTH|true
+90215000|Gastos Operativos – Servicios – Transporte – Estacionamiento|DEBIT|PEN|DIRECT_OTH|true
+90220000|Gastos Operativos – Servicios – Financieros|DEBIT|PEN||false
+90221000|Gastos Operativos – Servicios – Financieros – Intereses|DEBIT|PEN|DIRECT_OTH|true
+90222000|Gastos Operativos – Servicios – Financieros – Comisiones bancarias|DEBIT|PEN|DIRECT_OTH|true
+90223000|Gastos Operativos – Servicios – Financieros – Bancarias diversas|DEBIT|PEN|DIRECT_OTH|true
+90224000|Gastos Operativos – Servicios – Financieros – Diferencia en cambio|DEBIT|PEN|DIRECT_OTH|true
+90230000|Gastos Operativos – Servicios – Certificaciones|DEBIT|PEN||false
+90231000|Gastos Operativos – Servicios – Certificaciones – Entidades Certificadoras|DEBIT|PEN|DIRECT_OTH|true
+90232000|Gastos Operativos – Servicios – Certificaciones – Entidades Verificadoras|DEBIT|PEN|DIRECT_OTH|true
+90239000|Gastos Operativos – Servicios – Certificaciones – Otras Entidades|DEBIT|PEN|DIRECT_OTH|true
+90240000|Gastos Operativos – Servicios – Públicos|DEBIT|PEN||false
+90241000|Gastos Operativos – Servicios – Públicos – Internet|DEBIT|PEN|DIRECT_OTH|true
+90242000|Gastos Operativos – Servicios – Públicos – Telefonía|DEBIT|PEN|DIRECT_OTH|true
+90250000|Gastos Operativos – Servicios – Estado|DEBIT|PEN||false
+90251000|Gastos Operativos – Servicios – Estado – Derechos de tramitación|DEBIT|PEN|DIRECT_OTH|true
+90252000|Gastos Operativos – Servicios – Estado – Derechos Registrales|DEBIT|PEN|DIRECT_OTH|true
+90260000|Gastos Operativos – Servicios – Diversos|DEBIT|PEN||false
+90261000|Gastos Operativos – Servicios – Diversos – Publicaciones|DEBIT|PEN|DIRECT_OTH|true
+90262000|Gastos Operativos – Servicios – Diversos – Honorarios|DEBIT|PEN|DIRECT_OTH|true
+90263000|Gastos Operativos – Servicios – Diversos – Comisiones|DEBIT|PEN|DIRECT_OTH|true
+90264000|Gastos Operativos – Servicios – Diversos – Notariales|DEBIT|PEN|DIRECT_OTH|true
+90265000|Gastos Operativos – Servicios – Diversos – No Domiciliados|DEBIT|PEN|DIRECT_OTH|true
+90300000|Gastos Operativos – Materiales y Suministros|DEBIT|PEN||false
+90310000|Gastos Operativos – Materiales y Suministros – Combustibles|DEBIT|PEN|DIRECT_SUPPLY|true
+90320000|Gastos Operativos – Materiales y Suministros – Artículos de oficina|DEBIT|PEN|DIRECT_SUPPLY|true
+90330000|Gastos Operativos – Materiales y Suministros – Envases y embalajes|DEBIT|PEN|DIRECT_SUPPLY|true
+90400000|Gastos Operativos – Activo Fijo|DEBIT|PEN||false
+90410000|Gastos Operativos – Activo Fijo – Equipos y otros como costo|DEBIT|PEN||false
+90411000|Gastos Operativos – Activo Fijo – Equipos diversos como costo|DEBIT|PEN|DIRECT_OTH|true
+90412000|Gastos Operativos – Activo Fijo – Herramientas como costo|DEBIT|PEN|DIRECT_OTH|true
+90413000|Gastos Operativos – Activo Fijo – Software como costo|DEBIT|PEN|DIRECT_OTH|true
+90420000|Gastos Operativos – Activo Fijo – Mantenimiento|DEBIT|PEN|DIRECT_OTH|true
+90430000|Gastos Operativos – Activo Fijo – Depreciación|DEBIT|PEN|DIRECT_OTH|true
+90440000|Gastos Operativos – Activo Fijo – Amortización|DEBIT|PEN|DIRECT_OTH|true
+90900000|Gastos Operativos – Otros|DEBIT|PEN||false
+91000000|Gastos Administrativos|DEBIT|PEN||false
+91100000|Gastos Administrativos – Personal|DEBIT|PEN||false
+91110000|Gastos Administrativos – Personal – Salarios y remuneraciones|DEBIT|PEN|INDIRECT_HWORK|true
+91120000|Gastos Administrativos – Personal – Gratificaciones|DEBIT|PEN|INDIRECT_HWORK|true
+91130000|Gastos Administrativos – Personal – Seguro de salud|DEBIT|PEN|INDIRECT_HWORK|true
+91140000|Gastos Administrativos – Personal – Movilidad|DEBIT|PEN|INDIRECT_HWORK|true
+91150000|Gastos Administrativos – Personal – Viáticos|DEBIT|PEN||false
+91151000|Gastos Administrativos – Personal – Viáticos – Nacional|DEBIT|PEN|INDIRECT_HWORK|true
+91152000|Gastos Administrativos – Personal – Viáticos – Internacional|DEBIT|PEN|INDIRECT_HWORK|true
+91160000|Gastos Administrativos – Personal – Atención al personal|DEBIT|PEN|INDIRECT_HWORK|true
+91170000|Gastos Administrativos – Personal – Beneficios|DEBIT|PEN|INDIRECT_HWORK|true
+91180000|Gastos Administrativos – Personal – Capacitación|DEBIT|PEN|INDIRECT_HWORK|true
+91190000|Gastos Administrativos – Personal – Diversos|DEBIT|PEN||false
+91191000|Gastos Administrativos – Personal – Diversos – Dotación|DEBIT|PEN|INDIRECT_HWORK|true
+91200000|Gastos Administrativos – Servicios de Terceros|DEBIT|PEN||false
+91210000|Gastos Administrativos – Servicios – Transporte|DEBIT|PEN||false
+91211000|Gastos Administrativos – Servicios – Transporte – Pasajeros|DEBIT|PEN|INDIRECT_OTH|true
+91212000|Gastos Administrativos – Servicios – Transporte – Carga|DEBIT|PEN|INDIRECT_OTH|true
+91213000|Gastos Administrativos – Servicios – Transporte – Courier|DEBIT|PEN|INDIRECT_OTH|true
+91214000|Gastos Administrativos – Servicios – Transporte – Peajes|DEBIT|PEN|INDIRECT_OTH|true
+91215000|Gastos Administrativos – Servicios – Transporte – Estacionamiento|DEBIT|PEN|INDIRECT_OTH|true
+91220000|Gastos Administrativos – Servicios – Financieros|DEBIT|PEN||false
+91221000|Gastos Administrativos – Servicios – Financieros – Intereses|DEBIT|PEN|INDIRECT_OTH|true
+91222000|Gastos Administrativos – Servicios – Financieros – Comisiones bancarias|DEBIT|PEN|INDIRECT_OTH|true
+91223000|Gastos Administrativos – Servicios – Financieros – Bancarias diversas|DEBIT|PEN|INDIRECT_OTH|true
+91224000|Gastos Administrativos – Servicios – Financieros – Diferencia en cambio|DEBIT|PEN|INDIRECT_OTH|true
+91230000|Gastos Administrativos – Servicios – Certificaciones|DEBIT|PEN||false
+91231000|Gastos Administrativos – Servicios – Certificaciones – Entidades Certificadoras|DEBIT|PEN|INDIRECT_OTH|true
+91232000|Gastos Administrativos – Servicios – Certificaciones – Entidades Verificadoras|DEBIT|PEN|INDIRECT_OTH|true
+91239100|Gastos Administrativos – Servicios – Certificaciones – Otras Entidades|DEBIT|PEN|INDIRECT_OTH|true
+91240000|Gastos Administrativos – Servicios – Públicos|DEBIT|PEN||false
+91241000|Gastos Administrativos – Servicios – Públicos – Internet|DEBIT|PEN|INDIRECT_OTH|true
+91242000|Gastos Administrativos – Servicios – Públicos – Telefonía|DEBIT|PEN|INDIRECT_OTH|true
+91250000|Gastos Administrativos – Servicios – Estado|DEBIT|PEN||false
+91251000|Gastos Administrativos – Servicios – Estado – Derechos de tramitación|DEBIT|PEN|INDIRECT_OTH|true
+91252000|Gastos Administrativos – Servicios – Estado – Derechos Registrales|DEBIT|PEN|INDIRECT_OTH|true
+91260000|Gastos Administrativos – Servicios – Diversos|DEBIT|PEN||false
+91261000|Gastos Administrativos – Servicios – Diversos – Publicaciones|DEBIT|PEN|INDIRECT_OTH|true
+91262000|Gastos Administrativos – Servicios – Diversos – Honorarios|DEBIT|PEN|INDIRECT_OTH|true
+91263000|Gastos Administrativos – Servicios – Diversos – Comisiones|DEBIT|PEN|INDIRECT_OTH|true
+91264000|Gastos Administrativos – Servicios – Diversos – Notariales|DEBIT|PEN|INDIRECT_OTH|true
+91265000|Gastos Administrativos – Servicios – Diversos – No Domiciliados|DEBIT|PEN|INDIRECT_OTH|true
+91300000|Gastos Administrativos – Materiales y Suministros|DEBIT|PEN||false
+91310000|Gastos Administrativos – Materiales y Suministros – Combustibles|DEBIT|PEN|INDIRECT_SUPPLY|true
+91320000|Gastos Administrativos – Materiales y Suministros – Artículos de oficina|DEBIT|PEN|INDIRECT_SUPPLY|true
+91330000|Gastos Administrativos – Materiales y Suministros – Envases y embalajes|DEBIT|PEN|INDIRECT_SUPPLY|true
+91400000|Gastos Administrativos – Activo Fijo|DEBIT|PEN||false
+91410000|Gastos Administrativos – Activo Fijo – Equipos y otros como costo|DEBIT|PEN||false
+91411000|Gastos Administrativos – Activo Fijo – Equipos diversos como costo|DEBIT|PEN|INDIRECT_OTH|true
+91412000|Gastos Administrativos – Activo Fijo – Herramientas como costo|DEBIT|PEN|INDIRECT_OTH|true
+91413000|Gastos Administrativos – Activo Fijo – Software como costo|DEBIT|PEN|INDIRECT_OTH|true
+91420000|Gastos Administrativos – Activo Fijo – Mantenimiento|DEBIT|PEN|INDIRECT_OTH|true
+91430000|Gastos Administrativos – Activo Fijo – Depreciación|DEBIT|PEN|INDIRECT_OTH|true
+91440000|Gastos Administrativos – Activo Fijo – Amortización|DEBIT|PEN|INDIRECT_OTH|true
+91500000|Gastos Administrativos – Tributarios|DEBIT|PEN||false
+91510000|Gastos Administrativos – Tributarios – IGV asumido|DEBIT|PEN|INDIRECT_OTH|true
+91520000|Gastos Administrativos – Tributarios – Aduanas|DEBIT|PEN||false
+91521000|Gastos Administrativos – Tributarios – Aduanas – Aranceles|DEBIT|PEN|INDIRECT_OTH|true
+91522000|Gastos Administrativos – Tributarios – Aduanas – Otros Tributos|DEBIT|PEN|INDIRECT_OTH|true
+91523000|Gastos Administrativos – Tributarios – Intereses Moratorios|DEBIT|PEN|INDIRECT_OTH|true
+91524000|Gastos Administrativos – Tributarios – Intereses Fraccionamiento|DEBIT|PEN|INDIRECT_OTH|true
+91525000|Gastos Administrativos – Tributarios – Intereses Refinanciación|DEBIT|PEN|INDIRECT_OTH|true
+91529000|Gastos Administrativos – Tributarios – Otros|DEBIT|PEN|INDIRECT_OTH|true
+91530000|Gastos Administrativos – Sanciones|DEBIT|PEN||false
+91531000|Gastos Administrativos – Sanciones – Multas Tributarias|DEBIT|PEN|INDIRECT_OTH|true
+91532000|Gastos Administrativos – Sanciones – Multas No Tributarias|DEBIT|PEN|INDIRECT_OTH|true
+91533000|Gastos Administrativos – Sanciones – Penalidades|DEBIT|PEN|INDIRECT_OTH|true
+92000000|Gastos por Distribuir|DEBIT|PEN||false
+92100000|Gastos por Distribuir – Personal|DEBIT|PEN||false
+92110000|Gastos por Distribuir – Personal – Salarios y remuneraciones|DEBIT|PEN|INDIRECT_HWORK|true
+92120000|Gastos por Distribuir – Personal – Gratificaciones|DEBIT|PEN|INDIRECT_HWORK|true
+92130000|Gastos por Distribuir – Personal – Seguro de salud|DEBIT|PEN|INDIRECT_HWORK|true
+92140000|Gastos por Distribuir – Personal – Movilidad|DEBIT|PEN|INDIRECT_HWORK|true
+92150000|Gastos por Distribuir – Personal – Viáticos|DEBIT|PEN||false
+92151000|Gastos por Distribuir – Personal – Viáticos – Nacional|DEBIT|PEN|INDIRECT_HWORK|true
+92152000|Gastos por Distribuir – Personal – Viáticos – Internacional|DEBIT|PEN|INDIRECT_HWORK|true
+92160000|Gastos por Distribuir – Personal – Atención al personal|DEBIT|PEN|INDIRECT_HWORK|true
+92170000|Gastos por Distribuir – Personal – Beneficios|DEBIT|PEN|INDIRECT_HWORK|true
+92180000|Gastos por Distribuir – Personal – Capacitación|DEBIT|PEN|INDIRECT_HWORK|true
+92190000|Gastos por Distribuir – Personal – Diversos|DEBIT|PEN||false
+92192000|Gastos por Distribuir – Personal – Diversos – Dotación|DEBIT|PEN|INDIRECT_HWORK|true
+92200000|Gastos por Distribuir – Servicios de Terceros|DEBIT|PEN||false
+92210000|Gastos por Distribuir – Servicios – Transporte|DEBIT|PEN||false
+92211000|Gastos por Distribuir – Servicios – Transporte – Pasajeros|DEBIT|PEN|INDIRECT_OTH|true
+92212000|Gastos por Distribuir – Servicios – Transporte – Carga|DEBIT|PEN|INDIRECT_OTH|true
+92213000|Gastos por Distribuir – Servicios – Transporte – Courier|DEBIT|PEN|INDIRECT_OTH|true
+92214000|Gastos por Distribuir – Servicios – Transporte – Peajes|DEBIT|PEN|INDIRECT_OTH|true
+92215000|Gastos por Distribuir – Servicios – Transporte – Estacionamiento|DEBIT|PEN|INDIRECT_OTH|true
+92220000|Gastos por Distribuir – Servicios – Financieros|DEBIT|PEN||false
+92221000|Gastos por Distribuir – Servicios – Financieros – Intereses|DEBIT|PEN|INDIRECT_OTH|true
+92222000|Gastos por Distribuir – Servicios – Financieros – Comisiones bancarias|DEBIT|PEN|INDIRECT_OTH|true
+92223000|Gastos por Distribuir – Servicios – Financieros – Bancarias diversas|DEBIT|PEN|INDIRECT_OTH|true
+92224000|Gastos por Distribuir – Servicios – Financieros – Diferencia en cambio|DEBIT|PEN|INDIRECT_OTH|true
+92230000|Gastos por Distribuir – Servicios – Certificaciones|DEBIT|PEN||false
+92231000|Gastos por Distribuir – Servicios – Certificaciones – Entidades Certificadoras|DEBIT|PEN|INDIRECT_OTH|true
+92232000|Gastos por Distribuir – Servicios – Certificaciones – Entidades Verificadoras|DEBIT|PEN|INDIRECT_OTH|true
+92239200|Gastos por Distribuir – Servicios – Certificaciones – Otras Entidades|DEBIT|PEN|INDIRECT_OTH|true
+92240000|Gastos por Distribuir – Servicios – Públicos|DEBIT|PEN||false
+92241000|Gastos por Distribuir – Servicios – Públicos – Internet|DEBIT|PEN|INDIRECT_OTH|true
+92242000|Gastos por Distribuir – Servicios – Públicos – Telefonía|DEBIT|PEN|INDIRECT_OTH|true
+92250000|Gastos por Distribuir – Servicios – Estado|DEBIT|PEN||false
+92251000|Gastos por Distribuir – Servicios – Estado – Derechos de tramitación|DEBIT|PEN|INDIRECT_OTH|true
+92252000|Gastos por Distribuir – Servicios – Estado – Derechos Registrales|DEBIT|PEN|INDIRECT_OTH|true
+92260000|Gastos por Distribuir – Servicios – Diversos|DEBIT|PEN||false
+92261000|Gastos por Distribuir – Servicios – Diversos – Publicaciones|DEBIT|PEN|INDIRECT_OTH|true
+92262000|Gastos por Distribuir – Servicios – Diversos – Honorarios|DEBIT|PEN|INDIRECT_OTH|true
+92263000|Gastos por Distribuir – Servicios – Diversos – Comisiones|DEBIT|PEN|INDIRECT_OTH|true
+92264000|Gastos por Distribuir – Servicios – Diversos – Notariales|DEBIT|PEN|INDIRECT_OTH|true
+92265000|Gastos por Distribuir – Servicios – Diversos – No Domiciliados|DEBIT|PEN|INDIRECT_OTH|true
+92300000|Gastos por Distribuir – Materiales y Suministros|DEBIT|PEN||false
+92310000|Gastos por Distribuir – Materiales y Suministros – Combustibles|DEBIT|PEN|INDIRECT_SUPPLY|true
+92320000|Gastos por Distribuir – Materiales y Suministros – Artículos de oficina|DEBIT|PEN|INDIRECT_SUPPLY|true
+92330000|Gastos por Distribuir – Materiales y Suministros – Envases y embalajes|DEBIT|PEN|INDIRECT_SUPPLY|true
+92400000|Gastos por Distribuir – Activo Fijo|DEBIT|PEN||false
+92410000|Gastos por Distribuir – Activo Fijo – Equipos y otros como costo|DEBIT|PEN||false
+92411000|Gastos por Distribuir – Activo Fijo – Equipos diversos como costo|DEBIT|PEN|INDIRECT_OTH|true
+92412000|Gastos por Distribuir – Activo Fijo – Herramientas como costo|DEBIT|PEN|INDIRECT_OTH|true
+92413000|Gastos por Distribuir – Activo Fijo – Software como costo|DEBIT|PEN|INDIRECT_OTH|true
+92420000|Gastos por Distribuir – Activo Fijo – Mantenimiento|DEBIT|PEN|INDIRECT_OTH|true
+92430000|Gastos por Distribuir – Activo Fijo – Depreciación|DEBIT|PEN|INDIRECT_OTH|true
+92440000|Gastos por Distribuir – Activo Fijo – Amortización|DEBIT|PEN|INDIRECT_OTH|true
+92500000|Gastos por Distribuir – Tributarios|DEBIT|PEN||false
+92510000|Gastos por Distribuir – Tributarios – IGV asumido|DEBIT|PEN|INDIRECT_OTH|true
+92520000|Gastos por Distribuir – Tributarios – Aduanas|DEBIT|PEN||false
+92521000|Gastos por Distribuir – Tributarios – Aduanas – Aranceles|DEBIT|PEN|INDIRECT_OTH|true
+92522000|Gastos por Distribuir – Tributarios – Aduanas – Otros Tributos|DEBIT|PEN|INDIRECT_OTH|true
+92523000|Gastos por Distribuir – Tributarios – Intereses Moratorios|DEBIT|PEN|INDIRECT_OTH|true
+92524000|Gastos por Distribuir – Tributarios – Intereses Fraccionamiento|DEBIT|PEN|INDIRECT_OTH|true
+92525000|Gastos por Distribuir – Tributarios – Intereses Refinanciación|DEBIT|PEN|INDIRECT_OTH|true
+92529000|Gastos por Distribuir – Tributarios – Otros|DEBIT|PEN|INDIRECT_OTH|true
+92530000|Gastos por Distribuir – Sanciones|DEBIT|PEN||false
+92531000|Gastos por Distribuir – Sanciones – Multas Tributarias|DEBIT|PEN|INDIRECT_OTH|true
+92532000|Gastos por Distribuir – Sanciones – Multas No Tributarias|DEBIT|PEN|INDIRECT_OTH|true
+92533000|Gastos por Distribuir – Sanciones – Penalidades|DEBIT|PEN|INDIRECT_OTH|true
+94000000|Gastos Generales|DEBIT|PEN||false
+94100000|Gastos Generales – De Representación|DEBIT|PEN||false
+94110000|Gastos Generales – De Representación – Restaurantes|DEBIT|PEN|INDIRECT_OTH|true
+94120000|Gastos Generales – De Representación – Bonificaciones Concedidas|DEBIT|PEN|INDIRECT_OTH|true
+94130000|Gastos Generales – De Representación – Premios Concedidos|DEBIT|PEN|INDIRECT_OTH|true
+94140000|Gastos Generales – De Representación – Donaciones|DEBIT|PEN|INDIRECT_OTH|true
+94150000|Gastos Generales – De Representación – Publicidad|DEBIT|PEN|INDIRECT_OTH|true
+94200000|Gastos Generales – Responsabilidad Social|DEBIT|PEN||false
+94210000|Gastos Generales – Social – Donaciones|DEBIT|PEN|INDIRECT_OTH|true
+94220000|Gastos Generales – Social – Servicios Gratuitos|DEBIT|PEN|INDIRECT_OTH|true
+94900000|Gastos Generales – Otros Gastos Generales|DEBIT|PEN|INDIRECT_OTH|true

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Scene?>
+<?import javafx.stage.Stage?>
+<Stage title="Maestra de Períodos Tributarios" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+       fx:controller="com.yupay.perutax.forms.TaxPeriodForm" fx:id="top">
+    <scene>
+        <Scene>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                  minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+                <ToolBar prefHeight="40.0" prefWidth="200.0">
+                    <Button contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity"
+                            minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#refreshAction"
+                            prefHeight="32.0" prefWidth="32.0">
+                        <tooltip>
+                            <Tooltip maxWidth="300.0" text="Actualizar desde la base de datos.">
+                                <graphic>
+                                    <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@png/icons8-sync-64.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@png/icons8-sync-24.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity"
+                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                            onAction="#createAction" prefHeight="32.0" prefWidth="32.0">
+                        <tooltip>
+                            <Tooltip maxWidth="300.0" text="Crear períodos para un año.">
+                                <graphic>
+                                    <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@png/icons8-add-row-64.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@png/icons8-add-row-24.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button contentDisplay="GRAPHIC_ONLY" layoutX="46.0" layoutY="10.0" maxHeight="-Infinity"
+                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                            onAction="#lockAction" prefHeight="32.0" prefWidth="32.0">
+                        <tooltip>
+                            <Tooltip maxWidth="300.0" text="Cerrar período seleccionado.">
+                                <graphic>
+                                    <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@png/icons8-lock-64.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@png/icons8-lock-24.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator orientation="VERTICAL"/>
+                    <Label maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" text="Buscar:"/>
+                    <TextField fx:id="txtFilter" maxHeight="-Infinity" minHeight="-Infinity" prefColumnCount="6"
+                               prefHeight="32.0" promptText="AAAAMM"/>
+                </ToolBar>
+                <TableView fx:id="tblData" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colID" editable="false" prefWidth="100.0" sortType="DESCENDING"
+                                     text="Período"/>
+                        <TableColumn prefWidth="75.0" text="Fecha">
+                            <columns>
+                                <TableColumn fx:id="colFrom" editable="false" prefWidth="150.0" sortable="false"
+                                             text="Desde"/>
+                                <TableColumn fx:id="colUntil" editable="false" prefWidth="150.0" sortable="false"
+                                             text="Hasta"/>
+                            </columns>
+                        </TableColumn>
+                        <TableColumn fx:id="colClosed" editable="false" prefWidth="180.0" sortable="false"
+                                     text="Cierre"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Scene>
+    </scene>
+</Stage>

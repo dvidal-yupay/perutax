@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Scene?>
+<?import javafx.stage.Stage?>
+<Stage fx:id="top" title="Vista de Correlativos" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+       fx:controller="com.yupay.perutax.forms.CorrelativeForm">
+    <scene>
+        <Scene>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                  prefHeight="400.0" prefWidth="800.0">
+                <ToolBar>
+                    <Button contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity"
+                            minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#syncAction"
+                            prefHeight="32.0" prefWidth="32.0">
+                        <tooltip>
+                            <Tooltip maxWidth="300.0" text="Actualizar desde la base de datos." wrapText="true">
+                                <graphic>
+                                    <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@png/icons8-sync-64.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@png/icons8-sync-24.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator orientation="VERTICAL"/>
+                    <Label text="Libro:"/>
+                    <TextField fx:id="txtFilter" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0"
+                               promptText="Libro a buscar"/>
+                </ToolBar>
+                <TableView fx:id="tblData" VBox.vgrow="ALWAYS" tableMenuButtonVisible="true">
+                    <columns>
+                        <TableColumn fx:id="colID" prefWidth="300.0" sortable="false" text="Object ID" visible="false"/>
+                        <TableColumn fx:id="colBook" prefWidth="125.0" text="Libro"/>
+                        <TableColumn fx:id="colPeriod" prefWidth="100.0" text="Período" sortType="DESCENDING"/>
+                        <TableColumn prefWidth="75.0" text="Última Serie">
+                            <columns>
+                                <TableColumn fx:id="colOpen" prefWidth="100.0" sortable="false"
+                                             style="-fx-alignment: CENTER_RIGHT;" text="Apertura"/>
+                                <TableColumn fx:id="colMovement" prefWidth="100.0" sortable="false"
+                                             style="-fx-alignment: CENTER_RIGHT;" text="Movimiento"/>
+                                <TableColumn fx:id="colClosing" prefWidth="100.0" sortable="false"
+                                             style="-fx-alignment: CENTER_RIGHT;" text="Cierre"/>
+                            </columns>
+                        </TableColumn>
+                        <TableColumn fx:id="colClosedAt" prefWidth="175.0" sortable="false" text="Sello de Cierre"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Scene>
+    </scene>
+</Stage>
