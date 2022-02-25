@@ -272,7 +272,6 @@ public final class Forms {
         return load("search.fxml", () -> new SearchDialog<>(info));
     }
 
-
     /**
      * Static factory for a folio-info.fxml form.
      *
@@ -282,6 +281,16 @@ public final class Forms {
     @NotNull
     public static JournalDtFolioDialog folioInfo(@NotNull FolioContext @NotNull ... contexts) {
         return load("folio-info.fxml", () -> new JournalDtFolioDialog(contexts));
+    }
+
+    /**
+     * Static factory for a journal-view.fxml form.
+     *
+     * @return the controller class.
+     */
+    @NotNull
+    public static JournalView journalView() {
+        return load("journal-view.fxml", JournalView::new);
     }
 
 }

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Scene?>
+<?import javafx.stage.Stage?>
+<!--
+  ~  Perutax - Taxation software for Peru.
+  ~     Copyright (C) 2021-2022  Ingenieria Informatica Yupay SACS
+  ~
+  ~     This program is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     This program is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<Stage fx:id="top" maximized="true" title="Libro Diario / Mayor" xmlns="http://javafx.com/javafx/17"
+       xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yupay.perutax.forms.JournalView">
+    <scene>
+        <Scene>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                  minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
+                <ToolBar maxWidth="1.7976931348623157E308" VBox.vgrow="NEVER">
+                    <Button contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity"
+                            minHeight="-Infinity"
+                            minWidth="-Infinity" mnemonicParsing="false" onAction="#refreshAction" prefHeight="32.0"
+                            prefWidth="32.0">
+                        <tooltip>
+                            <Tooltip maxWidth="300.0" text="Refrescar desde la base de datos." wrapText="true">
+                                <graphic>
+                                    <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@png/icons8-sync-64.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@png/icons8-sync-24.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator orientation="VERTICAL"/>
+                    <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity"
+                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                            onAction="#addAction" prefHeight="32.0" prefWidth="32.0">
+                        <tooltip>
+                            <Tooltip maxWidth="300.0" text="Crear un nuevo asiento contable." wrapText="true">
+                                <graphic>
+                                    <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@png/icons8-add-row-64.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@png/icons8-add-row-24.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button contentDisplay="GRAPHIC_ONLY" layoutX="46.0" layoutY="10.0" maxHeight="-Infinity"
+                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                            onAction="#viewAction" prefHeight="32.0" prefWidth="32.0">
+                        <tooltip>
+                            <Tooltip maxWidth="300.0" text="Ver el asiento contable." wrapText="true">
+                                <graphic>
+                                    <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <Image url="@png/icons8-book-reading-64.png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@png/icons8-book-reading-24.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Separator layoutX="46.0" layoutY="10.0" orientation="VERTICAL"/>
+                    <CheckBox fx:id="chkFilter" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false"
+                              prefHeight="32.0" text="Filtrar:"/>
+                    <TextField fx:id="txtFilter" maxHeight="-Infinity" minHeight="-Infinity" prefColumnCount="15"
+                               prefHeight="32.0" promptText="Ingrese la glosa a buscar..."/>
+                    <Label maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" text="Período:"/>
+                    <ComboBox fx:id="cboFilter" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0"/>
+                </ToolBar>
+                <TableView fx:id="tblData" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colCUO" prefWidth="200.0" text="CUO" visible="false"/>
+                        <TableColumn fx:id="colPeriod" prefWidth="100.0" sortType="DESCENDING"
+                                     style="-fx-alignment: CENTER;" text="Período"/>
+                        <TableColumn fx:id="colCorrelative" prefWidth="125.0" sortType="DESCENDING"
+                                     style="-fx-alignment: CENTER;" text="Correlativo"/>
+                        <TableColumn prefWidth="75.0" text="Fecha">
+                            <columns>
+                                <TableColumn fx:id="colDateTax" prefWidth="100.0" style="-fx-alignment: CENTER;"
+                                             text="Tributaria"/>
+                                <TableColumn fx:id="colDateDoc" prefWidth="100.0" style="-fx-alignment: CENTER;"
+                                             text="Documento"/>
+                                <TableColumn fx:id="colDateDue" prefWidth="100.0" style="-fx-alignment: CENTER;"
+                                             text="Vencimiento"/>
+                            </columns>
+                        </TableColumn>
+                        <TableColumn fx:id="colBriefing" prefWidth="375.0" text="Glosa"/>
+                        <TableColumn prefWidth="75.0" text="Subdiario">
+                            <columns>
+                                <TableColumn fx:id="colSubID" prefWidth="75.0" style="-fx-alignment: CENTER;"
+                                             text="ID"/>
+                                <TableColumn fx:id="colSubName" prefWidth="150.0" text="Nombre"/>
+                            </columns>
+                        </TableColumn>
+                        <TableColumn fx:id="colCurrency" prefWidth="75.0" style="-fx-alignment: CENTER;" text="Moneda"/>
+                        <TableColumn fx:id="colReverted" prefWidth="75.0" text="Revertido"/>
+                        <TableColumn fx:id="colStamp" prefWidth="150.0" text="Creado el..."/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Scene>
+    </scene>
+</Stage>

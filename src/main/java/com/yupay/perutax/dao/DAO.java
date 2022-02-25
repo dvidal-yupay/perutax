@@ -185,6 +185,8 @@ public final class DAO {
             return (DAOBase<T, U>) typeFolio();
         } else if (tClass == Subdiary.class) {
             return (DAOBase<T, U>) subdiary();
+        } else if (tClass == JournalSnapshot.class) {
+            return (DAOBase<T, U>) journalSS();
         } else {
             throw new NoSuchElementException("Cannot identify a DAO implementation for " + tClass);
         }

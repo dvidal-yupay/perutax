@@ -163,7 +163,7 @@ public class PeruTaxFX {
      */
     @FXML
     void accountJournal(@NotNull ActionEvent event) {
-        if (!event.isConsumed()) Forms.journalCard().creator().showAndWait();
+        if (!event.isConsumed()) Forms.journalView().show();
     }
     //</editor-fold>
 
