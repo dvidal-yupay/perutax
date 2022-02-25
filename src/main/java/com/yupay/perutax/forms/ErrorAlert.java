@@ -107,6 +107,7 @@ public class ErrorAlert
         var pw = new PrintWriter(sw);
         throwable.printStackTrace(pw);
         expandable.setText(sw.toString());
+        throwable.printStackTrace();
         computeAlert().show();
     }
 

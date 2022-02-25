@@ -19,10 +19,7 @@
 package com.yupay.perutax.entities;
 
 import jakarta.persistence.*;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
@@ -51,6 +48,12 @@ public class Subdiary {
      */
     private final BooleanProperty trash =
             new SimpleBooleanProperty(this, "trash");
+    /**
+     * The subdiary role defines the prefix used in correlatives
+     * for those journal entries associated with this subdiary.
+     */
+    private final ObjectProperty<SubdiaryRole> role =
+            new SimpleObjectProperty<>(this, "role");
 
     /**
      * Default empty constructor.
@@ -67,6 +70,37 @@ public class Subdiary {
         setId(another.getId());
         setTitle(another.getTitle());
         setTrash(another.isTrash());
+        setRole(another.getRole());
+    }
+
+    /**
+     * FX Accessor - getter.
+     *
+     * @return value of {@link #role}.get();
+     */
+    @Basic
+    @Column(name = "role", nullable = false)
+    @Enumerated(EnumType.STRING)
+    public final SubdiaryRole getRole() {
+        return role.get();
+    }
+
+    /**
+     * FX Accessor - setter.
+     *
+     * @param role value to assign into {@link #role}.
+     */
+    public final void setRole(SubdiaryRole role) {
+        this.role.set(role);
+    }
+
+    /**
+     * FX Accessor - property.
+     *
+     * @return property {@link #role}.
+     */
+    public final ObjectProperty<SubdiaryRole> roleProperty() {
+        return role;
     }
 
     /**

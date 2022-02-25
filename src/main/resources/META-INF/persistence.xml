@@ -27,6 +27,7 @@
         <class>com.yupay.perutax.entities.Currenci</class>
         <class>com.yupay.perutax.entities.AccountNature</class>
         <class>com.yupay.perutax.entities.CostGroup</class>
+        <class>com.yupay.perutax.entities.SubdiaryRole</class>
 
         <!--Entities-->
         <class>com.yupay.perutax.entities.Country</class>

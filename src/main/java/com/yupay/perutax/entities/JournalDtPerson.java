@@ -34,6 +34,7 @@ import java.util.function.Function;
  */
 @Entity
 @Table(name = "journal_dt_person")
+@PrimaryKeyJoinColumn(name = "id")
 public class JournalDtPerson {
     /**
      * The ID identifying the journal DT object.
@@ -60,10 +61,6 @@ public class JournalDtPerson {
      */
     private final ObjectProperty<Person> reference =
             new SimpleObjectProperty<>(this, "reference");
-    /**
-     * The journal detail line owning this entity.
-     */
-    private JournalDt owner;
 
     /**
      * Empty constructor for entities.
@@ -103,6 +100,7 @@ public class JournalDtPerson {
      */
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getId() {
         return id.get();
     }
@@ -194,26 +192,6 @@ public class JournalDtPerson {
      */
     public void setReference(Person personByPerson) {
         this.reference.set(personByPerson);
-    }
-
-    /**
-     * Accessor - getter.
-     *
-     * @return value of {@link #owner}
-     */
-    @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
-    public JournalDt getOwner() {
-        return owner;
-    }
-
-    /**
-     * Accessor - setter.
-     *
-     * @param owner value to set on {@link #owner}
-     */
-    public void setOwner(JournalDt owner) {
-        this.owner = owner;
     }
 
     /**

@@ -474,7 +474,9 @@ public class Journal {
      *
      * @return the details elements.
      */
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "transaction",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     public Collection<JournalDt> getDetails() {
         return getDetail();
     }
@@ -646,8 +648,8 @@ public class Journal {
      */
     public void createLine() {
         var x = new JournalDt();
-        //x.setTransaction(this);//TODO: check this.
         detail.add(x);
+        x.setTransaction(this);
         var i = 0;
         for (var dt : detail) dt.setLine(++i);
     }

@@ -39,11 +39,6 @@ public class JournalDt {
     private final LongProperty id =
             new SimpleLongProperty(this, "id");
     /**
-     * The transaction ID to where this detail line belongs.
-     */
-    private final StringProperty transId =
-            new SimpleStringProperty(this, "transId");
-    /**
      * The line number (order of appareance).
      */
     private final IntegerProperty line =
@@ -103,13 +98,47 @@ public class JournalDt {
      */
     private final ObjectProperty<JournalDtPerson> person =
             new SimpleObjectProperty<>(this, "person");
+    /**
+     * The referenced transaction to where this belongs.
+     */
+    private final ObjectProperty<Journal> transaction =
+            new SimpleObjectProperty<>(this, "transaction");
+
+    /**
+     * FX Accessor - getter.
+     *
+     * @return value of {@link #transaction}.get();
+     */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "transID")
+    public final Journal getTransaction() {
+        return transaction.get();
+    }
+
+    /**
+     * FX Accessor - setter.
+     *
+     * @param transaction value to assign into {@link #transaction}.
+     */
+    public final void setTransaction(Journal transaction) {
+        this.transaction.set(transaction);
+    }
+
+    /**
+     * FX Accessor - property.
+     *
+     * @return property {@link #transaction}.
+     */
+    public final ObjectProperty<Journal> transactionProperty() {
+        return transaction;
+    }
 
     /**
      * Accessor - getter.
      *
      * @return value of {@link #id}
      */
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
     public long getId() {
@@ -123,26 +152,6 @@ public class JournalDt {
      */
     public void setId(long id) {
         this.id.set(id);
-    }
-
-    /**
-     * Accessor - getter.
-     *
-     * @return value of {@link #transId}
-     */
-    @ManyToOne(optional = false, targetEntity = Journal.class)
-    @JoinColumn(name = "transID", referencedColumnName = "id")
-    public String getTransId() {
-        return transId.get();
-    }
-
-    /**
-     * Accessor - setter.
-     *
-     * @param transId value to set on {@link #transId}
-     */
-    public void setTransId(String transId) {
-        this.transId.set(transId);
     }
 
     /**
@@ -350,7 +359,8 @@ public class JournalDt {
      *
      * @return value of {@link #folio}
      */
-    @OneToOne(mappedBy = "owner")
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "folio", referencedColumnName = "id")
     public JournalDtFolio getFolio() {
         return folio.get();
     }
@@ -358,10 +368,10 @@ public class JournalDt {
     /**
      * Accessor - setter.
      *
-     * @param journalDtFolioById value to set on {@link #folio}
+     * @param folio value to set on {@link #folio}
      */
-    public void setFolio(JournalDtFolio journalDtFolioById) {
-        this.folio.set(journalDtFolioById);
+    public void setFolio(JournalDtFolio folio) {
+        this.folio.set(folio);
     }
 
     /**
@@ -369,7 +379,8 @@ public class JournalDt {
      *
      * @return value of {@link #person}
      */
-    @OneToOne(mappedBy = "owner")
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "person", referencedColumnName = "id")
     public JournalDtPerson getPerson() {
         return person.get();
     }
@@ -377,10 +388,10 @@ public class JournalDt {
     /**
      * Accessor - setter.
      *
-     * @param journalDtPersonById value to set on {@link #person}
+     * @param person value to set on {@link #person}
      */
-    public void setPerson(JournalDtPerson journalDtPersonById) {
-        this.person.set(journalDtPersonById);
+    public void setPerson(JournalDtPerson person) {
+        this.person.set(person);
     }
 
 
@@ -391,15 +402,6 @@ public class JournalDt {
      */
     public LongProperty idProperty() {
         return id;
-    }
-
-    /**
-     * JavaFX accessor - property.
-     *
-     * @return the property {@link  #transId}
-     */
-    public StringProperty transIdProperty() {
-        return transId;
     }
 
     /**
@@ -513,7 +515,7 @@ public class JournalDt {
     @Override
     public boolean equals(Object o) {
         return o instanceof JournalDt journalDt
-                && Objects.equals(getTransId(), journalDt.getTransId())
+                && Objects.equals(getTransaction(), journalDt.getTransaction())
                 && Objects.equals(getLine(), journalDt.getLine());
     }
 

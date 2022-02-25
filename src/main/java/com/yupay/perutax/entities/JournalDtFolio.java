@@ -31,7 +31,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "journal_dt_folio")
-
+@PrimaryKeyJoinColumn(name = "id")
 public class JournalDtFolio {
     /**
      * The object ID from linked detail.
@@ -53,12 +53,6 @@ public class JournalDtFolio {
      */
     private final ObjectProperty<TypeFolio> folioType =
             new SimpleObjectProperty<>(this, "folioType");
-    /**
-     * The owner journal detail line. It's not observable
-     * since it won't be directly used. This is only for
-     * JPA mapping purposes.
-     */
-    private JournalDt owner;
 
     /**
      * Accessor - getter.
@@ -67,6 +61,7 @@ public class JournalDtFolio {
      */
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getId() {
         return id.get();
     }
@@ -138,26 +133,6 @@ public class JournalDtFolio {
      */
     public void setFolioType(TypeFolio tfolioByFolioType) {
         this.folioType.set(tfolioByFolioType);
-    }
-
-    /**
-     * Accessor - getter.
-     *
-     * @return value of {@link #owner}
-     */
-    @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
-    public JournalDt getOwner() {
-        return owner;
-    }
-
-    /**
-     * Accessor - setter.
-     *
-     * @param owner value to set on {@link #owner}
-     */
-    public void setOwner(JournalDt owner) {
-        this.owner = owner;
     }
 
     /**

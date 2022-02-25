@@ -19,6 +19,8 @@
 package com.yupay.perutax.dao;
 
 import com.yupay.perutax.entities.Correlative;
+import com.yupay.perutax.entities.TaxPeriod;
+import jakarta.persistence.EntityManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 
@@ -51,5 +53,38 @@ public final class DAOCorrelative extends DAOBase<Correlative, DAOCorrelative> {
     @Override
     protected @NotNull @Unmodifiable Object id(@NotNull Correlative item) {
         return item.getId();
+    }
+
+    /**
+     * Fetches a correlative from database for
+     * given book and period. If not found, a
+     * new one will be created.
+     *
+     * @param book   the book code.
+     * @param period the tax period.
+     * @param em     the active entity manager.
+     * @return fetched correlative, or a new one if not found.
+     */
+    @NotNull Correlative findOrSupply(@NotNull String book,
+                                      @NotNull TaxPeriod period,
+                                      @NotNull EntityManager em) {
+        var qry = em.createQuery(
+                "SELECT C FROM Correlative C" +
+                        " WHERE C.period = :period " +
+                        "AND C.book = :book",
+                Correlative.class);
+        qry.setParameter("period", period);
+        qry.setParameter("book", book);
+        return qry.getResultStream()
+                .findFirst()
+                .orElseGet(() -> {
+                    var x = new Correlative();
+                    x.setBook(book);
+                    x.setPeriod(period);
+                    x.setLastA(0);
+                    x.setLastM(0);
+                    x.setLastC(0);
+                    return x;
+                });
     }
 }

@@ -36,8 +36,8 @@ import java.util.stream.Stream;
  * @param <U> type erasure of implementation.
  */
 public abstract sealed class DAOBase<T, U extends DAOBase<T, U>> permits
-        DAOCorrelative, DAOCostCenter, DAOCountry, DAOJournalSS, DAOPerson,
-        DAOSubdiary, DAOTaxAccount, DAOTaxPeriod, DAOTypeDOI, DAOTypeFolio,
+        DAOCorrelative, DAOCostCenter, DAOCountry, DAOJournal, DAOJournalSS,
+        DAOPerson, DAOSubdiary, DAOTaxAccount, DAOTaxPeriod, DAOTypeDOI, DAOTypeFolio,
         DAOXRate {
     /**
      * The class representing the entity.

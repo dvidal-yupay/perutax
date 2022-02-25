@@ -1,10 +1,11 @@
 package com.yupay.perutax.forms;
 
-import com.yupay.perutax.dao.DAO;
 import com.yupay.perutax.entities.Currenci;
+import com.yupay.perutax.entities.Journal;
 import com.yupay.perutax.entities.JournalSnapshot;
 import com.yupay.perutax.entities.TaxPeriod;
 import com.yupay.perutax.entities.functionals.PeriodComparator;
+import com.yupay.perutax.forms.flows.InsertOneFlow;
 import com.yupay.perutax.forms.flows.SelectAllFlow;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -177,7 +178,14 @@ public class JournalView {
      */
     @FXML
     void addAction(@NotNull ActionEvent event) {
-
+        if (event.isConsumed()) return;
+        Forms.journalCard().creator()
+                .showAndWait()
+                .ifPresent(new InsertOneFlow<Journal>()
+                        .withOnSuccess(x -> data.add(new JournalSnapshot(x)))
+                        .withOnFail(easy("No se pudo grabar el asiento contable."))
+                        .asConsumer());
+        event.consume();
     }
 
     /**
@@ -217,9 +225,11 @@ public class JournalView {
      * Loads secondary data lists.
      */
     private void secondaryLoad() {
-        cboFilter.getItems().clear();
-        DAO.period().specialize().findOpen().forEach(cboFilter.getItems()::add);
-        cboFilter.getItems().sort(new PeriodComparator().descending());
+        new SelectAllFlow<>(TaxPeriod.class)
+                .first(cboFilter.getItems()::clear)
+                .forEach(cboFilter.getItems()::add)
+                .onComplete(() -> cboFilter.getItems().sort(new PeriodComparator().descending()))
+                .execute();
     }
 
     /**

@@ -18,8 +18,10 @@
 
 package com.yupay.perutax.forms;
 
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ListView;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -162,6 +164,21 @@ public class FluentAlert extends Alert {
     @Contract("_->this")
     public @NotNull FluentAlert withContent(@NotNull String content) {
         setContentText(content);
+        return this;
+    }
+
+    /**
+     * Creates a list view to hold the strings and sets as content node.
+     *
+     * @param list the list items.
+     * @return this instance.
+     */
+    @Contract("_->this")
+    public @NotNull FluentAlert withStringList(@NotNull ObservableList<String> list) {
+        var lv = new ListView<>(list);
+        lv.setEditable(false);
+        lv.setMaxHeight(400);
+        getDialogPane().setContent(lv);
         return this;
     }
 }

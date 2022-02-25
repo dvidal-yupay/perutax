@@ -20,6 +20,7 @@ package com.yupay.perutax.entities;
 
 import jakarta.persistence.*;
 import javafx.beans.property.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -99,6 +100,33 @@ public class JournalSnapshot {
      */
     private final BooleanProperty reverted =
             new SimpleBooleanProperty(this, "reverted");
+
+    /**
+     * Default constructor for entity.
+     */
+    public JournalSnapshot() {
+    }
+
+    /**
+     * Constructor that takes a journal object
+     * and takes a snapshot.
+     *
+     * @param o the journal object.
+     */
+    public JournalSnapshot(@NotNull Journal o) {
+        setBriefing(o.getBriefing());
+        setCorrelative(o.getCorrelative());
+        setCreatedAt(o.getCreatedAt());
+        setCurrency(o.getCurrency());
+        setDateDoc(o.getDateDoc());
+        setDateDue(o.getDateDue());
+        setDateTax(o.getDateTax());
+        setId(o.getId());
+        setReverted(o.getRevertedBy() != null);
+        setSubId(o.getSubdiary().getId());
+        setSubTitle(o.getSubdiary().getTitle());
+        setTaxPeriod(o.getPeriod().getId());
+    }
 
     /**
      * Accessor - getter.

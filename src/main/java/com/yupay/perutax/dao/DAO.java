@@ -155,6 +155,16 @@ public final class DAO {
     }
 
     /**
+     * Factory of entity DAO implementation.
+     *
+     * @return a new DAO for Journal entries.
+     */
+    @Contract("->new")
+    public static @NotNull DAOBase<Journal, DAOJournal> journal() {
+        return new DAOJournal();
+    }
+
+    /**
      * Utility method to fetch a DAO implementation for a given tClass.
      *
      * @param tClass the given tClass for required entity.
@@ -187,6 +197,8 @@ public final class DAO {
             return (DAOBase<T, U>) subdiary();
         } else if (tClass == JournalSnapshot.class) {
             return (DAOBase<T, U>) journalSS();
+        } else if (tClass == Journal.class) {
+            return (DAOBase<T, U>) journal();
         } else {
             throw new NoSuchElementException("Cannot identify a DAO implementation for " + tClass);
         }

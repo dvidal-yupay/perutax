@@ -528,7 +528,15 @@ public class JournalCard extends Dialog<Journal> {
                 .forEach(warns::add);
         if (fmtDebitFC.getValue().compareTo(fmtCreditFC.getValue()) != 0)
             warns.add("El total del debe y haber no cumplen el principio de partida doble.");
-        top.lookupButton(ButtonType.APPLY).setDisable(!warns.isEmpty());
+        var notEmpty = !warns.isEmpty();
+        if (notEmpty)
+            FluentAlert.err()
+                    .withStringList(warns)
+                    .withHeader("Existen algunas inconsistencias. No se podrá grabar la entrada.")
+                    .withTitle("Inconsistente")
+                    .withButtons(ButtonType.CLOSE)
+                    .show();
+        top.lookupButton(ButtonType.APPLY).setDisable(notEmpty);
         event.consume();
     }
 
@@ -772,7 +780,6 @@ public class JournalCard extends Dialog<Journal> {
             fmtBriefing.valueProperty().bindBidirectional(value.briefingProperty());
             updateTotals();
             valueAdjusting = false;
-            mniRevert.disableProperty().bind(value.revertedByProperty().isNotNull());
         }
 
         @Override
@@ -797,7 +804,6 @@ public class JournalCard extends Dialog<Journal> {
             lblExtPeriod.textProperty().unbind();
             fmtBriefing.valueProperty().unbindBidirectional(value.briefingProperty());
             valueAdjusting = false;
-            mniRevert.disableProperty().unbind();
         }
 
         @Override
@@ -815,7 +821,6 @@ public class JournalCard extends Dialog<Journal> {
             clearDatePickers(dtpDoc, dtpDue, dtpTax);
             fmtBriefing.setValue("");
             valueAdjusting = false;
-            mniRevert.setDisable(false);
         }
     }
     //</editor-fold>
