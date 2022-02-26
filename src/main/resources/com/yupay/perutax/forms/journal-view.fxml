@@ -124,7 +124,7 @@
                         </TableColumn>
                         <TableColumn fx:id="colCurrency" prefWidth="75.0" style="-fx-alignment: CENTER;" text="Moneda"/>
                         <TableColumn fx:id="colReverted" prefWidth="75.0" text="Revertido"/>
-                        <TableColumn fx:id="colStamp" prefWidth="150.0" text="Creado el..."/>
+                        <TableColumn fx:id="colStamp" prefWidth="200.0" text="Creado el..."/>
                     </columns>
                 </TableView>
             </VBox>

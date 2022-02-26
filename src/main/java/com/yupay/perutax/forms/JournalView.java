@@ -169,6 +169,19 @@ public class JournalView {
         dateTableColumns(colStamp);
         objectTableColumn(colCurrency, Objects::toString);
 
+        columnValueFactory(colBriefing, JournalSnapshot::briefingProperty);
+        columnValueFactory(colPeriod, JournalSnapshot::taxPeriodProperty);
+        columnValueFactory(colCorrelative, JournalSnapshot::correlativeProperty);
+        columnValueFactory(colCUO, JournalSnapshot::idProperty);
+        columnValueFactory(colSubID, JournalSnapshot::subIdProperty);
+        columnValueFactory(colSubName, JournalSnapshot::subTitleProperty);
+        columnValueFactory(colReverted, JournalSnapshot::revertedProperty);
+        columnValueFactory(colDateDoc, JournalSnapshot::dateDocProperty);
+        columnValueFactory(colDateDue, JournalSnapshot::dateDueProperty);
+        columnValueFactory(colDateTax, JournalSnapshot::dateTaxProperty);
+        columnValueFactory(colStamp, JournalSnapshot::createdAtProperty);
+        columnValueFactory(colCurrency, JournalSnapshot::currencyProperty);
+
     }
 
     /**
