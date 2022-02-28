@@ -19,6 +19,7 @@
 package com.yupay.perutax.forms;
 
 import com.yupay.perutax.entities.Subdiary;
+import com.yupay.perutax.entities.SubdiaryRole;
 import com.yupay.perutax.forms.flows.EditSelectionTrigger;
 import com.yupay.perutax.forms.flows.InsertOneFlow;
 import com.yupay.perutax.forms.flows.SelectAllFlow;
@@ -76,6 +77,12 @@ public class SubdiaryView {
      * FXML control injected from subdiary-view.fxml
      */
     @FXML
+    private TableColumn<Subdiary, SubdiaryRole> colRole;
+
+    /**
+     * FXML control injected from subdiary-view.fxml
+     */
+    @FXML
     private TableColumn<Subdiary, Boolean> colTrash;
 
     /**
@@ -115,6 +122,7 @@ public class SubdiaryView {
         columnValueFactory(colID, Subdiary::idProperty);
         columnValueFactory(colTitle, Subdiary::titleProperty);
         columnValueFactory(colTrash, Subdiary::trashProperty);
+        columnValueFactory(colRole, Subdiary::roleProperty);
         setupTableFilter(tblData,
                 data,
                 new TextFilter(),
