@@ -99,6 +99,7 @@
                     <columns>
                         <TableColumn fx:id="colID" prefWidth="75.0" text="Código"/>
                         <TableColumn fx:id="colTitle" prefWidth="275.0" text="Título"/>
+                        <TableColumn fx:id="colRole" prefWidth="150.0" text="Rol"/>
                         <TableColumn fx:id="colTrash" prefWidth="75.0" text="Basurero"/>
                     </columns>
                 </TableView>
