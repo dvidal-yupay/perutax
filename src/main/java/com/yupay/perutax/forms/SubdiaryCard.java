@@ -19,6 +19,7 @@
 package com.yupay.perutax.forms;
 
 import com.yupay.perutax.entities.Subdiary;
+import com.yupay.perutax.entities.SubdiaryRole;
 import com.yupay.perutax.forms.inner.BaseChangeListener;
 import com.yupay.perutax.forms.inner.UpperCaseFormatter;
 import com.yupay.perutax.forms.inner.VarcharFormatter;
@@ -54,6 +55,12 @@ public class SubdiaryCard extends Dialog<Subdiary> {
      */
     private final TextFormatter<String> fmtTitle =
             new UpperCaseFormatter();
+
+    /**
+     * FXML controls injected from subdiary-card.fxml
+     */
+    @FXML
+    private ComboBox<SubdiaryRole> cboRole;
 
     /**
      * FXML controls injected from subdiary-card.fxml
@@ -99,6 +106,7 @@ public class SubdiaryCard extends Dialog<Subdiary> {
         txtID.setTextFormatter(fmtID);
         txtTitle.setTextFormatter(fmtTitle);
         value.addListener(new ValueChanged());
+        cboRole.setItems(SubdiaryRole.observable());
     }
 
     /**
@@ -150,6 +158,7 @@ public class SubdiaryCard extends Dialog<Subdiary> {
             fmtID.valueProperty().bindBidirectional(value.idProperty());
             fmtTitle.valueProperty().bindBidirectional(value.titleProperty());
             chkTrash.selectedProperty().bindBidirectional(value.trashProperty());
+            cboRole.valueProperty().bindBidirectional(value.roleProperty());
         }
 
         @Override
@@ -157,12 +166,14 @@ public class SubdiaryCard extends Dialog<Subdiary> {
             fmtID.valueProperty().unbindBidirectional(value.idProperty());
             fmtTitle.valueProperty().unbindBidirectional(value.titleProperty());
             chkTrash.selectedProperty().unbindBidirectional(value.trashProperty());
+            cboRole.valueProperty().unbindBidirectional(value.roleProperty());
         }
 
         @Override
         protected void clear() {
             clearFormatters("", fmtID, fmtTitle);
             chkTrash.setSelected(false);
+            cboRole.setValue(null);
         }
     }
 }
