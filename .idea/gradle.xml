@@ -8,17 +8,17 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$USER_HOME$/codebase/perutax" />
+            <option value="$PROJECT_DIR$" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$USER_HOME$/codebase/perutax" />
+        <option name="externalProjectPath" value="/docs/codebase/perutax" />
         <option name="gradleHome" value="/usr/share/java/gradle" />
         <option name="modules">
           <set>
-            <option value="$USER_HOME$/codebase/perutax" />
+            <option value="/docs/codebase/perutax" />
           </set>
         </option>
       </GradleProjectSettings>
