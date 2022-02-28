@@ -10,3 +10,4 @@
 *.mwb.bak
 /build
 /.gradle
+/.idea/gradle.xml
