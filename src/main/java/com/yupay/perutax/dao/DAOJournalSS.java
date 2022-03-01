@@ -18,8 +18,10 @@
 
 package com.yupay.perutax.dao;
 
+import com.yupay.perutax.entities.Journal;
 import com.yupay.perutax.entities.JournalSnapshot;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Unmodifiable;
 
 /**
@@ -51,5 +53,24 @@ public final class DAOJournalSS extends DAOBase<JournalSnapshot, DAOJournalSS> {
     @Override
     protected @NotNull @Unmodifiable Object id(@NotNull JournalSnapshot item) {
         return item.getId();
+    }
+
+    /**
+     * Fetches the journal entity for the given snapshot.
+     *
+     * @param object the snapshot object.
+     * @return the journal entity, or null if not exists.
+     * Since JournalSnapshot objects are a view, it's unlikely
+     * that in any normal use case it would return null. It's
+     * marked as nullable because in a test environmente
+     * it could happen.
+     */
+    public @Nullable Journal fetchJournal(@NotNull JournalSnapshot object) {
+        var em = DAOSource.manager();
+        try {
+            return em.find(Journal.class, object.getId());
+        } finally {
+            if (em.isOpen()) em.close();
+        }
     }
 }

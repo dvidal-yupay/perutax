@@ -1,5 +1,6 @@
 package com.yupay.perutax.forms;
 
+import com.yupay.perutax.dao.DAO;
 import com.yupay.perutax.entities.Currenci;
 import com.yupay.perutax.entities.Journal;
 import com.yupay.perutax.entities.JournalSnapshot;
@@ -12,12 +13,14 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.concurrent.Callable;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
@@ -218,8 +221,20 @@ public class JournalView {
      * @param event the event object.
      */
     @FXML
-    void viewAction(@NotNull ActionEvent event) {
+    void tableClicked(@NotNull MouseEvent event) {
+        if (!event.isConsumed()) showViewer();
+        event.consume();
+    }
 
+    /**
+     * FXML event handler.
+     *
+     * @param event the event object.
+     */
+    @FXML
+    void viewAction(@NotNull ActionEvent event) {
+        if (!event.isConsumed()) showViewer();
+        event.consume();
     }
 
     /**
@@ -254,6 +269,36 @@ public class JournalView {
                 .forEach(data::add)
                 .onError(easy("No se pudo cargar el listado de asientos del diario."))
                 .execute();
+    }
+
+    /**
+     * Convenient method to show journal card in editing mode,
+     * with selected item. Will trigger an alert of no item is
+     * selected, so the user is informed about his error.
+     */
+    private void showViewer() {
+        Optional.ofNullable(tblData.getSelectionModel().getSelectedItem())
+                .map(s -> {
+                    try {
+                        return DAO.journalSS().specialize().fetchJournal(s);
+                    } catch (RuntimeException ex) {
+                        easy("No se ha podido recuperar la información" +
+                                " completa de la base de datos.").accept(ex);
+                        return null;
+                    }
+                })
+                .ifPresentOrElse(
+                        i -> Forms.journalCard()
+                                .withMode(FormMode.EDITOR)
+                                .withValue(i)
+                                .show(),
+                        () -> FluentAlert.err()
+                                .withButtons(ButtonType.CLOSE)
+                                .withContent("Primero seleccione un elemento en la tabla," +
+                                        " luego presione el botón visualizar asiento, o" +
+                                        " haga doble click sobre el elemento seleccionado.")
+                                .withHeader("No ha seleccionado el elemento a mostrar.")
+                                .withTitle("Error"));
     }
 
     /**
