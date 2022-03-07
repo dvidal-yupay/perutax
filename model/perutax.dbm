@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.4-beta1" use-changelog="false" author="Ingenieria Informatica Yupay SACS" last-position="0,196" last-zoom="0.4" max-obj-count="13"
+	 default-schema="public"
+	 layers="commons"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<database name="perutaxdb" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layers="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<tag name="commons">
+	<style id="table-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
+	<style id="table-ext-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
+	<style id="table-name" colors="#000000"/>
+	<style id="table-schema-name" colors="#000000"/>
+	<style id="table-title" colors="#4aa5ff,#4aa5ff,#3175b0"/>
+	<style id="table-toggler-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
+	<style id="table-toggler-btns" colors="#f3f3f3,#e1e1e1,#bebebe"/>
+</tag>
+<tag name="folios">
+	<style id="table-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
+	<style id="table-ext-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
+	<style id="table-name" colors="#000000"/>
+	<style id="table-schema-name" colors="#000000"/>
+	<style id="table-title" colors="#50841f,#fff285,#77a7b6"/>
+	<style id="table-toggler-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
+	<style id="table-toggler-btns" colors="#f3f3f3,#e1e1e1,#bebebe"/>
+</tag>
+<tag name="journal">
+	<style id="table-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
+	<style id="table-ext-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
+	<style id="table-name" colors="#000000"/>
+	<style id="table-schema-name" colors="#000000"/>
+	<style id="table-title" colors="#5dabcc,#febc63,#31d767"/>
+	<style id="table-toggler-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
+	<style id="table-toggler-btns" colors="#f3f3f3,#e1e1e1,#bebebe"/>
+</tag>
+<table name="tdoi" layers="0" collapse-mode="1" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="340" y="640"/>
+	<column name="id" not-null="true">
+		<type name="char" length="1"/>
+	</column>
+	<column name="title" not-null="true">
+		<type name="varchar" length="10"/>
+	</column>
+	<column name="regex" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="trash" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<constraint name="uq_tdoi_title" type="uq-constr" table="public.tdoi">
+		<columns names="title" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="tdoi_pk" type="pk-constr" table="public.tdoi">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="country" layers="0" collapse-mode="1" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="2140" y="960"/>
+	<column name="id" not-null="true">
+		<type name="char" length="2"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="tax_id3">
+		<type name="char" length="3"/>
+	</column>
+	<column name="tax_id4">
+		<type name="char" length="4"/>
+	</column>
+	<column name="trash" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<constraint name="country_pk" type="pk-constr" table="public.country">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="person" layers="0" collapse-mode="1" max-obj-count="15" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="1260" y="280"/>
+	<column name="id" not-null="true">
+		<type name="char" length="36"/>
+	</column>
+	<column name="doi_num" not-null="true">
+		<type name="varchar" length="15"/>
+	</column>
+	<column name="full_name" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="address">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="role_customer" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="role_supplier" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="role_employee" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="role_shareholder" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="role_freelancer" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="role_associated" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="trash" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<constraint name="person_pk" type="pk-constr" table="public.person">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="country" index="5"/>
+		<object name="doi_type" index="1"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="country_fk" index="2"/>
+		<object name="tdoi_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="person_has_tdoi" type="rel1n" layers="0"
+	 src-col-pattern="doi_type"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#350a73"
+	 src-table="public.tdoi"
+	 dst-table="public.person"
+	 src-required="true" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT">
+	<label ref-type="name-label">
+		<position x="-6.63074" y="-28.229"/>
+	</label>
+</relationship>
+
+<relationship name="person_in_country" type="rel1n" layers="0"
+	 src-col-pattern="country"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#93d31e"
+	 src-table="public.country"
+	 dst-table="public.person"
+	 src-required="false" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT">
+	<label ref-type="name-label">
+		<position x="0.192008" y="-21.1434"/>
+	</label>
+</relationship>
+
+<sequence name="sq_xrate_id" cycle="false" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
+	<schema name="public"/>
+</sequence>
+
+<table name="xrate" layers="0" collapse-mode="1" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="80" y="380"/>
+	<column name="id" not-null="true" sequence="public.sq_xrate_id">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="taxDate" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="prch" not-null="true">
+		<type name="decimal" length="6" precision="3"/>
+	</column>
+	<column name="sale" not-null="true">
+		<type name="decimal" length="14" precision="2"/>
+	</column>
+	<constraint name="uq_xrate_date" type="uq-constr" table="public.xrate">
+		<columns names="taxDate" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="xrate_pk" type="pk-constr" table="public.xrate">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="tax_period" layers="0" collapse-mode="1" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="2140" y="1300"/>
+	<column name="id" not-null="true">
+		<type name="char" length="6"/>
+	</column>
+	<column name="dateFrom" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="dateUntil" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="closed">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="tax_period_pk" type="pk-constr" table="public.tax_period">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="correlative" layers="0" collapse-mode="1" max-obj-count="8" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="1360" y="1760"/>
+	<column name="id" not-null="true">
+		<type name="char" length="36"/>
+	</column>
+	<column name="book" not-null="true">
+		<type name="char" length="6"/>
+	</column>
+	<column name="lastA" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="lastM" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="lastC" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="closed">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="correlative_pk" type="pk-constr" table="public.correlative">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="period" index="2"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="tax_period_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="period_has_correlatives" type="rel1n" layers="0"
+	 src-col-pattern="period"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#bfd609"
+	 src-table="public.tax_period"
+	 dst-table="public.correlative"
+	 src-required="true" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<table name="cost_center" layers="0" collapse-mode="1" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="220" y="920"/>
+	<column name="id" not-null="true">
+		<type name="char" length="3"/>
+	</column>
+	<column name="title" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="trash" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<constraint name="uq_costcenter_title" type="uq-constr" table="public.cost_center">
+		<columns names="title" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="cost_center_pk" type="pk-constr" table="public.cost_center">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<usertype name="tax_account_nature" configuration="enumeration">
+	<schema name="public"/>
+	<enumeration values="DEBIT•CREDIT"/>
+</usertype>
+
+<usertype name="currenci" configuration="enumeration">
+	<schema name="public"/>
+	<enumeration values="USD•PEN"/>
+</usertype>
+
+<usertype name="group_cost" configuration="enumeration">
+	<schema name="public"/>
+	<enumeration values="DIRECT_HWORK•DIRECT_OTH•DIRECT_SUPPLY•INDIRECT_HWORK•INDIRECT_OTH•INDIRECT_SUPPLY"/>
+</usertype>
+
+<table name="tax_account" layers="0" collapse-mode="1" max-obj-count="9" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="560" y="1680"/>
+	<column name="id" not-null="true">
+		<type name="char" length="8"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="nature" not-null="true">
+		<type name="public.tax_account_nature" length="0"/>
+	</column>
+	<column name="currency" not-null="true">
+		<type name="public.currenci" length="0"/>
+	</column>
+	<column name="balance" not-null="true" default-value="0.00">
+		<type name="decimal" length="14" precision="2"/>
+	</column>
+	<column name="groupCost">
+		<type name="public.group_cost" length="0"/>
+	</column>
+	<column name="usable" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="trash" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<constraint name="tax_account_pk" type="pk-constr" table="public.tax_account">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="tfolio" layers="0" collapse-mode="1" max-obj-count="12" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="300" y="1180"/>
+	<column name="id" not-null="true">
+		<type name="char" length="2"/>
+	</column>
+	<column name="plameID">
+		<type name="char" length="1"/>
+	</column>
+	<column name="title" not-null="true">
+		<type name="varchar" length="10"/>
+	</column>
+	<column name="regexSerie" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="regexNumber" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="ctxtPurchase" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="ctxtSale" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="ctxtForeign" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="ctxtTaxCredit" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="trash" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<constraint name="uq_tfolio_title" type="uq-constr" table="public.tfolio">
+		<columns names="title" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="tfolio_pk" type="pk-constr" table="public.tfolio">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<usertype name="subdiary_role" configuration="enumeration">
+	<schema name="public"/>
+	<enumeration values="A•M•C"/>
+</usertype>
+
+<table name="subdiary" layers="0" collapse-mode="1" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<tag name="journal"/>
+	<position x="1440" y="880"/>
+	<column name="id" not-null="true">
+		<type name="char" length="2"/>
+	</column>
+	<column name="title" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="role" not-null="true">
+		<type name="public.subdiary_role" length="0"/>
+	</column>
+	<column name="trash" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<constraint name="uq_subdiary_title" type="uq-constr" table="public.subdiary">
+		<columns names="title" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="subdiary_pk" type="pk-constr" table="public.subdiary">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="journal" layers="0" collapse-mode="1" max-obj-count="19" z-value="0">
+	<schema name="public"/>
+	<tag name="journal"/>
+	<position x="1440" y="1240"/>
+	<column name="id" not-null="true">
+		<type name="char" length="36"/>
+	</column>
+	<column name="correlative" not-null="true">
+		<type name="char" length="10"/>
+	</column>
+	<column name="currency" not-null="true">
+		<type name="public.currenci" length="0"/>
+	</column>
+	<column name="xrate" not-null="true">
+		<type name="decimal" length="6" precision="3"/>
+	</column>
+	<column name="dateTax" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="dateDoc" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="dateDue">
+		<type name="date" length="0"/>
+	</column>
+	<column name="briefing" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="createdAt" not-null="true">
+		<type name="timestamp" length="0" precision="3"/>
+	</column>
+	<column name="revertedBy">
+		<type name="char" length="36"/>
+	</column>
+	<column name="refID">
+		<type name="char" length="36"/>
+	</column>
+	<column name="refBook">
+		<type name="char" length="6"/>
+	</column>
+	<column name="refPeriod">
+		<type name="char" length="6"/>
+	</column>
+	<column name="refCorrelative">
+		<type name="char" length="10"/>
+	</column>
+	<constraint name="journal_pk" type="pk-constr" table="public.journal">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="subdiary" index="3"/>
+		<object name="taxPeriod" index="1"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="subdiary_fk" index="2"/>
+		<object name="tax_period_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="journal_in_period" type="rel1n" layers="0"
+	 src-col-pattern="taxPeriod"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#66c3d9"
+	 src-table="public.tax_period"
+	 dst-table="public.journal"
+	 src-required="true" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="subdiary_has_many_journal" type="rel1n" layers="0"
+	 src-col-pattern="{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#363d0c"
+	 src-table="public.subdiary"
+	 dst-table="public.journal"
+	 src-required="true" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT"/>
+
+<constraint name="journal_reverted_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.journal" table="public.journal">
+	<columns names="revertedBy" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="journal_reverts" type="relfk" layers="0"
+	 src-table="public.journal"
+	 dst-table="public.journal" reference-fk="journal_reverted_fk"
+	 src-required="false" dst-required="false">
+	<line>
+		<position x="1713.44" y="1359.72"/>
+	<position x="1713.44" y="1217"/>
+	<position x="1606.96" y="1217"/>
+	</line>
+	<label ref-type="name-label">
+		<position x="-19.2319" y="18.8627"/>
+	</label>
+</relationship>
+
+</dbmodel>
