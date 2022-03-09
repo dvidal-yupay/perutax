@@ -27,6 +27,7 @@ import org.intellij.lang.annotations.RegExp;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
+
 /**
  * The Type of Folio entity.
  *
@@ -34,7 +35,7 @@ import java.util.Objects;
  * @version 1.0
  */
 @Entity
-@Table(name = "tfolio")
+@Table(name = "tfolio", schema = "public")
 public class TypeFolio {
     /**
      * The unique ID of the entity. This is assigned by user
@@ -144,7 +145,7 @@ public class TypeFolio {
      * @return value of {@link #plameId}
      */
     @Basic
-    @Column(name = "plameID", length = 1)
+    @Column(name = "plame_id", length = 1)
     public String getPlameId() {
         return plameId.get();
     }
@@ -184,7 +185,7 @@ public class TypeFolio {
      * @return value of {@link #regexSerie}
      */
     @Basic
-    @Column(name = "regexSerie", nullable = false)
+    @Column(name = "regex_serie", nullable = false)
     public @RegExp
     String getRegexSerie() {
         return regexSerie.get();
@@ -205,7 +206,7 @@ public class TypeFolio {
      * @return value of {@link #regexNumber}
      */
     @Basic
-    @Column(name = "regexNumber", nullable = false)
+    @Column(name = "regex_number", nullable = false)
     public @RegExp
     String getRegexNumber() {
         return regexNumber.get();
@@ -226,7 +227,7 @@ public class TypeFolio {
      * @return value of {@link #ctxtPurchase}
      */
     @Basic
-    @Column(name = "ctxtPurchase", nullable = false)
+    @Column(name = "ctxt_purchase", nullable = false)
     public boolean isCtxtPurchase() {
         return ctxtPurchase.get();
     }
@@ -246,7 +247,7 @@ public class TypeFolio {
      * @return value of {@link #ctxtSale}
      */
     @Basic
-    @Column(name = "ctxtSale", nullable = false)
+    @Column(name = "ctxt_sale", nullable = false)
     public boolean isCtxtSale() {
         return ctxtSale.get();
     }
@@ -266,7 +267,7 @@ public class TypeFolio {
      * @return value of {@link #ctxtForeign}
      */
     @Basic
-    @Column(name = "ctxtForeign", nullable = false)
+    @Column(name = "ctxt_foreign", nullable = false)
     public boolean isCtxtForeign() {
         return ctxtForeign.get();
     }
@@ -286,7 +287,7 @@ public class TypeFolio {
      * @return value of {@link #ctxtTaxCredit}
      */
     @Basic
-    @Column(name = "ctxtTaxCredit", nullable = false)
+    @Column(name = "ctxt_tax_credit", nullable = false)
     public boolean isCtxtTaxCredit() {
         return ctxtTaxCredit.get();
     }

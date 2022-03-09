@@ -34,7 +34,7 @@ import java.util.Objects;
  * @version 1.0
  */
 @Entity
-@Table(name = "correlative")
+@Table(name = "correlative", schema = "public")
 public class Correlative {
     /**
      * The ID of this correlative. Generated with as a UUID
@@ -124,7 +124,7 @@ public class Correlative {
      * @return value of {@link #lastA}
      */
     @Basic
-    @Column(name = "lastA", nullable = false)
+    @Column(name = "last_a", nullable = false)
     public long getLastA() {
         return lastA.get();
     }
@@ -144,7 +144,7 @@ public class Correlative {
      * @return value of {@link #lastM}
      */
     @Basic
-    @Column(name = "lastM", nullable = false)
+    @Column(name = "last_m", nullable = false)
     public long getLastM() {
         return lastM.get();
     }
@@ -164,7 +164,7 @@ public class Correlative {
      * @return value of {@link #lastC}
      */
     @Basic
-    @Column(name = "lastC", nullable = false)
+    @Column(name = "last_c", nullable = false)
     public long getLastC() {
         return lastC.get();
     }

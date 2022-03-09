@@ -46,7 +46,7 @@ public class RUCValidation implements Predicate<String> {
             check %= 11;
             check %= 10;
             check = 11 - check;
-            return check == digits[10];
+            return check % 10 == digits[10];
         } else {
             return false;
         }

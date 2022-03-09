@@ -33,7 +33,7 @@ import java.util.Objects;
  * @version 1.0
  */
 @Entity
-@Table(name = "cost_center")
+@Table(name = "cost_center", schema = "public")
 public class CostCenter {
     /**
      * The user-assigned ID of the cost center (3 cahracters).

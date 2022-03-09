@@ -31,7 +31,7 @@ import java.util.Objects;
  * @version 1.0
  */
 @Entity
-@Table(name = "subdiary")
+@Table(name = "subdiary", schema = "public")
 public class Subdiary {
     /**
      * The code (ID) of the subdiary.

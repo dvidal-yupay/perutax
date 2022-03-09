@@ -61,7 +61,12 @@ public class JournalDtFolio {
      */
     @Id
     @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator = "journaldt_folio_id")
+    @SequenceGenerator(name = "journaldt_folio_id",
+            sequenceName = "sq_journal_dt_folio_id",
+            schema = "public",
+            allocationSize = 1)
     public long getId() {
         return id.get();
     }
@@ -81,7 +86,7 @@ public class JournalDtFolio {
      * @return value of {@link #folioSerie}
      */
     @Basic
-    @Column(name = "folioSerie", length = 15)
+    @Column(name = "folio_serie", length = 15)
     public String getFolioSerie() {
         return folioSerie.get();
     }
@@ -101,7 +106,7 @@ public class JournalDtFolio {
      * @return value of {@link #folioNum}
      */
     @Basic
-    @Column(name = "folioNum", nullable = false, length = 15)
+    @Column(name = "folio_num", nullable = false, length = 15)
     public String getFolioNum() {
         return folioNum.get();
     }
@@ -121,7 +126,7 @@ public class JournalDtFolio {
      * @return value of {@link #folioType}
      */
     @ManyToOne
-    @JoinColumn(name = "folioType", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "folio_type", referencedColumnName = "id", nullable = false)
     public TypeFolio getFolioType() {
         return folioType.get();
     }

@@ -37,7 +37,7 @@ import java.util.Objects;
  * @version 1.0
  */
 @Entity
-@Table(name = "tax_period")
+@Table(name = "tax_period", schema = "public")
 public class TaxPeriod {
     /**
      * The ID conformed by year and month
@@ -54,7 +54,7 @@ public class TaxPeriod {
      * The date at which the period ends (inclusive).
      */
     private final ObjectProperty<LocalDate> dateUntil
-            = new SimpleObjectProperty<>(this, "dateUntil");
+            = new SimpleObjectProperty<>(this, "\"dateUntil\"");
     /**
      * Closed timestamp. If this is not null, no transaction should be
      * admited for this period.
@@ -107,7 +107,7 @@ public class TaxPeriod {
      * @return value of {@link #dateFrom}
      */
     @Basic
-    @Column(name = "dateFrom", nullable = false, columnDefinition = "DATE")
+    @Column(name = "date_from", nullable = false, columnDefinition = "DATE")
     public LocalDate getDateFrom() {
         return dateFrom.get();
     }
@@ -127,7 +127,7 @@ public class TaxPeriod {
      * @return value of {@link #dateUntil}
      */
     @Basic
-    @Column(name = "dateUntil", nullable = false, columnDefinition = "DATE")
+    @Column(name = "date_until", nullable = false, columnDefinition = "DATE")
     public LocalDate getDateUntil() {
         return dateUntil.get();
     }

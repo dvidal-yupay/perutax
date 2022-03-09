@@ -31,7 +31,7 @@ import java.util.Objects;
  * @version 1.0
  */
 @Entity
-@Table(name = "journal_dt")
+@Table(name = "journal_dt", schema = "public")
 public class JournalDt {
     /**
      * The unique ID of the detail line.
@@ -110,7 +110,7 @@ public class JournalDt {
      * @return value of {@link #transaction}.get();
      */
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "transID")
+    @JoinColumn(name = "trans_id")
     public final Journal getTransaction() {
         return transaction.get();
     }
@@ -138,7 +138,12 @@ public class JournalDt {
      *
      * @return value of {@link #id}
      */
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator = "journaldt_ID")
+    @SequenceGenerator(schema = "public",
+            sequenceName = "sq_journal_dt_id",
+            name = "journaldt_ID",
+            allocationSize = 1)
     @Id
     @Column(name = "id", nullable = false)
     public long getId() {
@@ -180,7 +185,7 @@ public class JournalDt {
      * @return value of {@link #accountName}
      */
     @Basic
-    @Column(name = "accountName", nullable = false, length = 200)
+    @Column(name = "account_name", nullable = false, length = 200)
     public String getAccountName() {
         return accountName.get();
     }
@@ -200,7 +205,7 @@ public class JournalDt {
      * @return value of {@link #debitFc}
      */
     @Basic
-    @Column(name = "debitFC", nullable = false, scale = 2, precision = 14)
+    @Column(name = "debit_fc", nullable = false, scale = 2, precision = 14)
     public BigDecimal getDebitFc() {
         return debitFc.get();
     }
@@ -220,7 +225,7 @@ public class JournalDt {
      * @return value of {@link #creditFc}
      */
     @Basic
-    @Column(name = "creditFC", nullable = false, scale = 2, precision = 14)
+    @Column(name = "credit_fc", nullable = false, scale = 2, precision = 14)
     public BigDecimal getCreditFc() {
         return creditFc.get();
     }
@@ -240,7 +245,7 @@ public class JournalDt {
      * @return value of {@link #debitSc}
      */
     @Basic
-    @Column(name = "debitSC", nullable = false, scale = 2, precision = 14)
+    @Column(name = "debit_sc", nullable = false, scale = 2, precision = 14)
     public BigDecimal getDebitSc() {
         return debitSc.get();
     }
@@ -260,7 +265,7 @@ public class JournalDt {
      * @return value of {@link #creditSc}
      */
     @Basic
-    @Column(name = "creditSC", nullable = false, scale = 2, precision = 14)
+    @Column(name = "credit_sc", nullable = false, scale = 2, precision = 14)
     public BigDecimal getCreditSc() {
         return creditSc.get();
     }
@@ -300,7 +305,7 @@ public class JournalDt {
      * @return value of {@link #costCenterName}
      */
     @Basic
-    @Column(name = "costCenterName")
+    @Column(name = "cost_center_name")
     public String getCostCenterName() {
         return costCenterName.get();
     }
@@ -320,7 +325,7 @@ public class JournalDt {
      * @return value of {@link #account}
      */
     @ManyToOne
-    @JoinColumn(name = "accountId", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false)
     public TaxAccount getAccount() {
         return account.get();
     }
@@ -340,7 +345,7 @@ public class JournalDt {
      * @return value of {@link #costCenter}
      */
     @ManyToOne
-    @JoinColumn(name = "costCenterID", referencedColumnName = "id")
+    @JoinColumn(name = "cost_center_id", referencedColumnName = "id")
     public CostCenter getCostCenter() {
         return costCenter.get();
     }

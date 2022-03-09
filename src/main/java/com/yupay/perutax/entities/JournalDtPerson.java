@@ -100,7 +100,12 @@ public class JournalDtPerson {
      */
     @Id
     @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator = "journaldt_person_id")
+    @SequenceGenerator(name = "journaldt_person_id",
+            sequenceName = "sq_journal_dt_person_id",
+            schema = "public",
+            allocationSize = 1)
     public long getId() {
         return id.get();
     }

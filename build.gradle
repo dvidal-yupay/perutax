@@ -26,8 +26,8 @@ application {
 
 
 dependencies {
-    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
-    implementation 'mysql:mysql-connector-java:8.0.27'
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation 'org.postgresql:postgresql:42.3.3'
     // https://mvnrepository.com/artifact/jakarta.persistence/jakarta.persistence-api
     implementation 'jakarta.persistence:jakarta.persistence-api:3.0.0'
     // https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink
@@ -39,7 +39,7 @@ dependencies {
     // https://mvnrepository.com/artifact/com.github.shadskii/reactorfx
     implementation 'com.github.shadskii:reactorfx:2.0.0'
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
-    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.google.code.gson:gson:2.9.0'
 
 
     //IntelliJ Annotations tools.

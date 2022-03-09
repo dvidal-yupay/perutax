@@ -37,7 +37,7 @@ import java.util.Objects;
  * @version 1.0
  */
 @Entity
-@Table(name = "journal_snap")
+@Table(name = "journal_snap", schema = "public")
 public class JournalSnapshot {
     /**
      * The ID of journal entry.
@@ -155,7 +155,7 @@ public class JournalSnapshot {
      * @return value of {@link #taxPeriod}
      */
     @Basic
-    @Column(name = "taxPeriod", nullable = false, length = 6)
+    @Column(name = "tax_period", nullable = false, length = 6)
     public String getTaxPeriod() {
         return taxPeriod.get();
     }
@@ -195,7 +195,7 @@ public class JournalSnapshot {
      * @return value of {@link #subId}
      */
     @Basic
-    @Column(name = "subID", nullable = false, length = 2)
+    @Column(name = "sub_id", nullable = false, length = 2)
     public String getSubId() {
         return subId.get();
     }
@@ -215,7 +215,7 @@ public class JournalSnapshot {
      * @return value of {@link #subTitle}
      */
     @Basic
-    @Column(name = "subTitle", nullable = false)
+    @Column(name = "sub_title", nullable = false)
     public String getSubTitle() {
         return subTitle.get();
     }
@@ -276,7 +276,7 @@ public class JournalSnapshot {
      * @return value of {@link #dateTax}
      */
     @Basic
-    @Column(name = "dateTax", nullable = false, columnDefinition = "DATE")
+    @Column(name = "date_tax", nullable = false, columnDefinition = "DATE")
     public LocalDate getDateTax() {
         return dateTax.get();
     }
@@ -296,7 +296,7 @@ public class JournalSnapshot {
      * @return value of {@link #dateDoc}
      */
     @Basic
-    @Column(name = "dateDoc", nullable = false, columnDefinition = "DATE")
+    @Column(name = "date_doc", nullable = false, columnDefinition = "DATE")
     public LocalDate getDateDoc() {
         return dateDoc.get();
     }
@@ -316,7 +316,7 @@ public class JournalSnapshot {
      * @return value of {@link #dateDue}
      */
     @Basic
-    @Column(name = "dateDue", columnDefinition = "DATE")
+    @Column(name = "date_due", columnDefinition = "DATE")
     public LocalDate getDateDue() {
         return dateDue.get();
     }
@@ -336,7 +336,7 @@ public class JournalSnapshot {
      * @return value of {@link #createdAt}
      */
     @Basic
-    @Column(name = "createdAt", nullable = false, columnDefinition = "TIMESTAMP")
+    @Column(name = "created_at", nullable = false, columnDefinition = "TIMESTAMP")
     public LocalDateTime getCreatedAt() {
         return createdAt.get();
     }

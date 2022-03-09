@@ -32,7 +32,7 @@ import java.util.Objects;
  * @version 1.0
  */
 @Entity
-@Table(name = "tax_account")
+@Table(name = "tax_account", schema = "public")
 public class TaxAccount {
     /**
      * The account ID, assigned by user. The account ID should
@@ -215,7 +215,7 @@ public class TaxAccount {
      * @return value of {@link #groupCost}
      */
     @Basic
-    @Column(name = "groupCost")
+    @Column(name = "group_cost")
     @Enumerated(EnumType.STRING)
     public CostGroup getGroupCost() {
         return groupCost.get();

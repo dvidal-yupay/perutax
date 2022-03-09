@@ -41,23 +41,23 @@ public enum FolioContext {
     /**
      * The PLAME id column.
      */
-    PLAME("plameID"),
+    PLAME("plame_id"),
     /**
      * The context for purchases records.
      */
-    PURCHASE("ctxtPurchase"),
+    PURCHASE("ctxt_purchase"),
     /**
      * The context for sales records.
      */
-    SALE("ctxtSale"),
+    SALE("ctxt_sale"),
     /**
      * The context for foreigners operations.
      */
-    FOREIGN("ctxtForeign"),
+    FOREIGN("ctxt_foreign"),
     /**
      * The context for taxation credit.
      */
-    TAX_CREDIT("ctxtTaxCredit");
+    TAX_CREDIT("ctxt_tax_credit");
     /**
      * The column (field) name where to find.
      */

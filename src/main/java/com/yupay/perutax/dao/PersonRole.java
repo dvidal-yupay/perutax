@@ -32,27 +32,27 @@ public enum PersonRole {
     /**
      * When I need to find a customer.
      */
-    CUSTOMER("roleCustomer"),
+    CUSTOMER("role_customer"),
     /**
      * When I need to find a supplier.
      */
-    SUPPLIER("roleSupplier"),
+    SUPPLIER("role_supplier"),
     /**
      * When I need to find an employee.
      */
-    EMPLOYEE("roleEmployee"),
+    EMPLOYEE("role_employee"),
     /**
      * When I need to find a share holder.
      */
-    SHAREHOLDER("roleShareholder"),
+    SHAREHOLDER("role_shareholder"),
     /**
      * When I need to find a freelancer.
      */
-    FREELANCER("roleFreelancer"),
+    FREELANCER("role_freelancer"),
     /**
      * When I need to find an associated person.
      */
-    ASSOCIATED("roleAssociated");
+    ASSOCIATED("role_associated");
     /**
      * The column (field) name where the flag is stored.
      */

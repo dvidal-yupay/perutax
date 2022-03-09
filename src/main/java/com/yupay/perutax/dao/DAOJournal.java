@@ -23,6 +23,8 @@ import com.yupay.perutax.entities.functionals.TaxAccountAdjuster;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 
+import java.time.LocalDateTime;
+
 import static com.yupay.perutax.dao.BookConstants.JOURNAL;
 
 /**
@@ -88,7 +90,9 @@ public final class DAOJournal extends DAOBase<Journal, DAOJournal> {
             item.getDetail().forEach(new TaxAccountAdjuster(em, item.getCurrency(), item.getXrate()));
 
             //Sync redundant information
-            item.getDetail().forEach(ln-> ln.setAccountName(ln.getAccount().getName()));
+            item.getDetail().forEach(ln -> ln.setAccountName(ln.getAccount().getName()));
+
+            item.setCreatedAt(LocalDateTime.now());
 
             //Insert journal entry and details.
             em.persist(item);

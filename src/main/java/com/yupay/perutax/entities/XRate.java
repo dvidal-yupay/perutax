@@ -36,7 +36,7 @@ import java.util.Objects;
  * @author InfoYupay SACS
  * @version 1.0
  */
-@Table(name = "xrate")
+@Table(name = "xrate", schema = "public")
 @Entity
 public class XRate {
     /**
@@ -68,6 +68,7 @@ public class XRate {
 
     /**
      * Constructor to copy values from another instance.
+     *
      * @param another the another instance.
      */
     public XRate(@NotNull XRate another) {
@@ -104,7 +105,7 @@ public class XRate {
      * @return value of {@link #taxDate}
      */
     @Basic
-    @Column(name = "taxDate", nullable = false, columnDefinition = "DATE")
+    @Column(name = "tax_date", nullable = false, columnDefinition = "DATE")
     public LocalDate getTaxDate() {
         return taxDate.get();
     }

@@ -38,7 +38,7 @@ import java.util.Objects;
  * @version 1.0
  */
 @Entity
-@Table(name = "journal")
+@Table(name = "journal", schema = "public")
 public class Journal {
     /**
      * UUID of the journal entry.
@@ -216,7 +216,7 @@ public class Journal {
      * @return value of {@link #dateTax}
      */
     @Basic
-    @Column(name = "dateTax", nullable = false, columnDefinition = "DATE")
+    @Column(name = "date_tax", nullable = false, columnDefinition = "DATE")
     public LocalDate getDateTax() {
         return dateTax.get();
     }
@@ -236,7 +236,7 @@ public class Journal {
      * @return value of {@link #dateDoc}
      */
     @Basic
-    @Column(name = "dateDoc", nullable = false, columnDefinition = "DATE")
+    @Column(name = "date_doc", nullable = false, columnDefinition = "DATE")
     public LocalDate getDateDoc() {
         return dateDoc.get();
     }
@@ -256,7 +256,7 @@ public class Journal {
      * @return value of {@link #dateDue}
      */
     @Basic
-    @Column(name = "dateDue", columnDefinition = "DATE")
+    @Column(name = "date_due", columnDefinition = "DATE")
     public LocalDate getDateDue() {
         return dateDue.get();
     }
@@ -296,7 +296,7 @@ public class Journal {
      * @return value of {@link #createdAt}
      */
     @Basic
-    @Column(name = "createdAt", nullable = false, columnDefinition = "TIMESTAMP")
+    @Column(name = "created_at", nullable = false, columnDefinition = "TIMESTAMP")
     public LocalDateTime getCreatedAt() {
         return createdAt.get();
     }
@@ -316,7 +316,7 @@ public class Journal {
      * @return value of {@link #refId}
      */
     @Basic
-    @Column(name = "refID", length = 36)
+    @Column(name = "ref_id", length = 36)
     public String getRefId() {
         return refId.get();
     }
@@ -336,7 +336,7 @@ public class Journal {
      * @return value of {@link #refBook}
      */
     @Basic
-    @Column(name = "refBook", length = 6)
+    @Column(name = "ref_book", length = 6)
     public String getRefBook() {
         return refBook.get();
     }
@@ -356,7 +356,7 @@ public class Journal {
      * @return value of {@link #refPeriod}
      */
     @Basic
-    @Column(name = "refPeriod", length = 6)
+    @Column(name = "ref_period", length = 6)
     public String getRefPeriod() {
         return refPeriod.get();
     }
@@ -376,7 +376,7 @@ public class Journal {
      * @return value of {@link #refCorrelative}
      */
     @Basic
-    @Column(name = "refCorrelative", length = 10)
+    @Column(name = "ref_correlative", length = 10)
     public String getRefCorrelative() {
         return refCorrelative.get();
     }
@@ -396,7 +396,7 @@ public class Journal {
      * @return value of {@link #period}
      */
     @ManyToOne
-    @JoinColumn(name = "taxPeriod", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "tax_period", referencedColumnName = "id", nullable = false)
     public TaxPeriod getPeriod() {
         return period.get();
     }
@@ -436,7 +436,7 @@ public class Journal {
      * @return value of {@link #revertedBy}
      */
     @ManyToOne
-    @JoinColumn(name = "revertedBy", referencedColumnName = "id")
+    @JoinColumn(name = "reverted_by", referencedColumnName = "id")
     public Journal getRevertedBy() {
         return revertedBy.get();
     }

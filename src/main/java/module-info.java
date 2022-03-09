@@ -9,7 +9,7 @@ module perutax {
      *===========================*/
     requires jakarta.persistence;
     requires eclipselink;
-    requires mysql.connector.java;
+    requires org.postgresql.jdbc;
 
     /*==============================================*
      * JavaFX dependencies                          *

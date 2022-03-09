@@ -34,7 +34,7 @@ import java.util.Objects;
  * @version 1.0
  */
 @Entity
-@Table(name = "country")
+@Table(name = "country", schema = "public")
 public class Country {
     /**
      * Country ID (which is alfa2 ISO code).

@@ -36,7 +36,7 @@ import java.util.Objects;
  * @version 1.0
  */
 @Entity
-@Table(name = "tdoi")
+@Table(name = "tdoi", schema = "public")
 public class TypeDOI {
     /**
      * The primary ID, that matches a txation ID of 1 character.

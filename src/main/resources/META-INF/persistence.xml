@@ -47,8 +47,6 @@
         <class>com.yupay.perutax.entities.JournalSnapshot</class>
         <!--TODO: remove this before sharing.-->
         <properties>
-            <property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/perutaxdb"/>
-            <property name="eclipselink.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
         </properties>
 
     </persistence-unit>
