@@ -8,32 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b35bc63e-9fd4-4849-b3ca-2e782b570d1f" name="Changes" comment="Modeling on pgmodeler.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/developer.properties" beforeDir="false" afterPath="$PROJECT_DIR$/model/developer.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/perutax.dbm" beforeDir="false" afterPath="$PROJECT_DIR$/model/perutax.dbm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/dao/DAOJournal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/dao/DAOJournal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/dao/FolioContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/dao/FolioContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/dao/PersonRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/dao/PersonRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Correlative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Correlative.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/CostCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/CostCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Journal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Journal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalDt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalDt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalDtFolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalDtFolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalDtPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalDtPerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalSnapshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalSnapshot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Subdiary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Subdiary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TaxAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TaxAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TaxPeriod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TaxPeriod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TypeDOI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TypeDOI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TypeFolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TypeFolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/XRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/XRate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/validation/RUCValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/validation/RUCValidation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/perutax_fixed.dbm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,13 +38,7 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="perutax" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="perutax" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -138,7 +109,7 @@
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="copyright" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -358,6 +329,7 @@
       <workItem from="1646631822552" duration="125000" />
       <workItem from="1646632455677" duration="112000" />
       <workItem from="1646744330365" duration="8478000" />
+      <workItem from="1646810332558" duration="586000" />
     </task>
     <task id="LOCAL-00014" summary="Create Sales DB model">
       <branch name="main" repository="$PROJECT_DIR$" original="true" />
@@ -440,6 +412,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$USER_HOME$/codebase/perutax" />
+    </ignored-roots>
     <MESSAGE value="First project commit." />
     <MESSAGE value="Copyright information added." />
     <MESSAGE value="Ignore build folder." />
