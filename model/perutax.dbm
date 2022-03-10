@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" last-position="758,665" last-zoom="1" max-obj-count="25"
+<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" last-position="770,1137" last-zoom="1" max-obj-count="25"
 	 default-owner="postgres"
 	 layers="commons,journal,folio"
 	 active-layers="0,1,2"
@@ -1157,11 +1157,58 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	<columns names="owner,line" ref-type="src-columns"/>
 </constraint>
 
+<sequence name="sq_folio_line_template" cycle="false" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
+	<schema name="public"/>
+</sequence>
+
+<view name="journal_snap" layers="1" collapse-mode="2" max-obj-count="15" z-value="0">
+	<schema name="public"/>
+	<tag name="journal"/>
+	<position x="1500" y="100"/>
+	<reference table="public.journal" column="id" alias="a"/>
+	<reference table="public.journal" column="tax_period" alias="a"/>
+	<reference table="public.journal" column="correlative" alias="a"/>
+	<reference table="public.journal" column="subdiary" alias="a" column-alias="sub_id"/>
+	<reference table="public.subdiary" column="title" alias="b" column-alias="sub_title"/>
+	<reference table="public.journal" column="briefing" alias="a"/>
+	<reference table="public.journal" column="currency" alias="a"/>
+	<reference table="public.journal" column="date_tax" alias="a"/>
+	<reference table="public.journal" column="date_doc" alias="a"/>
+	<reference table="public.journal" column="date_due" alias="a"/>
+	<reference table="public.journal" column="created_at" alias="a"/>
+	<reference alias="reverted">
+		<expression><![CDATA[a.reverted_by IS NOT NULL]]></expression>
+	</reference>
+	<reference>
+		<expression><![CDATA[journal a INNER JOIN subdiary b ON b.id = a.subdiary]]></expression>
+	</reference>
+	<expression type="select-exp">0,1,2,3,4,5,6,7,8,9,10,11</expression>
+	<expression type="from-exp">12</expression>
+</view>
+
+<relationship name="rel_journal_snap_journal" type="reltv" layers="1"
+	 src-table="public.journal_snap"
+	 dst-table="public.journal"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="rel_journal_snap_subdiary" type="reltv" layers="1"
+	 src-table="public.journal_snap"
+	 dst-table="public.subdiary"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
 <table name="folio_line_tmp" layers="2" collapse-mode="2" max-obj-count="18" z-value="0">
 	<schema name="public"/>
 	<tag name="folios"/>
-	<position x="1440" y="1320"/>
-	<column name="id" not-null="true" sequence="public.sq_folio_line_id">
+	<position x="1380" y="1320"/>
+	<column name="id" not-null="true" sequence="public.sq_folio_line_template">
 		<type name="bigint" length="0"/>
 	</column>
 	<column name="title" not-null="true">
@@ -1213,49 +1260,6 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 		<columns names="title" ref-type="src-columns"/>
 	</constraint>
 </table>
-
-<view name="journal_snap" layers="1" collapse-mode="2" max-obj-count="15" z-value="0">
-	<schema name="public"/>
-	<tag name="journal"/>
-	<position x="1500" y="100"/>
-	<reference table="public.journal" column="id" alias="a"/>
-	<reference table="public.journal" column="tax_period" alias="a"/>
-	<reference table="public.journal" column="correlative" alias="a"/>
-	<reference table="public.journal" column="subdiary" alias="a" column-alias="sub_id"/>
-	<reference table="public.subdiary" column="title" alias="b" column-alias="sub_title"/>
-	<reference table="public.journal" column="briefing" alias="a"/>
-	<reference table="public.journal" column="currency" alias="a"/>
-	<reference table="public.journal" column="date_tax" alias="a"/>
-	<reference table="public.journal" column="date_doc" alias="a"/>
-	<reference table="public.journal" column="date_due" alias="a"/>
-	<reference table="public.journal" column="created_at" alias="a"/>
-	<reference alias="reverted">
-		<expression><![CDATA[a.reverted_by IS NOT NULL]]></expression>
-	</reference>
-	<reference>
-		<expression><![CDATA[journal a INNER JOIN subdiary b ON b.id = a.subdiary]]></expression>
-	</reference>
-	<expression type="select-exp">0,1,2,3,4,5,6,7,8,9,10,11</expression>
-	<expression type="from-exp">12</expression>
-</view>
-
-<relationship name="rel_journal_snap_journal" type="reltv" layers="1"
-	 src-table="public.journal_snap"
-	 dst-table="public.journal"
-	 src-required="false" dst-required="false">
-	<label ref-type="name-label">
-		<position x="0" y="0"/>
-	</label>
-</relationship>
-
-<relationship name="rel_journal_snap_subdiary" type="reltv" layers="1"
-	 src-table="public.journal_snap"
-	 dst-table="public.subdiary"
-	 src-required="false" dst-required="false">
-	<label ref-type="name-label">
-		<position x="0" y="0"/>
-	</label>
-</relationship>
 
 <constraint name="journal_reverted_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
 	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.journal" table="public.journal">
