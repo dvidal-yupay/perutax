@@ -1,0 +1,10 @@
+Entities' replacement regex for getters:
+(\@(Generated|Basic|Many|One).*)
+
+Replacement text:
+/**
+ * Public accessor - getter.
+ *
+ * @return value of {@link # }
+ */
+ $1
