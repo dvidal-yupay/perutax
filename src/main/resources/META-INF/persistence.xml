@@ -28,6 +28,8 @@
         <class>com.yupay.perutax.entities.AccountNature</class>
         <class>com.yupay.perutax.entities.CostGroup</class>
         <class>com.yupay.perutax.entities.SubdiaryRole</class>
+        <class>com.yupay.perutax.entities.FolioObjectType</class>
+        <class>com.yupay.perutax.entities.FolioTotalType</class>
 
         <!--Entities-->
         <class>com.yupay.perutax.entities.Country</class>
@@ -45,7 +47,6 @@
         <class>com.yupay.perutax.entities.JournalDtPerson</class>
         <class>com.yupay.perutax.entities.Subdiary</class>
         <class>com.yupay.perutax.entities.JournalSnapshot</class>
-        <!--TODO: remove this before sharing.-->
         <properties>
         </properties>
 
