@@ -638,7 +638,7 @@ public class Folio {
      *
      * @return value of  {@link #party }
      */
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "party", referencedColumnName = "id", nullable = false)
     public FolioParty getParty() {
         return party;
@@ -678,7 +678,7 @@ public class Folio {
      *
      * @return value of  {@link #ledger }
      */
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "ledger", referencedColumnName = "id", nullable = false)
     public Journal getLedger() {
         return ledger;
@@ -698,7 +698,7 @@ public class Folio {
      *
      * @return value of  {@link #modified }
      */
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "modified", referencedColumnName = "id")
     public Folio getModified() {
         return modified;
