@@ -49,7 +49,7 @@
         <class>com.yupay.perutax.entities.JournalSnapshot</class>
         <class>com.yupay.perutax.entities.Folio</class>
         <class>com.yupay.perutax.entities.FolioLine</class>
-        <class>com.yupay.perutax.entities.FolioLineTmp</class>
+        <class>com.yupay.perutax.entities.FolioLineTemplate</class>
         <class>com.yupay.perutax.entities.FolioParty</class>
         <class>com.yupay.perutax.entities.FolioPurchaseClass</class>
         <class>com.yupay.perutax.entities.FolioTotal</class>
