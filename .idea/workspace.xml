@@ -7,7 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b35bc63e-9fd4-4849-b3ca-2e782b570d1f" name="Changes" comment="Migrated to PGSQL">
+    <list default="true" id="b35bc63e-9fd4-4849-b3ca-2e782b570d1f" name="Changes" comment="Modeling on pgmodeler.">
+      <change afterPath="$PROJECT_DIR$/model/perutax_fixed.dbm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,13 +38,7 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="perutax" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="perutax" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -101,7 +97,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20220309_0000" />
+    <property name="com.google.cloudcode.ide_session_index" value="20220308_0000" />
     <property name="last.edited.regexp" value="asddasda" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/com/yupay/perutax" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -113,7 +109,7 @@
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="copyright" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -332,8 +328,8 @@
       <workItem from="1646412471492" duration="314000" />
       <workItem from="1646631822552" duration="125000" />
       <workItem from="1646632455677" duration="112000" />
-      <workItem from="1646744330365" duration="8761000" />
-      <workItem from="1646881630462" duration="594000" />
+      <workItem from="1646744330365" duration="8478000" />
+      <workItem from="1646810332558" duration="586000" />
     </task>
     <task id="LOCAL-00014" summary="Create Sales DB model">
       <branch name="main" repository="$PROJECT_DIR$" original="true" />
@@ -353,21 +349,7 @@
       <option name="project" value="LOCAL" />
       <updated>1646632523391</updated>
     </task>
-    <task id="LOCAL-00018" summary="Migrated to PGSQL">
-      <created>1646807690318</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1646807690318</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Migrated to PGSQL">
-      <created>1646807704019</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1646807704019</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,6 +412,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$USER_HOME$/codebase/perutax" />
+    </ignored-roots>
     <MESSAGE value="First project commit." />
     <MESSAGE value="Copyright information added." />
     <MESSAGE value="Ignore build folder." />
@@ -442,8 +427,7 @@
     <MESSAGE value="Journal viewer implemented." />
     <MESSAGE value="Folios database modeled." />
     <MESSAGE value="Modeling on pgmodeler." />
-    <MESSAGE value="Migrated to PGSQL" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migrated to PGSQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modeling on pgmodeler." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

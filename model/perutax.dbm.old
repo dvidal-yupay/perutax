@@ -3,12 +3,12 @@
 CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" last-position="0,0" last-zoom="1" max-obj-count="25"
-	 default-owner="postgres"
+<dbmodel pgmodeler-ver="0.9.4-beta1" use-changelog="false" author="Ingenieria Informatica Yupay SACS" last-position="387,53" last-zoom="0.75" max-obj-count="25"
+	 default-schema="public"
 	 layers="commons,journal,folio"
 	 active-layers="0,1,2"
 	 layer-name-colors="#000000,#000000,#000000"
-	 layer-rect-colors="#b4b4b4,#000000,#000000"
+	 layer-rect-colors="#b4b4b4,#1d4ca0,#f72976"
 	 show-layer-names="false" show-layer-rects="false">
 <database name="perutaxdb" is-template="false" allow-conns="true">
 </database>
@@ -146,10 +146,12 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	</constraint>
 
 	<customidxs object-type="column">
+		<object name="country" index="5"/>
 		<object name="doi_type" index="1"/>
 	</customidxs>
 
 	<customidxs object-type="constraint">
+		<object name="country_fk" index="2"/>
 		<object name="tdoi_fk" index="1"/>
 	</customidxs>
 </table>
@@ -306,24 +308,17 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 
 <usertype name="tax_account_nature" configuration="enumeration">
 	<schema name="public"/>
-	<enumeration label="DEBIT"/>
-	<enumeration label="CREDIT"/>
+	<enumeration values="DEBIT•CREDIT"/>
 </usertype>
 
 <usertype name="currenci" configuration="enumeration">
 	<schema name="public"/>
-	<enumeration label="USD"/>
-	<enumeration label="PEN"/>
+	<enumeration values="USD•PEN"/>
 </usertype>
 
 <usertype name="group_cost" configuration="enumeration">
 	<schema name="public"/>
-	<enumeration label="DIRECT_HWORK"/>
-	<enumeration label="DIRECT_OTH"/>
-	<enumeration label="DIRECT_SUPPLY"/>
-	<enumeration label="INDIRECT_HWORK"/>
-	<enumeration label="INDIRECT_OTH"/>
-	<enumeration label="INDIRECT_SUPPLY"/>
+	<enumeration values="DIRECT_HWORK•DIRECT_OTH•DIRECT_SUPPLY•INDIRECT_HWORK•INDIRECT_OTH•INDIRECT_SUPPLY"/>
 </usertype>
 
 <table name="tax_account" layers="0,1" collapse-mode="2" max-obj-count="9" z-value="0">
@@ -403,9 +398,7 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 
 <usertype name="subdiary_role" configuration="enumeration">
 	<schema name="public"/>
-	<enumeration label="A"/>
-	<enumeration label="M"/>
-	<enumeration label="C"/>
+	<enumeration values="A•M•C"/>
 </usertype>
 
 <table name="subdiary" layers="1" collapse-mode="2" max-obj-count="4" z-value="0">
@@ -483,10 +476,12 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	</constraint>
 
 	<customidxs object-type="column">
+		<object name="subdiary" index="4"/>
 		<object name="tax_period" index="1"/>
 	</customidxs>
 
 	<customidxs object-type="constraint">
+		<object name="subdiary_fk" index="2"/>
 		<object name="tax_period_fk" index="1"/>
 	</customidxs>
 </table>
@@ -654,11 +649,21 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	</constraint>
 
 	<customidxs object-type="column">
+		<object name="account_id" index="11"/>
+		<object name="cost_center_id" index="10"/>
+		<object name="folio" index="12"/>
+		<object name="person" index="13"/>
 		<object name="trans_id" index="9"/>
 	</customidxs>
 
 	<customidxs object-type="constraint">
+		<object name="cost_center_fk" index="4"/>
+		<object name="journal_dt_folio_fk" index="2"/>
+		<object name="journal_dt_person_fk" index="6"/>
+		<object name="journal_dt_uq" index="5"/>
+		<object name="journal_dt_uq1" index="7"/>
 		<object name="journal_fk" index="1"/>
+		<object name="tax_account_fk" index="3"/>
 	</customidxs>
 </table>
 
@@ -749,16 +754,7 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 
 <usertype name="folio_object_type" configuration="enumeration">
 	<schema name="public"/>
-	<enumeration label="SALE"/>
-	<enumeration label="SALE_PREPAID"/>
-	<enumeration label="SALE_INSTALLMENT"/>
-	<enumeration label="SALE_ADDITIONAL"/>
-	<enumeration label="SALE_DISCOUNT"/>
-	<enumeration label="PURCHASE"/>
-	<enumeration label="PURCHASE_PREPAID"/>
-	<enumeration label="PURCHASE_INSTALLMENT"/>
-	<enumeration label="PURCHASE_ADDITIONAL"/>
-	<enumeration label="PURCHASE_DISCOUNT"/>
+	<enumeration values="SALE•SALE_PREPAID•SALE_INSTALLMENT•SALE_ADDITIONAL•SALE_DISCOUNT•PURCHASE•PURCHASE_PREPAID•PURCHASE_INSTALLMENT•PURCHASE_ADDITIONAL•PURCHASE_DISCOUNT"/>
 </usertype>
 
 <table name="folio" layers="0,2" collapse-mode="2" max-obj-count="32" z-value="0">
@@ -833,11 +829,23 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	</constraint>
 
 	<customidxs object-type="column">
+		<object name="cost_center" index="25"/>
+		<object name="folio_type" index="6"/>
+		<object name="ledger" index="14"/>
+		<object name="party" index="4"/>
 		<object name="period" index="3"/>
+		<object name="purchase_class" index="26"/>
 	</customidxs>
 
 	<customidxs object-type="constraint">
+		<object name="cost_center_fk" index="8"/>
+		<object name="folio_party_fk" index="4"/>
+		<object name="folio_purchase_class_fk" index="9"/>
+		<object name="folio_uq" index="3"/>
+		<object name="folio_uq1" index="5"/>
+		<object name="journal_fk" index="2"/>
 		<object name="tax_period_fk" index="1"/>
+		<object name="tfolio_fk" index="6"/>
 	</customidxs>
 </table>
 
@@ -1005,15 +1013,7 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 
 <usertype name="folio_total_type" configuration="enumeration">
 	<schema name="public"/>
-	<enumeration label="TAXABLE"/>
-	<enumeration label="TAX"/>
-	<enumeration label="DISCOUNT"/>
-	<enumeration label="DISCOUNT_TAX"/>
-	<enumeration label="EXPORT"/>
-	<enumeration label="EXEMPT"/>
-	<enumeration label="TAX_FREE"/>
-	<enumeration label="ICBP"/>
-	<enumeration label="OTHERS"/>
+	<enumeration values="TAXABLE•TAX•DISCOUNT•DISCOUNT_TAX•EXPORT•EXEMPT•TAX_FREE•ICBP•OTHERS"/>
 </usertype>
 
 <sequence name="sq_folio_total_id" cycle="false" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
@@ -1266,26 +1266,32 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
 
-<relationship name="rel_journal_journal" type="relfk" layers="0"
+<relationship name="journal_reverts" type="relfk" layers="1"
 	 src-table="public.journal"
 	 dst-table="public.journal" reference-fk="journal_reverted_fk"
 	 src-required="false" dst-required="false">
 	<line>
-		<position x="1027.59" y="379.717"/>
-	<position x="1027.59" y="237"/>
-	<position x="923.06" y="237"/>
+		<position x="1027.6" y="379.721"/>
+	<position x="1027.6" y="237"/>
+	<position x="923.068" y="237"/>
 	</line>
+	<label ref-type="name-label">
+		<position x="-19.2319" y="18.8627"/>
+	</label>
 </relationship>
 
-<relationship name="rel_folio_folio" type="relfk" layers="0"
+<relationship name="rel_folio_folio" type="relfk" layers="0,2"
 	 src-table="public.folio"
 	 dst-table="public.folio" reference-fk="folio_modified_fk"
 	 src-required="false" dst-required="false">
 	<line>
-		<position x="1607.59" y="871.583"/>
-	<position x="1607.59" y="657"/>
-	<position x="1496.39" y="657"/>
+		<position x="1607.6" y="871.588"/>
+	<position x="1607.6" y="657"/>
+	<position x="1496.4" y="657"/>
 	</line>
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
 </relationship>
 
 </dbmodel>
