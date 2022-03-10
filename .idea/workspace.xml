@@ -7,33 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b35bc63e-9fd4-4849-b3ca-2e782b570d1f" name="Changes" comment="Modeling on pgmodeler.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/developer.properties" beforeDir="false" afterPath="$PROJECT_DIR$/model/developer.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/perutax.dbm" beforeDir="false" afterPath="$PROJECT_DIR$/model/perutax.dbm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/dao/DAOJournal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/dao/DAOJournal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/dao/FolioContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/dao/FolioContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/dao/PersonRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/dao/PersonRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Correlative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Correlative.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/CostCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/CostCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Journal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Journal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalDt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalDt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalDtFolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalDtFolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalDtPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalDtPerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalSnapshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/JournalSnapshot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Subdiary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/Subdiary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TaxAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TaxAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TaxPeriod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TaxPeriod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TypeDOI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TypeDOI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TypeFolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/TypeFolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/XRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/XRate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/validation/RUCValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yupay/perutax/entities/validation/RUCValidation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+    <list default="true" id="b35bc63e-9fd4-4849-b3ca-2e782b570d1f" name="Changes" comment="Migrated to PGSQL">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +101,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20220308_0000" />
+    <property name="com.google.cloudcode.ide_session_index" value="20220309_0000" />
     <property name="last.edited.regexp" value="asddasda" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/com/yupay/perutax" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -357,7 +332,8 @@
       <workItem from="1646412471492" duration="314000" />
       <workItem from="1646631822552" duration="125000" />
       <workItem from="1646632455677" duration="112000" />
-      <workItem from="1646744330365" duration="8478000" />
+      <workItem from="1646744330365" duration="8761000" />
+      <workItem from="1646881630462" duration="594000" />
     </task>
     <task id="LOCAL-00014" summary="Create Sales DB model">
       <branch name="main" repository="$PROJECT_DIR$" original="true" />
@@ -377,7 +353,21 @@
       <option name="project" value="LOCAL" />
       <updated>1646632523391</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Migrated to PGSQL">
+      <created>1646807690318</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1646807690318</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Migrated to PGSQL">
+      <created>1646807704019</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1646807704019</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +442,8 @@
     <MESSAGE value="Journal viewer implemented." />
     <MESSAGE value="Folios database modeled." />
     <MESSAGE value="Modeling on pgmodeler." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modeling on pgmodeler." />
+    <MESSAGE value="Migrated to PGSQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="Migrated to PGSQL" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
