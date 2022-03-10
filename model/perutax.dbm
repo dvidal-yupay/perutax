@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" last-position="0,0" last-zoom="1" max-obj-count="25"
+<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" last-position="758,665" last-zoom="1" max-obj-count="25"
 	 default-owner="postgres"
 	 layers="commons,journal,folio"
 	 active-layers="0,1,2"
@@ -761,7 +761,7 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	<enumeration label="PURCHASE_DISCOUNT"/>
 </usertype>
 
-<table name="folio" layers="0,2" collapse-mode="2" max-obj-count="32" z-value="0">
+<table name="folio" layers="0,2" collapse-mode="2" max-obj-count="33" z-value="0">
 	<schema name="public"/>
 	<tag name="folios"/>
 	<position x="1320" y="680"/>
@@ -827,6 +827,9 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	</column>
 	<column name="modified">
 		<type name="char" length="36"/>
+	</column>
+	<column name="created_at" not-null="true" default-value="current_timestamp">
+		<type name="timestamp" length="0"/>
 	</column>
 	<constraint name="folio_pk" type="pk-constr" table="public.folio">
 		<columns names="id" ref-type="src-columns"/>
@@ -1282,7 +1285,7 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	 dst-table="public.folio" reference-fk="folio_modified_fk"
 	 src-required="false" dst-required="false">
 	<line>
-		<position x="1607.59" y="871.583"/>
+		<position x="1607.59" y="878.117"/>
 	<position x="1607.59" y="657"/>
 	<position x="1496.39" y="657"/>
 	</line>
