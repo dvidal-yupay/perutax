@@ -19,6 +19,7 @@
 package com.yupay.perutax.entities;
 
 import jakarta.persistence.*;
+import javafx.beans.property.*;
 
 /**
  * This entity represents the class of purchase as specified
@@ -60,18 +61,21 @@ public class FolioPurchaseClass {
     /**
      * The ID as specified in SUNAT-PLE tables.
      */
-    private short id;
+    private final IntegerProperty id =
+            new SimpleIntegerProperty(this, "id");
     /**
      * The title to show to the user (unique).
      */
-    private String title;
+    private final StringProperty title =
+            new SimpleStringProperty(this, "title");
     /**
      * The trash flag is used to know if the entity
      * may be used. Since this entity shouldn't be
      * deleted from database due relationships issues,
      * then this flag acts like a deleted indicator.
      */
-    private boolean trash;
+    private final BooleanProperty trash =
+            new SimpleBooleanProperty(this, "trash");
 
     /**
      * Public accessor - getter.
@@ -81,7 +85,7 @@ public class FolioPurchaseClass {
     @Id
     @Column(name = "id")
     public short getId() {
-        return id;
+        return (short) id.get();
     }
 
     /**
@@ -90,7 +94,7 @@ public class FolioPurchaseClass {
      * @param id value to set into {@link #id}
      */
     public void setId(short id) {
-        this.id = id;
+        this.id.set(id);
     }
 
     /**
@@ -101,7 +105,7 @@ public class FolioPurchaseClass {
     @Basic
     @Column(name = "title")
     public String getTitle() {
-        return title;
+        return title.get();
     }
 
     /**
@@ -110,7 +114,7 @@ public class FolioPurchaseClass {
      * @param title value to set into {@link #title}
      */
     public void setTitle(String title) {
-        this.title = title;
+        this.title.set(title);
     }
 
     /**
@@ -121,7 +125,7 @@ public class FolioPurchaseClass {
     @Basic
     @Column(name = "trash")
     public boolean isTrash() {
-        return trash;
+        return trash.get();
     }
 
     /**
@@ -130,7 +134,7 @@ public class FolioPurchaseClass {
      * @param trash value to set into {@link #trash}
      */
     public void setTrash(boolean trash) {
-        this.trash = trash;
+        this.trash.set(trash);
     }
 
 }
