@@ -21,6 +21,8 @@ package com.yupay.perutax.entities;
 import jakarta.persistence.*;
 import javafx.beans.property.*;
 
+import java.util.Objects;
+
 /**
  * This entity represents the class of purchase as specified
  * for purchases records in the SUNAT-PLE specification
@@ -159,5 +161,19 @@ public class FolioPurchaseClass {
      */
     public BooleanProperty trashProperty() {
         return trash;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof FolioPurchaseClass that) {
+            return Objects.equals(getId(), that.getId());
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

@@ -22,6 +22,7 @@ import jakarta.persistence.*;
 import javafx.beans.property.*;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * This entity is a template for a folio line, so
@@ -543,5 +544,19 @@ public class FolioLineTemplate {
      */
     public ObjectProperty<Currenci> currencyProperty() {
         return currency;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof FolioLineTemplate that) {
+            return Objects.equals(getId(), that.getId());
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

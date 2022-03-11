@@ -22,6 +22,8 @@ import jakarta.persistence.*;
 import javafx.beans.property.*;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
 /**
  * This entity is the party of a folio, maybe a
  * supplier or customer party. This party is necessary
@@ -266,5 +268,19 @@ public class FolioParty {
      */
     public ObjectProperty<Person> personProperty() {
         return person;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof FolioParty that) {
+            return Objects.equals(getId(), that.getId());
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

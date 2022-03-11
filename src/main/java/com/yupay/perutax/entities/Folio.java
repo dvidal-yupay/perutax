@@ -28,6 +28,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.Objects;
 
 /**
  * The Folio entity represents any folio in the system
@@ -1145,5 +1146,19 @@ public class Folio {
      */
     public ListProperty<FolioTotal> totalsProperty() {
         return totals;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Folio folio) {
+            return Objects.equals(getId(), folio.getId());
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

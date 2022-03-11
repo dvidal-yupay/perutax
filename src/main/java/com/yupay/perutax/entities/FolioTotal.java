@@ -25,6 +25,7 @@ import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * This entity represents a total item
@@ -210,5 +211,19 @@ public class FolioTotal {
      */
     public ObjectProperty<Folio> ownerProperty() {
         return owner;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof FolioTotal that) {
+            return Objects.equals(getId(), that.getId());
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

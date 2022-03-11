@@ -22,6 +22,7 @@ import jakarta.persistence.*;
 import javafx.beans.property.*;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * This entity represents one line shown in the folio.
@@ -708,5 +709,19 @@ public class FolioLine {
      */
     public ObjectProperty<Folio> ownerProperty() {
         return owner;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof FolioLine folioLine) {
+            return Objects.equals(getId(), folioLine.getId());
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }
