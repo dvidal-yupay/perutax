@@ -425,4 +425,123 @@ public class FolioLineTemplate {
         this.currency.set(currency);
     }
 
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #id}
+     */
+    public LongProperty idProperty() {
+        return id;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #title}
+     */
+    public StringProperty titleProperty() {
+        return title;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #taxId}
+     */
+    public StringProperty taxIdProperty() {
+        return taxId;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #briefing}
+     */
+    public StringProperty briefingProperty() {
+        return briefing;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #taxableFc}
+     */
+    public ObjectProperty<BigDecimal> taxableFcProperty() {
+        return taxableFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #taxFc}
+     */
+    public ObjectProperty<BigDecimal> taxFcProperty() {
+        return taxFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #exportFc}
+     */
+    public ObjectProperty<BigDecimal> exportFcProperty() {
+        return exportFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #discountFc}
+     */
+    public ObjectProperty<BigDecimal> discountFcProperty() {
+        return discountFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #discountTaxFc}
+     */
+    public ObjectProperty<BigDecimal> discountTaxFcProperty() {
+        return discountTaxFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #exemptFc}
+     */
+    public ObjectProperty<BigDecimal> exemptFcProperty() {
+        return exemptFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #taxFreeFc}
+     */
+    public ObjectProperty<BigDecimal> taxFreeFcProperty() {
+        return taxFreeFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #icbpFc}
+     */
+    public ObjectProperty<BigDecimal> icbpFcProperty() {
+        return icbpFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #othersFc}
+     */
+    public ObjectProperty<BigDecimal> othersFcProperty() {
+        return othersFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #payableFc}
+     */
+    public ObjectProperty<BigDecimal> payableFcProperty() {
+        return payableFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #currency}
+     */
+    public ObjectProperty<Currenci> currencyProperty() {
+        return currency;
+    }
 }

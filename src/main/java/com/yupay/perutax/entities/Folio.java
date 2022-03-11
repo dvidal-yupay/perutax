@@ -876,4 +876,274 @@ public class Folio {
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt.set(createdAt);
     }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #id}
+     */
+    public StringProperty idProperty() {
+        return id;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #objectType}
+     */
+    public ObjectProperty<FolioObjectType> objectTypeProperty() {
+        return objectType;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #book}
+     */
+    public StringProperty bookProperty() {
+        return book;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #correlative}
+     */
+    public StringProperty correlativeProperty() {
+        return correlative;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #folioSerie}
+     */
+    public StringProperty folioSerieProperty() {
+        return folioSerie;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #folioNum}
+     */
+    public StringProperty folioNumProperty() {
+        return folioNum;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #dateDoc}
+     */
+    public ObjectProperty<LocalDate> dateDocProperty() {
+        return dateDoc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #dateDue}
+     */
+    public ObjectProperty<LocalDate> dateDueProperty() {
+        return dateDue;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #dateTax}
+     */
+    public ObjectProperty<LocalDate> dateTaxProperty() {
+        return dateTax;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #remarks}
+     */
+    public StringProperty remarksProperty() {
+        return remarks;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #currency}
+     */
+    public ObjectProperty<Currenci> currencyProperty() {
+        return currency;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #xrate}
+     */
+    public ObjectProperty<BigDecimal> xrateProperty() {
+        return xrate;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #payableFc}
+     */
+    public ObjectProperty<BigDecimal> payableFcProperty() {
+        return payableFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #payableSc}
+     */
+    public ObjectProperty<BigDecimal> payableScProperty() {
+        return payableSc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #prepaidFc}
+     */
+    public ObjectProperty<BigDecimal> prepaidFcProperty() {
+        return prepaidFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #prepaidSc}
+     */
+    public ObjectProperty<BigDecimal> prepaidScProperty() {
+        return prepaidSc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #paidFc}
+     */
+    public ObjectProperty<BigDecimal> paidFcProperty() {
+        return paidFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #unpaidFc}
+     */
+    public ObjectProperty<BigDecimal> unpaidFcProperty() {
+        return unpaidFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #voided}
+     */
+    public BooleanProperty voidedProperty() {
+        return voided;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #reverted}
+     */
+    public BooleanProperty revertedProperty() {
+        return reverted;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #period}
+     */
+    public ObjectProperty<TaxPeriod> periodProperty() {
+        return period;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #party}
+     */
+    public ObjectProperty<FolioParty> partyProperty() {
+        return party;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #folioType}
+     */
+    public ObjectProperty<TypeFolio> folioTypeProperty() {
+        return folioType;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #ledger}
+     */
+    public ObjectProperty<Journal> ledgerProperty() {
+        return ledger;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #modified}
+     */
+    public ObjectProperty<Folio> modifiedProperty() {
+        return modified;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #costCenter}
+     */
+    public ObjectProperty<CostCenter> costCenterProperty() {
+        return costCenter;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #purchaseClass}
+     */
+    public ObjectProperty<FolioPurchaseClass> purchaseClassProperty() {
+        return purchaseClass;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #createdAt}
+     */
+    public ObjectProperty<LocalDateTime> createdAtProperty() {
+        return createdAt;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #detail}
+     */
+    public ListProperty<FolioLine> detailProperty() {
+        return detail;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #totals}
+     */
+    public ListProperty<FolioTotal> totalsProperty() {
+        return totals;
+    }
 }

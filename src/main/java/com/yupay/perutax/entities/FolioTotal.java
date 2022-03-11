@@ -166,4 +166,49 @@ public class FolioTotal {
     public void setOwner(Folio owner) {
         this.owner.set(owner);
     }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #id}
+     */
+    public LongProperty idProperty() {
+        return id;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #totalType}
+     */
+    public ObjectProperty<FolioTotalType> totalTypeProperty() {
+        return totalType;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #amountFc}
+     */
+    public ObjectProperty<BigDecimal> amountFcProperty() {
+        return amountFc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #amountSc}
+     */
+    public ObjectProperty<BigDecimal> amountScProperty() {
+        return amountSc;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     *
+     * @return property {@link #owner}
+     */
+    public ObjectProperty<Folio> ownerProperty() {
+        return owner;
+    }
 }

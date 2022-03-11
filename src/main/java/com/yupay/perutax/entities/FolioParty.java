@@ -219,4 +219,52 @@ public class FolioParty {
     public void setPerson(Person person) {
         this.person.set(person);
     }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #id}
+     */
+    public LongProperty idProperty() {
+        return id;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #doiType}
+     */
+    public StringProperty doiTypeProperty() {
+        return doiType;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #doiNum}
+     */
+    public StringProperty doiNumProperty() {
+        return doiNum;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #fullName}
+     */
+    public StringProperty fullNameProperty() {
+        return fullName;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #address}
+     */
+    public StringProperty addressProperty() {
+        return address;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #person}
+     */
+    public ObjectProperty<Person> personProperty() {
+        return person;
+    }
 }

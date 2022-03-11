@@ -137,4 +137,27 @@ public class FolioPurchaseClass {
         this.trash.set(trash);
     }
 
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #id}
+     */
+    public IntegerProperty idProperty() {
+        return id;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #title}
+     */
+    public StringProperty titleProperty() {
+        return title;
+    }
+
+    /**
+     * JavaFX accessor - property.
+     * @return property {@link #trash}
+     */
+    public BooleanProperty trashProperty() {
+        return trash;
+    }
 }
