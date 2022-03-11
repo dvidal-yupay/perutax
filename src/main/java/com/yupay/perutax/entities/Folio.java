@@ -19,6 +19,9 @@
 package com.yupay.perutax.entities;
 
 import jakarta.persistence.*;
+import javafx.beans.property.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.eclipse.persistence.annotations.UuidGenerator;
 
 import java.math.BigDecimal;
@@ -44,28 +47,32 @@ public class Folio {
      * In the SUNAT-PLE specification this field is
      * referred to as a CUO.
      */
-    private String id;
+    private final StringProperty id =
+            new SimpleStringProperty(this, "id");
     /**
      * The type of object of this folio.
      * It's used to determine which automatic
      * ledger entry will be generated, and in
      * which user UX should be shown.
      */
-    private FolioObjectType objectType;
+    private final ObjectProperty<FolioObjectType> objectType =
+            new SimpleObjectProperty<>(this, "objectType");
     /**
      * The string code for the book. It's specified
      * in the SUNAT-PLE specification. In the case of a
      * sale it would be 140100, and in the case of a purchase
      * it would be 050100.
      */
-    private String book;
+    private final StringProperty book =
+            new SimpleStringProperty(this, "book");
     /**
      * Book keeping correlative, it's generated for
      * each month.
      *
      * @see Correlative
      */
-    private String correlative;
+    private final StringProperty correlative =
+            new SimpleStringProperty(this, "correlative");
     /**
      * Folio series. (In Peru, an invoice number
      * is formed by a XXXX-YYYYYY where XXXX is a serie,
@@ -74,77 +81,91 @@ public class Folio {
      * never should be repeated, and at the same time each
      * issuing point must have its own number sequence.
      */
-    private String folioSerie;
+    private final StringProperty folioSerie =
+            new SimpleStringProperty(this, "folioSerie");
     /**
      * Folio number.
      */
-    private String folioNum;
+    private final StringProperty folioNum =
+            new SimpleStringProperty(this, "folioNum");
     /**
      * Document date as shown in printed invoice.
      */
-    private LocalDate dateDoc;
+    private final ObjectProperty<LocalDate> dateDoc =
+            new SimpleObjectProperty<>(this, "dateDoc");
     /**
      * Due date of the folio.
      */
-    private LocalDate dateDue;
+    private final ObjectProperty<LocalDate> dateDue =
+            new SimpleObjectProperty<>(this, "dateDue");
     /**
      * Taxation date. If you're registering a credit note to
      * revert the folio, taxation date should be the modified
      * folio document date.
      */
-    private LocalDate dateTax;
+    private final ObjectProperty<LocalDate> dateTax =
+            new SimpleObjectProperty<>(this, "dateTax");
     /**
      * General remarks of the folio. It's optional
      * and may be any information the user wants to
      * state, it's not necessarily printed in the folio.
      */
-    private String remarks;
+    private final StringProperty remarks =
+            new SimpleStringProperty(this, "remarks");
     /**
      * The currency in which the folio amounts are
      * expressed (Folio Currency).
      */
-    private Currenci currency;
+    private final ObjectProperty<Currenci> currency =
+            new SimpleObjectProperty<>(this, "currency");
     /**
      * The eXchange rate used to convert Folio currency
      * into System currency.
      */
-    private BigDecimal xrate;
+    private final ObjectProperty<BigDecimal> xrate =
+            new SimpleObjectProperty<>(this, "xrate");
     /**
      * Total payable amount (sum of all totals, subsctract
      * prepaid amount). Expressed as Folio currency. At any
      * given time, this should be true: {@code payableFc - paidFc = unpaidFc}
      */
-    private BigDecimal payableFc;
+    private final ObjectProperty<BigDecimal> payableFc =
+            new SimpleObjectProperty<>(this, "payableFc");
     /**
      * Total payable amount (sum of all totals,
      * substract prepaid amount). Expressed as
      * System currency.
      */
-    private BigDecimal payableSc;
+    private final ObjectProperty<BigDecimal> payableSc =
+            new SimpleObjectProperty<>(this, "payableSc");
     /**
      * Total prepaid amount (Expressed as Folio currency).
      * The prepaid amount is only reserved for prepayments
      * invoices.
      */
-    private BigDecimal prepaidFc;
+    private final ObjectProperty<BigDecimal> prepaidFc =
+            new SimpleObjectProperty<>(this, "prepaidFc");
     /**
      * Total prepaid amount (expressed as System Currency).
      * The prepaid amount is only reserved for prepayments
      * invoices.
      */
-    private BigDecimal prepaidSc;
+    private final ObjectProperty<BigDecimal> prepaidSc =
+            new SimpleObjectProperty<>(this, "prepaidSc");
     /**
      * The total paid amount of the folio.
      * When first registering the folio,
      * it'd be 0.00
      */
-    private BigDecimal paidFc;
+    private final ObjectProperty<BigDecimal> paidFc =
+            new SimpleObjectProperty<>(this, "paidFc");
     /**
      * The unpaid amount of the folio.
      * When first registering the folio,
      * it'd be the same as {@link #payableFc}.
      */
-    private BigDecimal unpaidFc;
+    private final ObjectProperty<BigDecimal> unpaidFc =
+            new SimpleObjectProperty<>(this, "unpaidFc");
     /**
      * Falg for voided folio. The difference
      * between reverted and voided is that
@@ -154,622 +175,650 @@ public class Folio {
      * be stated in the book keeping. Then, only
      * a sale folio may state this flag as true.
      */
-    private boolean voided;
+    private final BooleanProperty voided =
+            new SimpleBooleanProperty(this, "voided");
     /**
      * Flag for reverted folio. If this folio has
      * been reverted by a credit note, should be true.
      */
-    private boolean reverted;
+    private final BooleanProperty reverted =
+            new SimpleBooleanProperty(this, "reverted");
     /**
      * The taxation period.
      */
-    private TaxPeriod period;
+    private final ObjectProperty<TaxPeriod> period =
+            new SimpleObjectProperty<>(this, "period");
     /**
      * The folio party object. In a purchase folio,
      * this would be the supplier; while in a sale
      * folio this would be the customer.
      */
-    private FolioParty party;
+    private final ObjectProperty<FolioParty> party =
+            new SimpleObjectProperty<>(this, "party");
     /**
      * The type of folio.
      */
-    private TypeFolio folioType;
+    private final ObjectProperty<TypeFolio> folioType =
+            new SimpleObjectProperty<>(this, "folioType");
     /**
      * The entry in the ledger book.
      */
-    private Journal ledger;
+    private final ObjectProperty<Journal> ledger =
+            new SimpleObjectProperty<>(this, "ledger");
     /**
      * The folio that has been modified
      * (in a credit or debit note).
      */
-    private Folio modified;
+    private final ObjectProperty<Folio> modified =
+            new SimpleObjectProperty<>(this, "modified");
     /**
      * The assigned cost center for purchases folios.
      */
-    private CostCenter costCenter;
+    private final ObjectProperty<CostCenter> costCenter =
+            new SimpleObjectProperty<>(this, "costCenter");
     /**
      * The class of purchase (if the folio represents a purchase).
      * This parameter is a special business requirement from the
      * SUNAT-PLE specification.
      */
-    private FolioPurchaseClass purchaseClass;
-    /**
-     * The detail (lines) of the folio as shown
-     * in the physical document (business entity).
-     */
-    private Collection<FolioLine> detail;
-    /**
-     * The footer detail of totals contained
-     * by this folio.
-     */
-    private Collection<FolioTotal> totals;
+    private final ObjectProperty<FolioPurchaseClass> purchaseClass =
+            new SimpleObjectProperty<>(this, "purchaseClass");
     /**
      * Time stamp of the exact moment at which the
      * folio was created.
      */
-    private LocalDateTime createdAt;
+    private final ObjectProperty<LocalDateTime> createdAt =
+            new SimpleObjectProperty<>(this, "createdAt");
+    /**
+     * The detail (lines) of the folio as shown
+     * in the physical document (business entity).
+     */
+    private ListProperty<FolioLine> detail =
+            new SimpleListProperty<>(this, "detail",
+                    FXCollections.observableArrayList());
+    /**
+     * The footer detail of totals contained
+     * by this folio.
+     */
+    private ListProperty<FolioTotal> totals =
+            new SimpleListProperty<>(this, "totals",
+                    FXCollections.observableArrayList());
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #id }
+     * @return value of  {@link #id}
      */
     @GeneratedValue(generator = "UUID_FOLIO")
     @UuidGenerator(name = "UUID_FOLIO")
     @Id
     @Column(name = "id")
     public String getId() {
-        return id;
+        return id.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param id value to set on {@link #id }
+     * @param id value to set on {@link #id}
      */
     public void setId(String id) {
-        this.id = id;
+        this.id.set(id);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #objectType }
+     * @return value of  {@link #objectType}
      */
     @Basic
     @Column(name = "object_type", nullable = false)
     @Enumerated(EnumType.STRING)
     public FolioObjectType getObjectType() {
-        return objectType;
+        return objectType.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param objectType value to set on {@link #objectType }
+     * @param objectType value to set on {@link #objectType}
      */
     public void setObjectType(FolioObjectType objectType) {
-        this.objectType = objectType;
+        this.objectType.set(objectType);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #book }
+     * @return value of  {@link #book}
      */
     @Basic
     @Column(name = "book")
     public String getBook() {
-        return book;
+        return book.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param book value to set on {@link #book }
+     * @param book value to set on {@link #book}
      */
     public void setBook(String book) {
-        this.book = book;
+        this.book.set(book);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #correlative }
+     * @return value of  {@link #correlative}
      */
     @Basic
     @Column(name = "correlative")
     public String getCorrelative() {
-        return correlative;
+        return correlative.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param correlative value to set on {@link #correlative }
+     * @param correlative value to set on {@link #correlative}
      */
     public void setCorrelative(String correlative) {
-        this.correlative = correlative;
+        this.correlative.set(correlative);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #folioSerie }
+     * @return value of  {@link #folioSerie}
      */
     @Basic
     @Column(name = "folio_serie")
     public String getFolioSerie() {
-        return folioSerie;
+        return folioSerie.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param folioSerie value to set on {@link #folioSerie }
+     * @param folioSerie value to set on {@link #folioSerie}
      */
     public void setFolioSerie(String folioSerie) {
-        this.folioSerie = folioSerie;
+        this.folioSerie.set(folioSerie);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #folioNum }
+     * @return value of  {@link #folioNum}
      */
     @Basic
     @Column(name = "folio_num")
     public String getFolioNum() {
-        return folioNum;
+        return folioNum.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param folioNum value to set on {@link #folioNum }
+     * @param folioNum value to set on {@link #folioNum}
      */
     public void setFolioNum(String folioNum) {
-        this.folioNum = folioNum;
+        this.folioNum.set(folioNum);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #dateDoc }
+     * @return value of  {@link #dateDoc}
      */
     @Basic
     @Column(name = "date_doc", nullable = false, columnDefinition = "DATE")
     public LocalDate getDateDoc() {
-        return dateDoc;
+        return dateDoc.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param dateDoc value to set on {@link #dateDoc }
+     * @param dateDoc value to set on {@link #dateDoc}
      */
     public void setDateDoc(LocalDate dateDoc) {
-        this.dateDoc = dateDoc;
+        this.dateDoc.set(dateDoc);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #dateDue }
+     * @return value of  {@link #dateDue}
      */
     @Basic
     @Column(name = "date_due", columnDefinition = "DATE")
     public LocalDate getDateDue() {
-        return dateDue;
+        return dateDue.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param dateDue value to set on {@link #dateDue }
+     * @param dateDue value to set on {@link #dateDue}
      */
     public void setDateDue(LocalDate dateDue) {
-        this.dateDue = dateDue;
+        this.dateDue.set(dateDue);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #dateTax }
+     * @return value of  {@link #dateTax}
      */
     @Basic
     @Column(name = "date_tax", nullable = false, columnDefinition = "DATE")
     public LocalDate getDateTax() {
-        return dateTax;
+        return dateTax.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param dateTax value to set on {@link #dateTax }
+     * @param dateTax value to set on {@link #dateTax}
      */
     public void setDateTax(LocalDate dateTax) {
-        this.dateTax = dateTax;
+        this.dateTax.set(dateTax);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #remarks }
+     * @return value of  {@link #remarks}
      */
     @Basic
     @Column(name = "remarks")
     public String getRemarks() {
-        return remarks;
+        return remarks.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param remarks value to set on {@link #remarks }
+     * @param remarks value to set on {@link #remarks}
      */
     public void setRemarks(String remarks) {
-        this.remarks = remarks;
+        this.remarks.set(remarks);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #currency }
+     * @return value of  {@link #currency}
      */
     @Basic
     @Column(name = "currency", nullable = false)
     @Enumerated(EnumType.STRING)
     public Currenci getCurrency() {
-        return currency;
+        return currency.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param currency value to set on {@link #currency }
+     * @param currency value to set on {@link #currency}
      */
     public void setCurrency(Currenci currency) {
-        this.currency = currency;
+        this.currency.set(currency);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #xrate }
+     * @return value of  {@link #xrate}
      */
     @Basic
     @Column(name = "xrate", scale = 3, precision = 6)
     public BigDecimal getXrate() {
-        return xrate;
+        return xrate.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param xrate value to set on {@link #xrate }
+     * @param xrate value to set on {@link #xrate}
      */
     public void setXrate(BigDecimal xrate) {
-        this.xrate = xrate;
+        this.xrate.set(xrate);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #payableFc }
+     * @return value of  {@link #payableFc}
      */
     @Basic
     @Column(name = "payable_fc", precision = 14, scale = 2)
     public BigDecimal getPayableFc() {
-        return payableFc;
+        return payableFc.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param payableFc value to set on {@link #payableFc }
+     * @param payableFc value to set on {@link #payableFc}
      */
     public void setPayableFc(BigDecimal payableFc) {
-        this.payableFc = payableFc;
+        this.payableFc.set(payableFc);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #payableSc }
+     * @return value of  {@link #payableSc}
      */
     @Basic
     @Column(name = "payable_sc", precision = 14, scale = 2)
     public BigDecimal getPayableSc() {
-        return payableSc;
+        return payableSc.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param payableSc value to set on {@link #payableSc }
+     * @param payableSc value to set on {@link #payableSc}
      */
     public void setPayableSc(BigDecimal payableSc) {
-        this.payableSc = payableSc;
+        this.payableSc.set(payableSc);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #prepaidFc }
+     * @return value of  {@link #prepaidFc}
      */
     @Basic
     @Column(name = "prepaid_fc", precision = 14, scale = 2)
     public BigDecimal getPrepaidFc() {
-        return prepaidFc;
+        return prepaidFc.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param prepaidFc value to set on {@link #prepaidFc }
+     * @param prepaidFc value to set on {@link #prepaidFc}
      */
     public void setPrepaidFc(BigDecimal prepaidFc) {
-        this.prepaidFc = prepaidFc;
+        this.prepaidFc.set(prepaidFc);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #prepaidSc }
+     * @return value of  {@link #prepaidSc}
      */
     @Basic
     @Column(name = "prepaid_sc", precision = 14, scale = 2)
     public BigDecimal getPrepaidSc() {
-        return prepaidSc;
+        return prepaidSc.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param prepaidSc value to set on {@link #prepaidSc }
+     * @param prepaidSc value to set on {@link #prepaidSc}
      */
     public void setPrepaidSc(BigDecimal prepaidSc) {
-        this.prepaidSc = prepaidSc;
+        this.prepaidSc.set(prepaidSc);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #paidFc }
+     * @return value of  {@link #paidFc}
      */
     @Basic
     @Column(name = "paid_fc", precision = 14, scale = 2)
     public BigDecimal getPaidFc() {
-        return paidFc;
+        return paidFc.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param paidFc value to set on {@link #paidFc }
+     * @param paidFc value to set on {@link #paidFc}
      */
     public void setPaidFc(BigDecimal paidFc) {
-        this.paidFc = paidFc;
+        this.paidFc.set(paidFc);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #unpaidFc }
+     * @return value of  {@link #unpaidFc}
      */
     @Basic
     @Column(name = "unpaid_fc", precision = 14, scale = 2)
     public BigDecimal getUnpaidFc() {
-        return unpaidFc;
+        return unpaidFc.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param unpaidFc value to set on {@link #unpaidFc }
+     * @param unpaidFc value to set on {@link #unpaidFc}
      */
     public void setUnpaidFc(BigDecimal unpaidFc) {
-        this.unpaidFc = unpaidFc;
+        this.unpaidFc.set(unpaidFc);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #voided }
+     * @return value of  {@link #voided}
      */
     @Basic
     @Column(name = "voided")
     public boolean isVoided() {
-        return voided;
+        return voided.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param voided value to set on {@link #voided }
+     * @param voided value to set on {@link #voided}
      */
     public void setVoided(boolean voided) {
-        this.voided = voided;
+        this.voided.set(voided);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #reverted }
+     * @return value of  {@link #reverted}
      */
     @Basic
     @Column(name = "reverted")
     public boolean isReverted() {
-        return reverted;
+        return reverted.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param reverted value to set on {@link #reverted }
+     * @param reverted value to set on {@link #reverted}
      */
     public void setReverted(boolean reverted) {
-        this.reverted = reverted;
+        this.reverted.set(reverted);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #period }
+     * @return value of  {@link #period}
      */
     @ManyToOne
     @JoinColumn(name = "period", referencedColumnName = "id", nullable = false)
     public TaxPeriod getPeriod() {
-        return period;
+        return period.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param period value to set on {@link #period }
+     * @param period value to set on {@link #period}
      */
     public void setPeriod(TaxPeriod period) {
-        this.period = period;
+        this.period.set(period);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #party }
+     * @return value of  {@link #party}
      */
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "party", referencedColumnName = "id", nullable = false)
     public FolioParty getParty() {
-        return party;
+        return party.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param party value to set on {@link #party }
+     * @param party value to set on {@link #party}
      */
     public void setParty(FolioParty party) {
-        this.party = party;
+        this.party.set(party);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #folioType }
+     * @return value of  {@link #folioType}
      */
     @ManyToOne
     @JoinColumn(name = "folio_type", referencedColumnName = "id", nullable = false)
     public TypeFolio getFolioType() {
-        return folioType;
+        return folioType.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param folioType value to set on {@link #folioType }
+     * @param folioType value to set on {@link #folioType}
      */
     public void setFolioType(TypeFolio folioType) {
-        this.folioType = folioType;
+        this.folioType.set(folioType);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #ledger }
+     * @return value of  {@link #ledger}
      */
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "ledger", referencedColumnName = "id", nullable = false)
     public Journal getLedger() {
-        return ledger;
+        return ledger.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param ledger value to set on {@link #ledger }
+     * @param ledger value to set on {@link #ledger}
      */
     public void setLedger(Journal ledger) {
-        this.ledger = ledger;
+        this.ledger.set(ledger);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #modified }
+     * @return value of  {@link #modified}
      */
     @OneToOne
     @JoinColumn(name = "modified", referencedColumnName = "id")
     public Folio getModified() {
-        return modified;
+        return modified.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param modified value to set on {@link #modified }
+     * @param modified value to set on {@link #modified}
      */
     public void setModified(Folio modified) {
-        this.modified = modified;
+        this.modified.set(modified);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #costCenter }
+     * @return value of  {@link #costCenter}
      */
     @ManyToOne
     @JoinColumn(name = "cost_center", referencedColumnName = "id")
     public CostCenter getCostCenter() {
-        return costCenter;
+        return costCenter.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param costCenter value to set on {@link #costCenter }
+     * @param costCenter value to set on {@link #costCenter}
      */
     public void setCostCenter(CostCenter costCenter) {
-        this.costCenter = costCenter;
+        this.costCenter.set(costCenter);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #purchaseClass }
+     * @return value of  {@link #purchaseClass}
      */
     @ManyToOne
     @JoinColumn(name = "purchase_class", referencedColumnName = "id")
     public FolioPurchaseClass getPurchaseClass() {
-        return purchaseClass;
+        return purchaseClass.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param purchaseClass value to set on {@link #purchaseClass }
+     * @param purchaseClass value to set on {@link #purchaseClass}
      */
     public void setPurchaseClass(FolioPurchaseClass purchaseClass) {
-        this.purchaseClass = purchaseClass;
+        this.purchaseClass.set(purchaseClass);
     }
 
     /**
      * Accessor - getter.
      *
-     * @return value of  {@link #detail }
+     * @return value of  {@link #detail}
      */
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     public Collection<FolioLine> getDetail() {
-        return detail;
+        return detail.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param detail value to set on {@link #detail }
+     * @param detail value to set on {@link #detail}
      */
     public void setDetail(Collection<FolioLine> detail) {
-        this.detail = detail;
+        this.detail.setAll(detail);
+    }
+
+    /**
+     * Accessor - getter.
+     * <br>
+     * This is provided to use the JavaFX version
+     * of the getter, since JPA won't accept
+     * an observable list mapping.
+     *
+     * @return value of {@link #detail}
+     */
+    @Transient
+    public ObservableList<FolioLine> getDetailFX() {
+        return detail.get();
     }
 
     /**
@@ -779,16 +828,30 @@ public class Folio {
      */
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     public Collection<FolioTotal> getTotals() {
-        return totals;
+        return totals.get();
     }
 
     /**
      * Accessor - setter.
      *
-     * @param totals value to set on {@link #totals }
+     * @param totals value to set on {@link #totals}
      */
     public void setTotals(Collection<FolioTotal> totals) {
-        this.totals = totals;
+        this.totals.setAll(totals);
+    }
+
+    /**
+     * Accessor - getter.
+     * <br>
+     * This is provided to use the JavaFX version
+     * of the getter, since JPA won't accept
+     * an observable list mapping.
+     *
+     * @return velue of {@link #totals}
+     */
+    @Transient
+    public ObservableList<FolioTotal> getTotalsFX() {
+        return totals.get();
     }
 
     /**
@@ -802,7 +865,7 @@ public class Folio {
             updatable = false,
             columnDefinition = "TIMESTAMP")
     public LocalDateTime getCreatedAt() {
-        return createdAt;
+        return createdAt.get();
     }
 
     /**
@@ -811,6 +874,6 @@ public class Folio {
      * @param createdAt value to set into {@link #createdAt}
      */
     public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+        this.createdAt.set(createdAt);
     }
 }

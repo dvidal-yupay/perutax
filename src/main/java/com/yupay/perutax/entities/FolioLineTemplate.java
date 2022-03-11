@@ -195,7 +195,7 @@ public class FolioLineTemplate {
      * @return value of {@link #taxableFc }
      */
     @Basic
-    @Column(name = "taxable_fc")
+    @Column(name = "taxable_fc", scale = 2, precision = 14)
     public BigDecimal getTaxableFc() {
         return taxableFc;
     }
@@ -215,7 +215,7 @@ public class FolioLineTemplate {
      * @return value of {@link #taxFc }
      */
     @Basic
-    @Column(name = "tax_fc")
+    @Column(name = "tax_fc", scale = 2, precision = 14)
     public BigDecimal getTaxFc() {
         return taxFc;
     }
@@ -235,7 +235,7 @@ public class FolioLineTemplate {
      * @return value of {@link #exportFc }
      */
     @Basic
-    @Column(name = "export_fc")
+    @Column(name = "export_fc", scale = 2, precision = 14)
     public BigDecimal getExportFc() {
         return exportFc;
     }
@@ -255,7 +255,7 @@ public class FolioLineTemplate {
      * @return value of {@link #discountFc }
      */
     @Basic
-    @Column(name = "discount_fc")
+    @Column(name = "discount_fc", scale = 2, precision = 14)
     public BigDecimal getDiscountFc() {
         return discountFc;
     }
@@ -275,7 +275,7 @@ public class FolioLineTemplate {
      * @return value of {@link #discountTaxFc }
      */
     @Basic
-    @Column(name = "discount_tax_fc")
+    @Column(name = "discount_tax_fc", scale = 2, precision = 14)
     public BigDecimal getDiscountTaxFc() {
         return discountTaxFc;
     }
@@ -295,7 +295,7 @@ public class FolioLineTemplate {
      * @return value of {@link #exemptFc }
      */
     @Basic
-    @Column(name = "exempt_fc")
+    @Column(name = "exempt_fc", scale = 2, precision = 14)
     public BigDecimal getExemptFc() {
         return exemptFc;
     }
@@ -315,7 +315,7 @@ public class FolioLineTemplate {
      * @return value of {@link #taxFreeFc }
      */
     @Basic
-    @Column(name = "tax_free_fc")
+    @Column(name = "tax_free_fc", scale = 2, precision = 14)
     public BigDecimal getTaxFreeFc() {
         return taxFreeFc;
     }
@@ -335,7 +335,7 @@ public class FolioLineTemplate {
      * @return value of {@link #icbpFc }
      */
     @Basic
-    @Column(name = "icbp_fc")
+    @Column(name = "icbp_fc", scale = 2, precision = 14)
     public BigDecimal getIcbpFc() {
         return icbpFc;
     }
@@ -355,7 +355,7 @@ public class FolioLineTemplate {
      * @return value of {@link #othersFc }
      */
     @Basic
-    @Column(name = "others_fc")
+    @Column(name = "others_fc", scale = 2, precision = 14)
     public BigDecimal getOthersFc() {
         return othersFc;
     }
@@ -375,7 +375,7 @@ public class FolioLineTemplate {
      * @return value of {@link #payableFc }
      */
     @Basic
-    @Column(name = "payable_fc")
+    @Column(name = "payable_fc", scale = 2, precision = 14)
     public BigDecimal getPayableFc() {
         return payableFc;
     }

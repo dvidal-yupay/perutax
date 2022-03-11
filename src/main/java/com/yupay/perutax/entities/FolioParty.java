@@ -89,7 +89,7 @@ public class FolioParty {
     /**
      * Public accessor - getter.
      *
-     * @return value of {@link # }
+     * @return value of {@link #id}
      */
     @GeneratedValue(generator = "sq_folioparty")
 
@@ -115,7 +115,7 @@ public class FolioParty {
     /**
      * Public accessor - getter.
      *
-     * @return value of {@link # }
+     * @return value of {@link #doiType}
      */
     @Basic
     @Column(name = "doi_type")
@@ -135,7 +135,7 @@ public class FolioParty {
     /**
      * Public accessor - getter.
      *
-     * @return value of {@link # }
+     * @return value of {@link #doiNum}
      */
     @Basic
     @Column(name = "doi_num")
@@ -155,7 +155,7 @@ public class FolioParty {
     /**
      * Public accessor - getter.
      *
-     * @return value of {@link # }
+     * @return value of {@link #fullName}
      */
     @Basic
     @Column(name = "full_name")
@@ -175,7 +175,7 @@ public class FolioParty {
     /**
      * Public accessor - getter.
      *
-     * @return value of {@link # }
+     * @return value of {@link #address}
      */
     @Basic
     @Column(name = "address")
@@ -196,7 +196,7 @@ public class FolioParty {
     /**
      * Public accessor - getter.
      *
-     * @return value of {@link # }
+     * @return value of {@link #person}
      */
     @ManyToOne
     @JoinColumn(name = "person", referencedColumnName = "id", nullable = false)

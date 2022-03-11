@@ -1,10 +1,7 @@
-Entities' replacement regex for getters:
-(\@(Generated|Basic|Many|One).*)
+Regex replacement for getters conversions to JavaFX:
+(return .*);
+$1.get();
 
-Replacement text:
-/**
- * Public accessor - getter.
- *
- * @return value of {@link # }
- */
- $1
+Regex replacement for setters conversions to JavaFX:
+(this\..*) = (.*);
+$1.set($2);
