@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<DialogPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <buttonTypes>
+      <ButtonType fx:constant="APPLY" />
+      <ButtonType fx:constant="CANCEL" />
+   </buttonTypes>
+   <header>
+      <GridPane hgap="5.0" vgap="5.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="18.5" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="18.5" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="18.5" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="18.5" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="18.5" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="CUO:" />
+            <Hyperlink maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="7b564230-2c0c-4b5b-8448-1c3448e61dd4" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+            <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Correlativo:" GridPane.columnIndex="4" />
+            <Hyperlink alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Z999999999" GridPane.columnIndex="5" />
+            <Hyperlink alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Tipo:" GridPane.rowIndex="1" />
+            <ComboBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Serie:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Número:" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <TextField maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Fecha:" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Emisión" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <DatePicker maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Vencimiento" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <DatePicker maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Tributario" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField alignment="CENTER" editable="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Creación" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            <TextField alignment="CENTER" editable="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <Hyperlink alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Parte:" GridPane.rowIndex="4" />
+            <TextField maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
+            <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Moneda:" GridPane.rowIndex="5" />
+            <ComboBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="T. Cambio:" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <TextField alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <CheckBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" prefHeight="32.0" text="Revertido" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <CheckBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" prefHeight="32.0" text="Inutilizado" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+   </header>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <content>
+      <TabPane side="LEFT" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Detalle">
+               <content>
+                  <TableView prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn prefWidth="25.0" text="#" />
+                      <TableColumn prefWidth="350.0" text="Glosa" />
+                        <TableColumn prefWidth="75.0" text="Características">
+                           <columns>
+                              <TableColumn prefWidth="100.0" text="Dimensión 1" />
+                              <TableColumn prefWidth="100.0" text="Dimensión 2" />
+                              <TableColumn prefWidth="100.0" text="Dimensión 3" />
+                              <TableColumn prefWidth="100.0" text="Dimensión 4" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn prefWidth="150.0" text="Código SUNAT" />
+                        <TableColumn prefWidth="75.0" style="-fx-alignment: CENTER_RIGHT;" text="Cant" />
+                        <TableColumn prefWidth="75.0" style="-fx-alignment: CENTER;" text="Und" />
+                        <TableColumn prefWidth="175.0" style="-fx-alignment: CENTER_RIGHT;" text="Monto" />
+                        <TableColumn prefWidth="175.0" style="-fx-alignment: CENTER_RIGHT;" text="IGV" />
+                        <TableColumn prefWidth="175.0" style="-fx-alignment: CENTER_RIGHT;" text="Descuento" />
+                        <TableColumn prefWidth="175.0" style="-fx-alignment: CENTER_RIGHT;" text="Descuento (IGV)" />
+                        <TableColumn prefWidth="175.0" style="-fx-alignment: CENTER_RIGHT;" text="Exportación" />
+                        <TableColumn prefWidth="175.0" style="-fx-alignment: CENTER_RIGHT;" text="Exonerado" />
+                        <TableColumn prefWidth="175.0" style="-fx-alignment: CENTER_RIGHT;" text="Inafecto" />
+                        <TableColumn prefWidth="175.0" style="-fx-alignment: CENTER_RIGHT;" text="ICBP" />
+                        <TableColumn prefWidth="175.0" style="-fx-alignment: CENTER_RIGHT;" text="Otros" />
+                        <TableColumn prefWidth="175.0" style="-fx-alignment: CENTER_RIGHT;" text="Total Unitario" />
+                    </columns>
+                  </TableView>
+               </content>
+            </Tab>
+          <Tab text="Totales">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <GridPane hgap="2.0" vgap="2.0" HBox.hgrow="NEVER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" vgrow="NEVER" />
+                            <RowConstraints minHeight="10.0" vgrow="NEVER" />
+                            <RowConstraints minHeight="10.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Facturado" GridPane.columnIndex="1" />
+                              <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Soles" GridPane.columnIndex="2" />
+                              <Hyperlink maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Total:" GridPane.rowIndex="1" />
+                              <TextField alignment="CENTER_RIGHT" editable="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField alignment="CENTER_RIGHT" editable="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Adelanto:" GridPane.rowIndex="2" />
+                              <TextField alignment="CENTER_RIGHT" editable="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField alignment="CENTER_RIGHT" editable="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Pagado:" GridPane.rowIndex="3" />
+                              <TextField alignment="CENTER_RIGHT" editable="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" text="Pendiente:" GridPane.rowIndex="4" />
+                              <TextField alignment="CENTER_RIGHT" editable="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TableView disable="true" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                        <Separator orientation="VERTICAL" HBox.hgrow="NEVER">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Separator>
+                        <TableView HBox.hgrow="ALWAYS">
+                          <columns>
+                            <TableColumn editable="false" prefWidth="150.0" text="Total" />
+                            <TableColumn editable="false" prefWidth="100.0" sortable="false" style="-fx-alignment: CENTER_RIGHT;" text="Facturado" />
+                              <TableColumn editable="false" prefWidth="100.0" sortable="false" style="-fx-alignment: CENTER_RIGHT;" text="Soles" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </HBox>
+               </content></Tab>
+            <Tab text="Contable" />
+            <Tab text="Otros">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </content>
+</DialogPane>

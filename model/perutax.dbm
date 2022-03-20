@@ -3,12 +3,12 @@
 CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" last-position="770,1137" last-zoom="1" max-obj-count="25"
-	 default-owner="postgres"
-	 layers="commons,journal,folio"
-	 active-layers="0,1,2"
-	 layer-name-colors="#000000,#000000,#000000"
-	 layer-rect-colors="#b4b4b4,#000000,#000000"
+<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" author="Ingenieria Informatica Yupay SACS" last-position="538,759" last-zoom="1" max-obj-count="26"
+	 default-schema="public"
+	 layers="commons,journal"
+	 active-layers="0,1"
+	 layer-name-colors="#000000,#000000"
+	 layer-rect-colors="#b4b4b4,#000000"
 	 show-layer-names="false" show-layer-rects="false">
 <database name="perutaxdb" is-template="false" allow-conns="true">
 </database>
@@ -25,15 +25,6 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<style id="table-toggler-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
 	<style id="table-toggler-btns" colors="#f3f3f3,#e1e1e1,#bebebe"/>
 </tag>
-<tag name="folios">
-	<style id="table-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
-	<style id="table-ext-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
-	<style id="table-name" colors="#000000"/>
-	<style id="table-schema-name" colors="#000000"/>
-	<style id="table-title" colors="#50841f,#fff285,#77a7b6"/>
-	<style id="table-toggler-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
-	<style id="table-toggler-btns" colors="#f3f3f3,#e1e1e1,#bebebe"/>
-</tag>
 <tag name="journal">
 	<style id="table-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
 	<style id="table-ext-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
@@ -43,10 +34,19 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<style id="table-toggler-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
 	<style id="table-toggler-btns" colors="#f3f3f3,#e1e1e1,#bebebe"/>
 </tag>
+<tag name="sale">
+	<style id="table-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
+	<style id="table-ext-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
+	<style id="table-name" colors="#000000"/>
+	<style id="table-schema-name" colors="#000000"/>
+	<style id="table-title" colors="#87f399,#ec4290,#2972a3"/>
+	<style id="table-toggler-body" colors="#fcfcfc,#fcfcfc,#d7d7d7"/>
+	<style id="table-toggler-btns" colors="#f3f3f3,#e1e1e1,#bebebe"/>
+</tag>
 <table name="tdoi" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
 	<schema name="public"/>
 	<tag name="commons"/>
-	<position x="20" y="1020"/>
+	<position x="80" y="900"/>
 	<column name="id" not-null="true">
 		<type name="char" length="1"/>
 	</column>
@@ -79,7 +79,7 @@ A•CDI•\d{15}•FALSE]]>
 <table name="country" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
 	<schema name="public"/>
 	<tag name="commons"/>
-	<position x="20" y="1300"/>
+	<position x="200" y="1580"/>
 	<column name="id" not-null="true">
 		<type name="char" length="2"/>
 	</column>
@@ -104,10 +104,10 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	</initial-data>
 </table>
 
-<table name="person" layers="0,1,2" collapse-mode="2" max-obj-count="15" z-value="0">
+<table name="person" layers="0,1" collapse-mode="2" max-obj-count="15" z-value="0">
 	<schema name="public"/>
 	<tag name="commons"/>
-	<position x="320" y="960"/>
+	<position x="100" y="1160"/>
 	<column name="id" not-null="true">
 		<type name="char" length="36"/>
 	</column>
@@ -212,7 +212,7 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	</constraint>
 </table>
 
-<table name="tax_period" layers="0,1,2" collapse-mode="2" max-obj-count="4" z-value="0">
+<table name="tax_period" layers="0,1" collapse-mode="2" max-obj-count="4" z-value="0">
 	<schema name="public"/>
 	<tag name="commons"/>
 	<position x="1340" y="460"/>
@@ -283,10 +283,10 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	</label>
 </relationship>
 
-<table name="cost_center" layers="0,1,2" collapse-mode="2" max-obj-count="3" z-value="0">
+<table name="cost_center" layers="0,1" collapse-mode="2" max-obj-count="3" z-value="0">
 	<schema name="public"/>
 	<tag name="commons"/>
-	<position x="840" y="1440"/>
+	<position x="260" y="760"/>
 	<column name="id" not-null="true">
 		<type name="char" length="3"/>
 	</column>
@@ -326,43 +326,23 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	<enumeration label="INDIRECT_SUPPLY"/>
 </usertype>
 
-<table name="tax_account" layers="0,1" collapse-mode="2" max-obj-count="9" z-value="0">
+<usertype name="sale_total_class" configuration="enumeration">
 	<schema name="public"/>
-	<tag name="commons"/>
-	<position x="20" y="440"/>
-	<column name="id" not-null="true">
-		<type name="char" length="8"/>
-	</column>
-	<column name="name" not-null="true">
-		<type name="varchar" length="0"/>
-	</column>
-	<column name="nature" not-null="true">
-		<type name="public.tax_account_nature" length="0"/>
-	</column>
-	<column name="currency" not-null="true">
-		<type name="public.currenci" length="0"/>
-	</column>
-	<column name="balance" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="group_cost">
-		<type name="public.group_cost" length="0"/>
-	</column>
-	<column name="usable" not-null="true" default-value="FALSE">
-		<type name="boolean" length="0"/>
-	</column>
-	<column name="trash" not-null="true" default-value="FALSE">
-		<type name="boolean" length="0"/>
-	</column>
-	<constraint name="tax_account_pk" type="pk-constr" table="public.tax_account">
-		<columns names="id" ref-type="src-columns"/>
-	</constraint>
-</table>
+	<enumeration label="TAXABLE"/>
+	<enumeration label="TAX"/>
+	<enumeration label="DISCOUNT"/>
+	<enumeration label="DISCOUNT_TAX"/>
+	<enumeration label="EXPORT"/>
+	<enumeration label="EXEMPT"/>
+	<enumeration label="TAX_FREE"/>
+	<enumeration label="ICBP"/>
+	<enumeration label="OTHERS"/>
+</usertype>
 
-<table name="tfolio" layers="0,1,2" collapse-mode="1" max-obj-count="12" z-value="0">
+<table name="tfolio" layers="0,1" collapse-mode="1" max-obj-count="12" z-value="0">
 	<schema name="public"/>
 	<tag name="commons"/>
-	<position x="800" y="960"/>
+	<position x="840" y="940"/>
 	<column name="id" not-null="true">
 		<type name="char" length="2"/>
 	</column>
@@ -432,7 +412,7 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	</constraint>
 </table>
 
-<table name="journal" layers="1,2" collapse-mode="2" max-obj-count="19" z-value="0">
+<table name="journal" layers="1,0" collapse-mode="2" max-obj-count="19" z-value="0">
 	<schema name="public"/>
 	<tag name="journal"/>
 	<position x="760" y="260"/>
@@ -516,6 +496,9 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	 src-required="true" dst-required="false"
 	upd-action="RESTRICT"
 	del-action="RESTRICT">
+	<line>
+		<position x="880" y="100"/>
+	</line>
 	<label ref-type="name-label">
 		<position x="0" y="0"/>
 	</label>
@@ -525,7 +508,7 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	<schema name="public"/>
 </sequence>
 
-<sequence name="sq_journal_dt_person_id" cycle="false" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
+<sequence name="sq_person_reference_id" cycle="false" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
 	<schema name="public"/>
 </sequence>
 
@@ -533,11 +516,11 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	<schema name="public"/>
 </sequence>
 
-<table name="journal_dt_person" layers="1" collapse-mode="2" max-obj-count="6" z-value="0">
+<table name="person_reference" layers="1" collapse-mode="2" max-obj-count="7" z-value="0">
 	<schema name="public"/>
-	<tag name="journal"/>
-	<position x="40" y="720"/>
-	<column name="id" not-null="true" sequence="public.sq_journal_dt_person_id">
+	<tag name="commons"/>
+	<position x="800" y="1320"/>
+	<column name="id" not-null="true" sequence="public.sq_person_reference_id">
 		<type name="bigint" length="0"/>
 	</column>
 	<column name="doi_type" not-null="true">
@@ -549,7 +532,10 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	<column name="full_name" not-null="true">
 		<type name="varchar" length="0"/>
 	</column>
-	<constraint name="journal_dt_person_pk" type="pk-constr" table="public.journal_dt_person">
+	<column name="address">
+		<type name="varchar" length="0"/>
+	</column>
+	<constraint name="journal_dt_person_pk" type="pk-constr" table="public.person_reference">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 
@@ -568,7 +554,7 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	 src-fk-pattern="{st}_fk"
 	 custom-color="#8133b6"
 	 src-table="public.person"
-	 dst-table="public.journal_dt_person"
+	 dst-table="public.person_reference"
 	 src-required="true" dst-required="false"
 	upd-action="RESTRICT"
 	del-action="RESTRICT">
@@ -580,7 +566,7 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 <table name="journal_dt_folio" layers="1" collapse-mode="1" max-obj-count="4" z-value="0">
 	<schema name="public"/>
 	<tag name="journal"/>
-	<position x="780" y="720"/>
+	<position x="800" y="700"/>
 	<column name="id" not-null="true" sequence="public.sq_journal_dt_folio_id">
 		<type name="bigint" length="0"/>
 	</column>
@@ -681,20 +667,44 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	<columns names="trans_id,line" ref-type="src-columns"/>
 </constraint>
 
-<relationship name="journaldt_moves_account" type="rel1n" layers="1"
-	 src-col-pattern="account_id"
-	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
-	 src-fk-pattern="{st}_fk"
-	 custom-color="#c76ec5"
-	 src-table="public.tax_account"
-	 dst-table="public.journal_dt"
-	 src-required="true" dst-required="false"
-	upd-action="RESTRICT"
-	del-action="RESTRICT">
-	<label ref-type="name-label">
-		<position x="0" y="0"/>
-	</label>
-</relationship>
+<table name="tax_account" layers="0,1" collapse-mode="2" max-obj-count="10" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="20" y="440"/>
+	<column name="id" not-null="true">
+		<type name="char" length="8"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="nature" not-null="true">
+		<type name="public.tax_account_nature" length="0"/>
+	</column>
+	<column name="currency" not-null="true">
+		<type name="public.currenci" length="0"/>
+	</column>
+	<column name="balance" not-null="true" default-value="0.00">
+		<type name="decimal" length="14" precision="2"/>
+	</column>
+	<column name="group_cost">
+		<type name="public.group_cost" length="0"/>
+	</column>
+	<column name="usable" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="trash" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="sale_class">
+		<type name="public.sale_total_class" length="0"/>
+	</column>
+	<constraint name="tax_account_pk" type="pk-constr" table="public.tax_account">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="tax_account_sale_class_uq" type="uq-constr" table="public.tax_account">
+		<columns names="sale_class" ref-type="src-columns"/>
+	</constraint>
+</table>
 
 <relationship name="journaldt_moves_costcenter" type="rel1n" layers="1"
 	 src-col-pattern="cost_center_id"
@@ -706,9 +716,6 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	 src-required="false" dst-required="false"
 	upd-action="RESTRICT"
 	del-action="RESTRICT">
-	<line>
-		<position x="480" y="760"/>
-	</line>
 	<label ref-type="name-label">
 		<position x="0" y="0"/>
 	</label>
@@ -734,123 +741,23 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
 	 src-fk-pattern="{st}_fk"
 	 custom-color="#ca1863"
-	 src-table="public.journal_dt_person"
+	 src-table="public.person_reference"
 	 dst-table="public.journal_dt"
 	 src-required="false" dst-required="false"
 	upd-action="RESTRICT"
 	del-action="RESTRICT">
-	<line>
-		<position x="260" y="680"/>
-	</line>
 	<label ref-type="name-label">
 		<position x="0" y="0"/>
 	</label>
 </relationship>
 
-<usertype name="folio_object_type" configuration="enumeration">
-	<schema name="public"/>
-	<enumeration label="SALE"/>
-	<enumeration label="SALE_PREPAID"/>
-	<enumeration label="SALE_INSTALLMENT"/>
-	<enumeration label="SALE_ADDITIONAL"/>
-	<enumeration label="SALE_DISCOUNT"/>
-	<enumeration label="PURCHASE"/>
-	<enumeration label="PURCHASE_PREPAID"/>
-	<enumeration label="PURCHASE_INSTALLMENT"/>
-	<enumeration label="PURCHASE_ADDITIONAL"/>
-	<enumeration label="PURCHASE_DISCOUNT"/>
-</usertype>
-
-<table name="folio" layers="0,2" collapse-mode="2" max-obj-count="33" z-value="0">
-	<schema name="public"/>
-	<tag name="folios"/>
-	<position x="1320" y="680"/>
-	<column name="id" not-null="true">
-		<type name="char" length="36"/>
-	</column>
-	<column name="object_type" not-null="true">
-		<type name="public.folio_object_type" length="0"/>
-	</column>
-	<column name="book" not-null="true">
-		<type name="char" length="6"/>
-	</column>
-	<column name="correlative" not-null="true">
-		<type name="char" length="10"/>
-	</column>
-	<column name="folio_serie">
-		<type name="varchar" length="15"/>
-	</column>
-	<column name="folio_num" not-null="true">
-		<type name="varchar" length="15"/>
-	</column>
-	<column name="date_doc" not-null="true">
-		<type name="date" length="0"/>
-	</column>
-	<column name="date_due">
-		<type name="date" length="0"/>
-	</column>
-	<column name="date_tax" not-null="true">
-		<type name="date" length="0"/>
-	</column>
-	<column name="remarks">
-		<type name="varchar" length="0"/>
-	</column>
-	<column name="currency" not-null="true">
-		<type name="public.currenci" length="0"/>
-	</column>
-	<column name="xrate" not-null="true" default-value="1.000">
-		<type name="decimal" length="6" precision="3"/>
-	</column>
-	<column name="payable_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="payable_sc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="prepaid_fc" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="prepaid_sc" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="paid_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="unpaid_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="voided" not-null="true" default-value="FALSE">
-		<type name="boolean" length="0"/>
-	</column>
-	<column name="reverted" not-null="true" default-value="FALSE">
-		<type name="boolean" length="0"/>
-	</column>
-	<column name="modified">
-		<type name="char" length="36"/>
-	</column>
-	<column name="created_at" not-null="true" default-value="current_timestamp">
-		<type name="timestamp" length="0"/>
-	</column>
-	<constraint name="folio_pk" type="pk-constr" table="public.folio">
-		<columns names="id" ref-type="src-columns"/>
-	</constraint>
-
-	<customidxs object-type="column">
-		<object name="period" index="3"/>
-	</customidxs>
-
-	<customidxs object-type="constraint">
-		<object name="tax_period_fk" index="1"/>
-	</customidxs>
-</table>
-
-<relationship name="folio_in_period" type="rel1n" layers="0,2"
-	 src-col-pattern="period"
+<relationship name="journaldt_moves_account" type="rel1n" layers="1"
+	 src-col-pattern="account_id"
 	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
 	 src-fk-pattern="{st}_fk"
-	 custom-color="#8e885d"
-	 src-table="public.tax_period"
-	 dst-table="public.folio"
+	 custom-color="#c76ec5"
+	 src-table="public.tax_account"
+	 dst-table="public.journal_dt"
 	 src-required="true" dst-required="false"
 	upd-action="RESTRICT"
 	del-action="RESTRICT">
@@ -859,312 +766,18 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	</label>
 </relationship>
 
-<relationship name="folio_has_journal" type="rel11" layers="0,2"
-	 src-col-pattern="ledger"
-	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
-	 src-fk-pattern="{st}_fk"
-	 custom-color="#385ebc"
-	 src-table="public.journal"
-	 dst-table="public.folio"
-	 src-required="true" dst-required="false"
-	upd-action="RESTRICT"
-	del-action="RESTRICT">
-	<label ref-type="name-label">
-		<position x="0" y="0"/>
-	</label>
-</relationship>
-
-<sequence name="sq_folio_party_id" cycle="false" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
+<sequence name="sq_sale_total_id" cycle="false" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
 	<schema name="public"/>
 </sequence>
 
-<table name="folio_party" layers="0,2" collapse-mode="2" max-obj-count="7" z-value="0">
-	<schema name="public"/>
-	<tag name="folios"/>
-	<position x="900" y="1820"/>
-	<column name="id" not-null="true" sequence="public.sq_folio_party_id">
-		<type name="bigint" length="0"/>
-	</column>
-	<column name="doi_type" not-null="true">
-		<type name="char" length="1"/>
-	</column>
-	<column name="doi_num" not-null="true">
-		<type name="varchar" length="15"/>
-	</column>
-	<column name="full_name" not-null="true">
-		<type name="varchar" length="0"/>
-	</column>
-	<column name="address">
-		<type name="varchar" length="0"/>
-	</column>
-	<constraint name="folio_party_pk" type="pk-constr" table="public.folio_party">
-		<columns names="id" ref-type="src-columns"/>
-	</constraint>
-
-	<customidxs object-type="column">
-		<object name="person" index="1"/>
-	</customidxs>
-
-	<customidxs object-type="constraint">
-		<object name="person_fk" index="1"/>
-	</customidxs>
-</table>
-
-<relationship name="folioparty_has_person" type="rel1n" layers="0,2"
-	 src-col-pattern="{st}"
-	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
-	 src-fk-pattern="{st}_fk"
-	 custom-color="#0acfd2"
-	 src-table="public.person"
-	 dst-table="public.folio_party"
-	 src-required="true" dst-required="false"
-	upd-action="RESTRICT"
-	del-action="RESTRICT">
-	<label ref-type="name-label">
-		<position x="0" y="0"/>
-	</label>
-</relationship>
-
-<relationship name="folio_has_party" type="rel11" layers="0,2"
-	 src-col-pattern="party"
-	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
-	 src-fk-pattern="{st}_fk"
-	 custom-color="#e55056"
-	 src-table="public.folio_party"
-	 dst-table="public.folio"
-	 src-required="true" dst-required="false"
-	upd-action="RESTRICT"
-	del-action="RESTRICT">
-	<label ref-type="name-label">
-		<position x="0" y="0"/>
-	</label>
-</relationship>
-
-<relationship name="folio_has_type" type="rel1n" layers="0,2"
-	 src-col-pattern="folio_type"
-	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
-	 src-fk-pattern="{st}_fk"
-	 custom-color="#c31d02"
-	 src-table="public.tfolio"
-	 dst-table="public.folio"
-	 src-required="true" dst-required="false"
-	upd-action="RESTRICT"
-	del-action="RESTRICT">
-	<label ref-type="name-label">
-		<position x="0" y="0"/>
-	</label>
-</relationship>
-
-<relationship name="folio_has_costcenter" type="rel1n" layers="0,2"
-	 src-col-pattern="{st}"
-	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
-	 src-fk-pattern="{st}_fk"
-	 custom-color="#1a6011"
-	 src-table="public.cost_center"
-	 dst-table="public.folio"
-	 src-required="false" dst-required="false"
-	upd-action="RESTRICT"
-	del-action="RESTRICT">
-	<label ref-type="name-label">
-		<position x="0" y="0"/>
-	</label>
-</relationship>
-
-<table name="folio_purchase_class" layers="0,2" collapse-mode="2" max-obj-count="3" z-value="0">
-	<schema name="public"/>
-	<tag name="folios"/>
-	<position x="1120" y="1640"/>
-	<column name="id" not-null="true">
-		<type name="smallint" length="0"/>
-	</column>
-	<column name="title" not-null="true">
-		<type name="varchar" length="0"/>
-	</column>
-	<column name="trash" not-null="true" default-value="FALSE">
-		<type name="boolean" length="0"/>
-	</column>
-	<constraint name="foliocost_class_uq" type="uq-constr" table="public.folio_purchase_class">
-		<columns names="title" ref-type="src-columns"/>
-	</constraint>
-	<constraint name="folio_cost_class_pk" type="pk-constr" table="public.folio_purchase_class">
-		<columns names="id" ref-type="src-columns"/>
-	</constraint>
-</table>
-
-<relationship name="folio_has_prchclass" type="rel1n" layers="0,2"
-	 src-col-pattern="purchase_class"
-	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
-	 src-fk-pattern="{st}_fk"
-	 custom-color="#bf93aa"
-	 src-table="public.folio_purchase_class"
-	 dst-table="public.folio"
-	 src-required="false" dst-required="false"
-	upd-action="RESTRICT"
-	del-action="RESTRICT">
-	<label ref-type="name-label">
-		<position x="0" y="0"/>
-	</label>
-</relationship>
-
-<usertype name="folio_total_type" configuration="enumeration">
-	<schema name="public"/>
-	<enumeration label="TAXABLE"/>
-	<enumeration label="TAX"/>
-	<enumeration label="DISCOUNT"/>
-	<enumeration label="DISCOUNT_TAX"/>
-	<enumeration label="EXPORT"/>
-	<enumeration label="EXEMPT"/>
-	<enumeration label="TAX_FREE"/>
-	<enumeration label="ICBP"/>
-	<enumeration label="OTHERS"/>
-</usertype>
-
-<sequence name="sq_folio_total_id" cycle="false" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
-	<schema name="public"/>
-</sequence>
-
-<table name="folio_total" layers="2" collapse-mode="2" max-obj-count="6" z-value="0">
-	<schema name="public"/>
-	<tag name="folios"/>
-	<position x="1760" y="760"/>
-	<column name="id" not-null="true" sequence="public.sq_folio_total_id">
-		<type name="bigint" length="0"/>
-	</column>
-	<column name="total_type" not-null="true">
-		<type name="public.folio_total_type" length="0"/>
-	</column>
-	<column name="amount_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="amount_sc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<constraint name="folio_total_pk" type="pk-constr" table="public.folio_total">
-		<columns names="id" ref-type="src-columns"/>
-	</constraint>
-
-	<customidxs object-type="column">
-		<object name="owner" index="1"/>
-	</customidxs>
-
-	<customidxs object-type="constraint">
-		<object name="folio_fk" index="1"/>
-	</customidxs>
-</table>
-
-<relationship name="folio_has_totals" type="rel1n" layers="2"
-	 src-col-pattern="owner"
-	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
-	 src-fk-pattern="{st}_fk"
-	 custom-color="#9a9283"
-	 src-table="public.folio"
-	 dst-table="public.folio_total"
-	 src-required="true" dst-required="false"
-	upd-action="RESTRICT"
-	del-action="RESTRICT"/>
-
-<constraint name="folio_total_type_uq" type="uq-constr" table="public.folio_total">
-	<columns names="owner,total_type" ref-type="src-columns"/>
-</constraint>
-
-<sequence name="sq_folio_line_id" cycle="false" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
-	<schema name="public"/>
-</sequence>
-
-<table name="folio_line" layers="2" collapse-mode="2" max-obj-count="22" z-value="0">
-	<schema name="public"/>
-	<tag name="folios"/>
-	<position x="1760" y="980"/>
-	<column name="id" not-null="true" sequence="public.sq_folio_line_id">
-		<type name="bigint" length="0"/>
-	</column>
-	<column name="line" not-null="true">
-		<type name="smallint" length="0"/>
-	</column>
-	<column name="taxable_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="tax_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="export_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="discount_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="discount_tax_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="exempt_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="tax_free_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="icbp_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="others_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="payable_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="briefing" not-null="true">
-		<type name="varchar" length="250"/>
-	</column>
-	<column name="dim1">
-		<type name="varchar" length="250"/>
-	</column>
-	<column name="dim2">
-		<type name="varchar" length="250"/>
-	</column>
-	<column name="dim3">
-		<type name="varchar" length="250"/>
-	</column>
-	<column name="dim4">
-		<type name="varchar" length="250"/>
-	</column>
-	<column name="tax_id">
-		<type name="char" length="8"/>
-	</column>
-	<constraint name="folio_line_pk" type="pk-constr" table="public.folio_line">
-		<columns names="id" ref-type="src-columns"/>
-	</constraint>
-
-	<customidxs object-type="column">
-		<object name="owner" index="1"/>
-	</customidxs>
-
-	<customidxs object-type="constraint">
-		<object name="folio_fk" index="1"/>
-	</customidxs>
-</table>
-
-<relationship name="folio_has_detail" type="rel1n" layers="2"
-	 src-col-pattern="owner"
-	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
-	 src-fk-pattern="{st}_fk"
-	 custom-color="#e357ca"
-	 src-table="public.folio"
-	 dst-table="public.folio_line"
-	 src-required="true" dst-required="false"
-	upd-action="RESTRICT"
-	del-action="RESTRICT"/>
-
-<constraint name="folio_line_uq" type="uq-constr" table="public.folio_line">
-	<columns names="owner,line" ref-type="src-columns"/>
-</constraint>
-
-<sequence name="sq_folio_line_template" cycle="false" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
+<sequence name="sq_sale_line_id" cycle="false" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
 	<schema name="public"/>
 </sequence>
 
 <view name="journal_snap" layers="1" collapse-mode="2" max-obj-count="15" z-value="0">
 	<schema name="public"/>
 	<tag name="journal"/>
-	<position x="1500" y="100"/>
+	<position x="1500" y="20"/>
 	<reference table="public.journal" column="id" alias="a"/>
 	<reference table="public.journal" column="tax_period" alias="a"/>
 	<reference table="public.journal" column="correlative" alias="a"/>
@@ -1204,62 +817,452 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	</label>
 </relationship>
 
-<table name="folio_line_tmp" layers="2" collapse-mode="2" max-obj-count="18" z-value="0">
+<table name="sale" layers="0" collapse-mode="2" max-obj-count="26" z-value="0">
 	<schema name="public"/>
-	<tag name="folios"/>
-	<position x="1380" y="1320"/>
-	<column name="id" not-null="true" sequence="public.sq_folio_line_template">
-		<type name="bigint" length="0"/>
+	<tag name="sale"/>
+	<position x="1320" y="720"/>
+	<column name="id" not-null="true">
+		<type name="char" length="36"/>
 	</column>
-	<column name="title" not-null="true">
+	<column name="correlative" not-null="true">
+		<type name="char" length="10"/>
+	</column>
+	<column name="folio_serie" not-null="true">
+		<type name="char" length="4"/>
+	</column>
+	<column name="folio_num" not-null="true">
+		<type name="varchar" length="8"/>
+	</column>
+	<column name="date_doc" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="date_due">
+		<type name="date" length="0"/>
+	</column>
+	<column name="date_tax" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="created_at" not-null="true" default-value="CURRENT_TIMESTAMP">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="remark">
 		<type name="varchar" length="0"/>
-	</column>
-	<column name="tax_id" not-null="true">
-		<type name="char" length="8"/>
-	</column>
-	<column name="briefing" not-null="true">
-		<type name="varchar" length="250"/>
-	</column>
-	<column name="taxable_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="tax_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="export_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="discount_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="discount_tax_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="exempt_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="tax_free_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="icbp_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="others_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
-	</column>
-	<column name="payable_fc" not-null="true" default-value="0.00">
-		<type name="decimal" length="14" precision="2"/>
 	</column>
 	<column name="currency" not-null="true">
 		<type name="public.currenci" length="0"/>
 	</column>
-	<constraint name="folio_line_pk_cp" type="pk-constr" table="public.folio_line_tmp">
+	<column name="xrate" not-null="true">
+		<type name="decimal" length="6" precision="3"/>
+	</column>
+	<column name="payable_fc" not-null="true">
+		<type name="decimal" length="14" precision="2"/>
+	</column>
+	<column name="payable_sc" not-null="true">
+		<type name="decimal" length="14" precision="2"/>
+	</column>
+	<column name="paid_fc" not-null="true">
+		<type name="decimal" length="14" precision="2"/>
+	</column>
+	<column name="unpaid_fc" not-null="true">
+		<type name="decimal" length="14" precision="2"/>
+	</column>
+	<column name="reverted" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="voided" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="modified">
+		<type name="char" length="36"/>
+	</column>
+	<constraint name="sale_pk" type="pk-constr" table="public.sale">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
-	<constraint name="uq_folio_tmp" type="uq-constr" table="public.folio_line_tmp">
+
+	<customidxs object-type="column">
+		<object name="folio_type" index="3"/>
+		<object name="period" index="1"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="tax_period_fk" index="1"/>
+		<object name="tfolio_fk" index="2"/>
+	</customidxs>
+</table>
+
+<relationship name="sale_has_period" type="rel1n" layers="0"
+	 src-col-pattern="period"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#32c561"
+	 src-table="public.tax_period"
+	 dst-table="public.sale"
+	 src-required="true" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT"/>
+
+<relationship name="sale_has_ftype" type="rel1n" layers="0"
+	 src-col-pattern="folio_type"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#7c2ba1"
+	 src-table="public.tfolio"
+	 dst-table="public.sale"
+	 src-required="true" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT"/>
+
+<relationship name="sale_ref_person" type="rel11" layers="0"
+	 src-col-pattern="person"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#6529fa"
+	 src-table="public.person_reference"
+	 dst-table="public.sale"
+	 src-required="true" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT"/>
+
+<table name="sale_scheme" layers="0" collapse-mode="2" max-obj-count="9" z-value="0">
+	<schema name="public"/>
+	<tag name="sale"/>
+	<position x="2300" y="700"/>
+	<column name="id" not-null="true">
+		<type name="char" length="36"/>
+	</column>
+	<column name="title" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="tax_rate">
+		<type name="decimal" length="5" precision="4"/>
+	</column>
+	<column name="tax_fee">
+		<type name="decimal" length="14" precision="2"/>
+	</column>
+	<column name="amount_class" not-null="true">
+		<type name="public.sale_total_class" length="0"/>
+	</column>
+	<column name="tax_class" not-null="true">
+		<type name="public.sale_total_class" length="0"/>
+	</column>
+	<column name="trash" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="factoring_id" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<constraint name="salse_scheme_title_uq" type="uq-constr" table="public.sale_scheme">
 		<columns names="title" ref-type="src-columns"/>
 	</constraint>
+	<constraint name="sale_scheme_pk" type="pk-constr" table="public.sale_scheme">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
 </table>
+
+<table name="m_unit" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="2300" y="1440"/>
+	<column name="id" not-null="true">
+		<type name="char" length="36"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="tax_id" not-null="true">
+		<type name="varchar" length="3"/>
+	</column>
+	<column name="symbol" not-null="true">
+		<type name="varchar" length="6"/>
+	</column>
+	<column name="trash" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<constraint name="m_unit_pk" type="pk-constr" table="public.m_unit">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA[id•name•tax_id•symbol•trash⸣
+aafa9529-1719-4ceb-99e5-47c27f831a1c•BOBINAS•4A•BOB•/false/⸣
+6a343689-2c69-4ffb-b4cd-6811297e9358•BALDE•BJ•BAL•/false/⸣
+952f23e7-f371-46b4-ba43-49a67cd7520e•BARRILES•BLL•BRR•/false/⸣
+c500d902-d26d-419e-afe3-839cd431ded3•BOLSA•BG•BLS•/false/⸣
+e1f41e46-902b-4e53-a0cb-e47552ee5f3e•BOTELLAS•BO•BOT•/false/⸣
+2d97d8da-569c-41c6-b695-8ada098d613d•CAJA•BX•CJA•/false/⸣
+ce78c956-9059-455c-979a-ca00e6054a3b•CARTONES•CT•CTN•/false/⸣
+811f09ad-cd7f-4e29-ad9c-bae1e928a657•CENTIMETRO CUADRADO•CMK•CM2•/false/⸣
+0691c1b3-7014-415a-b5f9-ea14642eb059•CENTIMETRO CUBICO•CMQ•CM3•/false/⸣
+2a8778d4-4c1f-4eb6-8e34-bf9a42a9a705•CENTIMETRO LINEAL•CMT•CM•/false/⸣
+57d62528-7d2c-4f63-accd-cc5194d45f37•CIENTO DE UNIDADES•CEN•CTO•/false/⸣
+d83d8d01-b6a3-4cf8-a317-bcd8d18f6ead•CILINDRO•CY•CIL•/false/⸣
+c1974463-39f2-4783-a438-5c975c6b58dc•CONOS•CJ•CNO•/false/⸣
+4d2f9dad-ee31-4870-9320-83e523c76eb4•DOCENA•DZN•DOC•/false/⸣
+ee68a347-7807-405a-bc30-356fa8ef28ba•DOCENA POR 10**6•DZP•DZP•/false/⸣
+be4532d8-3a47-4b8f-b0a0-a22c524b283d•FARDO•BE•FDO•/false/⸣
+609ecaaf-9113-49f5-aec0-c519ed19aba9•GALON INGLES (4,545956L)•GLI•GLN UK•/false/⸣
+c33dbc4d-cee8-4611-a3a4-3d2d06a06d88•GRAMO•GRM•GR•/false/⸣
+3058cab3-e459-4cc2-af09-31eae5a3a486•GRUESA•GRO•GRU•/false/⸣
+ae61716b-3e61-48f0-8f6f-62b114a020eb•HECTOLITRO•HLT•HLT•/false/⸣
+d423ca3f-c2be-45f3-aac7-f2fe6ad604a1•HOJA•LEF•HJA•/false/⸣
+79076e18-50ff-4d1f-ad0f-da127938b792•JUEGO•SET•JGO•/false/⸣
+808189c0-8ad4-4b03-aaab-5b9ea7a58592•KILOGRAMO•KGM•KG•/false/⸣
+a1b71dc3-8a2c-4096-9847-ef10beb923d8•KILOMETRO•KTM•KM•/false/⸣
+247d86e5-0d3b-41d3-9a5c-491bddade8f4•KILOVATIO HORA•KWH•KWH•/false/⸣
+d2d2fe1f-e32d-4f68-bd34-cd6d9b344613•KIT•KT•KIT•/false/⸣
+1e51c4e5-de19-4157-93fc-5e3a18141592•LATAS•CA•LTA•/false/⸣
+3c87edb2-fdbe-445a-871f-f93ef3c8bacd•LIBRAS•LBR•LBS•/false/⸣
+f73816bd-0163-45e7-8710-80773de4dac5•LITRO•LTR•LTR•/false/⸣
+85899ae1-14d3-44bb-8ea4-b423f51ea6aa•MEGAWATT HORA•MWH•MWH•/false/⸣
+f3e6080b-8b20-4b9e-bdc3-2c80c2747a22•METRO•MTR•MTS•/false/⸣
+9ee7d21c-5cff-4cc9-a72f-28833c8a93c1•METRO CUADRADO•MTK•MT2•/false/⸣
+3bbfd8cd-245c-4dba-b6ae-04dca9783002•METRO CUBICO•MTQ•MT3•/false/⸣
+ed2970b4-4ae0-4e04-82fb-a965854dafea•MILIGRAMOS•MGM•MG•/false/⸣
+b945c776-3414-4a1e-8387-037eeb68b87a•MILILITRO•MLT•ML•/false/⸣
+78ec6cee-4f50-4016-b819-f1ff716620db•MILIMETRO•MMT•MM•/false/⸣
+c0a8abab-328b-41e0-8b71-1289295c6915•MILIMETRO CUADRADO•MMK•MM2•/false/⸣
+a74f9189-92fe-4a73-bf6c-da2bbd588a00•MILIMETRO CUBICO•MMQ•MM3•/false/⸣
+598e4f0d-1898-4fdc-8ee3-4d1af61f7575•MILLARES•MLL•MLL•/false/⸣
+bf4c640f-1e17-4471-9bd7-b5a09bba0815•MILLON DE UNIDADES•UM•UM•/false/⸣
+557c9010-d6f9-473a-99c6-080fbab5c1af•ONZAS•ONZ•OZ•/false/⸣
+bf86c828-37f7-464e-a92b-cbe7ceaa0c8a•PALETAS•PF•PLT•/false/⸣
+b5b30101-4fd1-482e-bb88-3b5ae89c5dda•PAQUETE•PK•PAQ•/false/⸣
+5a0922e2-4235-4a5d-940f-df4ead05f4f6•PAR•PR•PAR•/false/⸣
+d7fa52b3-98e6-43b2-8385-fb4c49a1aa73•PIES•FOT•PIE•/false/⸣
+22a7ac36-d076-4526-8f78-6b4db06bfb86•PIES CUADRADOS•FTK•PIE2•/false/⸣
+db473b0e-e267-471d-b005-b9cc8312c8f9•PIES CUBICOS•FTQ•PIE3•/false/⸣
+230966c1-26d5-4d6b-8caf-7e590f73022e•PIEZAS•C62•PZA•/false/⸣
+a3f2846f-4880-4a79-bf00-799f73c33fcc•PLACAS•PG•PLCA•/false/⸣
+083474c6-1a7d-4e52-a65b-561430edc767•PLIEGO•ST•PLI•/false/⸣
+ae16ad6a-6969-4154-8a73-2de5b00ca9da•PULGADAS•INH•PUL•/false/⸣
+f44d657a-76c3-4d8f-8007-95b434ff4dde•RESMA•RM•RMA•/false/⸣
+0abcf688-32e2-4fc8-a7b8-2aad7b15eb28•TAMBOR•DR•TBR•/false/⸣
+76f62292-ce65-436d-b484-905c3ce170ec•TONELADA CORTA•STN•T CRT•/false/⸣
+c0c27b8a-8113-4d3b-9e89-928bc93f65d8•TONELADA LARGA•LTN•T LRG•/false/⸣
+70688fed-0f23-4dbf-bfcd-d86839c16abe•TONELADAS•TNE•TON•/false/⸣
+54878bb8-cd1b-4aff-b016-f176ef9b1a3a•TUBOS•TU•TBO•/false/⸣
+2ed90e45-cee6-4ee6-80c3-aaf546e32dd7•UNIDAD (BIENES)•NIU•UND•/false/⸣
+9727dcd1-8776-4ee4-8ad3-a6f3c2dd5128•UNIDAD (SERVICIOS)•ZZ•UND•/false/⸣
+6e386baa-b08b-4c46-bb6b-b77475e0d3e0•US GALON (3,7843 L)•GLL•GAL•/false/⸣
+320e8afd-c998-43b7-8833-25c55dff0e52•YARDA•YRD•YRD•/false/⸣
+c6aed091-eea7-4077-bf2e-b041ed215de8•YARDA CUADRADA•YDK•YRD2•/false/]]>
+	</initial-data>
+</table>
+
+<sequence name="sq_product_id" cycle="false" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
+	<schema name="public"/>
+</sequence>
+
+<table name="product" layers="0" collapse-mode="2" max-obj-count="9" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="2340" y="1080"/>
+	<column name="id" not-null="true" sequence="public.sq_product_id">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="description" not-null="true">
+		<type name="varchar" length="250"/>
+	</column>
+	<column name="tax_id" not-null="true">
+		<type name="char" length="8"/>
+	</column>
+	<column name="price_currency" not-null="true">
+		<type name="public.currenci" length="0"/>
+	</column>
+	<column name="price_net_fc" not-null="true">
+		<type name="decimal" length="22" precision="10"/>
+	</column>
+	<column name="trash" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<constraint name="product_pk" type="pk-constr" table="public.product">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="sale_scheme" index="6"/>
+		<object name="unit" index="5"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="m_unit_fk" index="1"/>
+		<object name="sale_scheme_fk" index="2"/>
+	</customidxs>
+</table>
+
+<relationship name="product_has_units" type="rel1n" layers="0"
+	 src-col-pattern="unit"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#53d9ea"
+	 src-table="public.m_unit"
+	 dst-table="public.product"
+	 src-required="true" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT"/>
+
+<relationship name="product_has_salescheme" type="rel1n" layers="0"
+	 src-col-pattern="{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#2d0a4c"
+	 src-table="public.sale_scheme"
+	 dst-table="public.product"
+	 src-required="true" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT"/>
+
+<table name="sale_line" layers="0" collapse-mode="2" max-obj-count="22" z-value="0">
+	<schema name="public"/>
+	<tag name="sale"/>
+	<position x="1780" y="940"/>
+	<column name="id" not-null="true" sequence="public.sq_sale_line_id">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="line" not-null="true">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="unit_price_fc" not-null="true">
+		<type name="decimal" length="20" precision="8"/>
+	</column>
+	<column name="unit_tax_fc" not-null="true">
+		<type name="decimal" length="20" precision="8"/>
+	</column>
+	<column name="unit_payable_fc" not-null="true">
+		<type name="decimal" length="20" precision="8"/>
+	</column>
+	<column name="quantity" not-null="true">
+		<type name="decimal" length="20" precision="8"/>
+	</column>
+	<column name="line_price_fc" not-null="true">
+		<type name="decimal" length="14" precision="2"/>
+	</column>
+	<column name="line_tax_fc" not-null="true">
+		<type name="decimal" length="14" precision="2"/>
+	</column>
+	<column name="line_payable_fc" not-null="true">
+		<type name="decimal" length="14" precision="2"/>
+	</column>
+	<column name="price_class">
+		<type name="public.sale_total_class" length="0"/>
+	</column>
+	<column name="tax_class">
+		<type name="public.sale_total_class" length="0"/>
+	</column>
+	<column name="description" not-null="true">
+		<type name="varchar" length="250"/>
+	</column>
+	<column name="dim1">
+		<type name="varchar" length="250"/>
+	</column>
+	<column name="dim2">
+		<type name="varchar" length="250"/>
+	</column>
+	<column name="dim3">
+		<type name="varchar" length="250"/>
+	</column>
+	<column name="dim4">
+		<type name="varchar" length="250"/>
+	</column>
+	<constraint name="sale_line_pk" type="pk-constr" table="public.sale_line">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="m_unit" index="8"/>
+		<object name="product" index="3"/>
+		<object name="sale" index="1"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="m_unit_fk" index="4"/>
+		<object name="product_fk" index="2"/>
+		<object name="sale_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="sale_has_lines" type="rel1n" layers="0"
+	 src-col-pattern="{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#3dadb0"
+	 src-table="public.sale"
+	 dst-table="public.sale_line"
+	 src-required="true" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT"/>
+
+<constraint name="sale_line_line_uq" type="uq-constr" table="public.sale_line">
+	<columns names="sale,line" ref-type="src-columns"/>
+</constraint>
+
+<relationship name="saleline_has_product" type="rel1n" layers="0"
+	 src-col-pattern="{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#167d44"
+	 src-table="public.product"
+	 dst-table="public.sale_line"
+	 src-required="false" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT"/>
+
+<relationship name="saleline_has_munit" type="rel1n" layers="0"
+	 src-col-pattern="{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#f9c148"
+	 src-table="public.m_unit"
+	 dst-table="public.sale_line"
+	 src-required="true" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT"/>
+
+<table name="sale_total" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<tag name="sale"/>
+	<position x="1320" y="1340"/>
+	<column name="id" not-null="true" sequence="public.sq_sale_total_id">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="type" not-null="true">
+		<type name="public.sale_total_class" length="0"/>
+	</column>
+	<column name="amount_fc" not-null="true">
+		<type name="decimal" length="14" precision="2"/>
+	</column>
+	<column name="amount_sc" not-null="true">
+		<type name="decimal" length="14" precision="2"/>
+	</column>
+	<constraint name="sale_total_pk" type="pk-constr" table="public.sale_total">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<relationship name="sale_has_totals" type="rel1n" layers="0"
+	 src-col-pattern="owner"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#0d1138"
+	 src-table="public.sale"
+	 dst-table="public.sale_total"
+	 src-required="true" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT"/>
+
+<constraint name="sale_total_type_uq" type="uq-constr" table="public.sale_total">
+	<columns names="owner,type" ref-type="src-columns"/>
+</constraint>
+
+<relationship name="sale_has_journal" type="rel11" layers="0"
+	 src-col-pattern="{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#47c279"
+	 src-table="public.journal"
+	 dst-table="public.sale"
+	 src-required="true" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT"/>
 
 <constraint name="journal_reverted_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
 	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.journal" table="public.journal">
@@ -1267,8 +1270,8 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
 
-<constraint name="folio_modified_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
-	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.folio" table="public.folio">
+<constraint name="sale_modified_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.sale" table="public.sale">
 	<columns names="modified" ref-type="src-columns"/>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
@@ -1278,20 +1281,20 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	 dst-table="public.journal" reference-fk="journal_reverted_fk"
 	 src-required="false" dst-required="false">
 	<line>
-		<position x="1027.59" y="379.717"/>
-	<position x="1027.59" y="237"/>
-	<position x="923.06" y="237"/>
+		<position x="1015.59" y="379.717"/>
+	<position x="1015.59" y="249"/>
+	<position x="923.06" y="249"/>
 	</line>
 </relationship>
 
-<relationship name="rel_folio_folio" type="relfk" layers="0"
-	 src-table="public.folio"
-	 dst-table="public.folio" reference-fk="folio_modified_fk"
+<relationship name="sale_mods_sale" type="relfk" layers="0"
+	 src-table="public.sale"
+	 dst-table="public.sale" reference-fk="sale_modified_fk"
 	 src-required="false" dst-required="false">
 	<line>
-		<position x="1607.59" y="878.117"/>
-	<position x="1607.59" y="657"/>
-	<position x="1496.39" y="657"/>
+		<position x="1550.32" y="878.917"/>
+	<position x="1550.32" y="709"/>
+	<position x="1466.21" y="709"/>
 	</line>
 </relationship>
 
