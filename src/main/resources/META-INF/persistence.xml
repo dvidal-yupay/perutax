@@ -28,8 +28,7 @@
         <class>com.yupay.perutax.entities.AccountNature</class>
         <class>com.yupay.perutax.entities.CostGroup</class>
         <class>com.yupay.perutax.entities.SubdiaryRole</class>
-        <class>com.yupay.perutax.entities.FolioObjectType</class>
-        <class>com.yupay.perutax.entities.FolioTotalType</class>
+        <class>com.yupay.perutax.entities.SaleTotalClass</class>
 
         <!--Entities-->
         <class>com.yupay.perutax.entities.Country</class>
@@ -44,20 +43,14 @@
         <class>com.yupay.perutax.entities.Journal</class>
         <class>com.yupay.perutax.entities.JournalDt</class>
         <class>com.yupay.perutax.entities.JournalDtFolio</class>
-        <class>com.yupay.perutax.entities.JournalDtPerson</class>
+        <class>com.yupay.perutax.entities.PersonReference</class>
         <class>com.yupay.perutax.entities.Subdiary</class>
         <class>com.yupay.perutax.entities.JournalSnapshot</class>
-        <class>com.yupay.perutax.entities.Folio</class>
-        <class>com.yupay.perutax.entities.FolioLine</class>
-        <class>com.yupay.perutax.entities.FolioLineTemplate</class>
-        <class>com.yupay.perutax.entities.FolioParty</class>
-        <class>com.yupay.perutax.entities.FolioPurchaseClass</class>
-        <class>com.yupay.perutax.entities.FolioTotal</class>
-
-        <properties>
-            <property name="eclipselink.jdbc.url" value="jdbc:postgresql://localhost:5432/perutaxdb"/>
-            <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
-        </properties>
-
+        <class>com.yupay.perutax.entities.MeasureUnit</class>
+        <class>com.yupay.perutax.entities.Product</class>
+        <class>com.yupay.perutax.entities.Sale</class>
+        <class>com.yupay.perutax.entities.SaleLine</class>
+        <class>com.yupay.perutax.entities.SaleScheme</class>
+        <class>com.yupay.perutax.entities.SaleTotal</class>
     </persistence-unit>
 </persistence>

@@ -19,7 +19,7 @@
 package com.yupay.perutax.forms.inner;
 
 import com.yupay.perutax.dao.PersonRole;
-import com.yupay.perutax.entities.JournalDtPerson;
+import com.yupay.perutax.entities.PersonReference;
 import com.yupay.perutax.forms.Forms;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
@@ -47,7 +47,7 @@ import static com.yupay.perutax.forms.ErrorAlert.easy;
  * <pre>{@code
  * //The user searchs for a person in the table view.
  * T result = runSearch(userInput);
- * //But the result is a Person, while the cell requires a JournalDtPerson
+ * //But the result is a Person, while the cell requires a PersonReference
  * U wrap = wrapper.apply(result);
  * //And now, I can commit:
  * commitEdit(wrap);
@@ -113,17 +113,17 @@ public class SearchableWrapCell<S, T, U> extends TableCell<S, U> {
 
     /**
      * Convenient method to create a cell factory to search for
-     * a Person and wrap results as a JournalDtPerson object.
+     * a Person and wrap results as a PersonReference object.
      *
      * @param roles the roles of persons to allow.
      * @param <S>   type erasure of table view.
      * @return a new (never null) callback.
      */
-    public static <S> @NotNull Callback<TableColumn<S, JournalDtPerson>, TableCell<S, JournalDtPerson>>
+    public static <S> @NotNull Callback<TableColumn<S, PersonReference>, TableCell<S, PersonReference>>
     journalDtPerson(@NotNull PersonRole @NotNull ... roles) {
         return forColumn(SearchableInfo.person(roles),
-                JournalDtPerson::new,
-                JournalDtPerson.formatter());
+                PersonReference::new,
+                PersonReference.formatter());
     }
 
     @Override

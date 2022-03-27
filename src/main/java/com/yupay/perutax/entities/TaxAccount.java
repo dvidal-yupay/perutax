@@ -83,6 +83,40 @@ public class TaxAccount {
             new SimpleBooleanProperty(this, "trash");
 
     /**
+     * The total sale class associated to this account.
+     * When a sale is registered, a journal entry should
+     * be generated. Ie if a Sale entry should contain a
+     * total for taxable:
+     * <table>
+     *     <tr style="border-collapse: collapse">
+     *         <td style="border: 1px solid; border-collapse: collapse">Account</td>
+     *         <td style="border: 1px solid; border-collapse: collapse">Debit</td>
+     *         <td style="border: 1px solid; border-collapse: collapse">Credit</td>
+     *     </tr>
+     *     <tr style="border-collapse: collapse">
+     *         <td style="border: 1px solid; border-collapse: collapse">12xxxx Customers - invoices</td>
+     *         <td style="border: 1px solid; border-collapse: collapse">118.00</td>
+     *         <td style="border: 1px solid; border-collapse: collapse">0.00</td>
+     *     </tr>
+     *     <tr style="border-collapse: collapse;background: yellow">
+     *         <td style="border: 1px solid; border-collapse: collapse">70xxxx Sales - Taxable</td>
+     *         <td style="border: 1px solid; border-collapse: collapse">0.00</td>
+     *         <td style="border: 1px solid; border-collapse: collapse">100.00</td>
+     *     </tr>
+     *     <tr style="border-collapse: collapse">
+     *         <td style="border: 1px solid; border-collapse: collapse">42xxxx Taxes - Due</td>
+     *         <td style="border: 1px solid; border-collapse: collapse">0.00</td>
+     *         <td style="border: 1px solid; border-collapse: collapse">18.00</td>
+     *     </tr>
+     * </table>
+     * Then such 70xxxx Sales - Taxable account should has the saleClass value set
+     * to {@link SaleTotalClass#TAXABLE}. TotalClass and TaxAccount has a one-to-one
+     * relationship, and there's a Unique Constraint.
+     */
+    private final ObjectProperty<SaleTotalClass> saleClass =
+            new SimpleObjectProperty<>(this, "saleClass");
+
+    /**
      * Default empty constructor.
      */
     public TaxAccount() {
@@ -105,6 +139,36 @@ public class TaxAccount {
         setTrash(another.isTrash());
         setUsable(another.isUsable());
 
+    }
+
+    /**
+     * FX Accessor - getter.
+     *
+     * @return value of {@link #saleClass}.get();
+     */
+    @Enumerated(EnumType.STRING)
+    @Column(name = "sale_class")
+    @Basic
+    public final SaleTotalClass getSaleClass() {
+        return saleClass.get();
+    }
+
+    /**
+     * FX Accessor - setter.
+     *
+     * @param saleClass value to assign into {@link #saleClass}.
+     */
+    public final void setSaleClass(SaleTotalClass saleClass) {
+        this.saleClass.set(saleClass);
+    }
+
+    /**
+     * FX Accessor - property.
+     *
+     * @return property {@link #saleClass}.
+     */
+    public final ObjectProperty<SaleTotalClass> saleClassProperty() {
+        return saleClass;
     }
 
     /**

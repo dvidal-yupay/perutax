@@ -96,7 +96,7 @@ public class JournalDt {
     /**
      * Referenced person (if any).
      */
-    private final ObjectProperty<JournalDtPerson> person =
+    private final ObjectProperty<PersonReference> person =
             new SimpleObjectProperty<>(this, "person");
     /**
      * The referenced transaction to where this belongs.
@@ -386,7 +386,7 @@ public class JournalDt {
      */
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "person", referencedColumnName = "id")
-    public JournalDtPerson getPerson() {
+    public PersonReference getPerson() {
         return person.get();
     }
 
@@ -395,7 +395,7 @@ public class JournalDt {
      *
      * @param person value to set on {@link #person}
      */
-    public void setPerson(JournalDtPerson person) {
+    public void setPerson(PersonReference person) {
         this.person.set(person);
     }
 
@@ -513,7 +513,7 @@ public class JournalDt {
      *
      * @return the property {@link  #person}
      */
-    public ObjectProperty<JournalDtPerson> personProperty() {
+    public ObjectProperty<PersonReference> personProperty() {
         return person;
     }
 

@@ -18,67 +18,84 @@
 
 package com.yupay.perutax.entities;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 /**
- * This enumeration represents the distinct
- * types of items to show in the totals
- * footer of a given folio.
+ * This enumeration represents the total amount of
+ * a sale object.
  *
  * @author InfoYupay SACS
  * @version 1.0
  */
-public enum FolioTotalType {
+public enum SaleTotalClass {
     /**
-     * The taxable amount.
+     * Taxable amount.
      */
     TAXABLE("Op. Gravada"),
     /**
-     * The tax amount.
+     * Tax amount.
      */
     TAX("IGV"),
     /**
-     * The discount amount.
+     * Discount - value portion.
      */
     DISCOUNT("Descuento"),
     /**
-     * The tax of the discount amount.
+     * Discount - tax portion.
      */
-    DISCOUNT_TAX("Dscto. - IGV"),
+    DISCOUNT_TAX("Dscto - IGV"),
     /**
-     * Exportation amount.
+     * Exportation value.
      */
     EXPORT("Exportación"),
     /**
-     * Tax exempt amount.
+     * Exepmt (Allowance) amount.
      */
     EXEMPT("Exonerado"),
     /**
-     * Tax free amount.
+     * Free of taxes.
      */
     TAX_FREE("Inafecto"),
     /**
-     * ICBP tax (bag plastics tax).
+     * Plastic bag tax (ICBP)
      */
     ICBP("ICBP"),
     /**
-     * Others.
+     * Other (various) amounts.
      */
     OTHERS("Otros");
     /**
-     * The human-friendly text to use in GUI.
+     * Human firendly caption to show
+     * in the user experience.
      */
-    private final String title;
+    public final String text;
 
     /**
-     * The default constructor.
+     * Default constructor.
      *
-     * @param title a brief title to show to user.
+     * @param text the caption to show in UX screens.
      */
-    FolioTotalType(String title) {
-        this.title = title;
+    SaleTotalClass(String text) {
+        this.text = text;
+    }
+
+    /**
+     * Static factory to get an observable list
+     * of all values. Short-hand for
+     * {@code FXCollections.observableArrayList(SaleTotalClass.values());}
+     *
+     * @return a new observable list, never null.
+     */
+    @Contract(" -> new")
+    public static @NotNull ObservableList<SaleTotalClass> observable() {
+        return FXCollections.observableArrayList(values());
     }
 
     @Override
     public String toString() {
-        return title;
+        return text;
     }
 }

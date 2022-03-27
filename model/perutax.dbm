@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" author="Ingenieria Informatica Yupay SACS" last-position="538,759" last-zoom="1" max-obj-count="26"
+<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" author="Ingenieria Informatica Yupay SACS" last-position="838,714" last-zoom="1" max-obj-count="26"
 	 default-schema="public"
 	 layers="commons,journal"
 	 active-layers="0,1"
@@ -1111,7 +1111,7 @@ c6aed091-eea7-4077-bf2e-b041ed215de8•YARDA CUADRADA•YDK•YRD2•/false/]]>
 	upd-action="RESTRICT"
 	del-action="RESTRICT"/>
 
-<table name="sale_line" layers="0" collapse-mode="2" max-obj-count="22" z-value="0">
+<table name="sale_line" layers="0" collapse-mode="2" max-obj-count="24" z-value="0">
 	<schema name="public"/>
 	<tag name="sale"/>
 	<position x="1780" y="940"/>
@@ -1162,6 +1162,9 @@ c6aed091-eea7-4077-bf2e-b041ed215de8•YARDA CUADRADA•YDK•YRD2•/false/]]>
 	</column>
 	<column name="dim4">
 		<type name="varchar" length="250"/>
+	</column>
+	<column name="tax_rate" not-null="true">
+		<type name="decimal" length="5" precision="4"/>
 	</column>
 	<constraint name="sale_line_pk" type="pk-constr" table="public.sale_line">
 		<columns names="id" ref-type="src-columns"/>
@@ -1263,6 +1266,14 @@ c6aed091-eea7-4077-bf2e-b041ed215de8•YARDA CUADRADA•YDK•YRD2•/false/]]>
 	 src-required="true" dst-required="false"
 	upd-action="RESTRICT"
 	del-action="RESTRICT"/>
+
+<constraint name="sale_correlative_uq" type="uq-constr" table="public.sale">
+	<columns names="period,correlative" ref-type="src-columns"/>
+</constraint>
+
+<constraint name="sale_num_uq" type="uq-constr" table="public.sale">
+	<columns names="folio_type,folio_serie,folio_num" ref-type="src-columns"/>
+</constraint>
 
 <constraint name="journal_reverted_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
 	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.journal" table="public.journal">

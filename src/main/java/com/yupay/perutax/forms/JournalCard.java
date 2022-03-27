@@ -169,7 +169,7 @@ public class JournalCard extends Dialog<Journal> {
      * FXML control injected from journal-card.fxml
      */
     @FXML
-    private TableColumn<JournalDt, JournalDtPerson> colPerson;
+    private TableColumn<JournalDt, PersonReference> colPerson;
 
     /**
      * FXML control injected from journal-card.fxml

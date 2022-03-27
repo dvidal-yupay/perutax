@@ -33,9 +33,8 @@ import java.util.function.Function;
  * @version 1.0
  */
 @Entity
-@Table(name = "journal_dt_person")
-@PrimaryKeyJoinColumn(name = "id")
-public class JournalDtPerson {
+@Table(name = "person_reference", schema = "public")
+public class PersonReference {
     /**
      * The ID identifying the journal DT object.
      */
@@ -61,11 +60,16 @@ public class JournalDtPerson {
      */
     private final ObjectProperty<Person> reference =
             new SimpleObjectProperty<>(this, "reference");
+    /**
+     * The address of the person. (Snapshot)
+     */
+    private final StringProperty address =
+            new SimpleStringProperty(this, "address");
 
     /**
      * Empty constructor for entities.
      */
-    public JournalDtPerson() {
+    public PersonReference() {
     }
 
     /**
@@ -73,11 +77,12 @@ public class JournalDtPerson {
      *
      * @param person the person to asign.
      */
-    public JournalDtPerson(@NotNull Person person) {
+    public PersonReference(@NotNull Person person) {
         setReference(person);
         setFullName(person.getFullName());
         setDoiNum(person.getDoiNum());
         setDoiType(person.getDoiType().getId());
+        setAddress(person.getAddress());
     }
 
     /**
@@ -86,11 +91,40 @@ public class JournalDtPerson {
      * @return the function.
      */
     @Contract("->new")
-    public static @NotNull Function<JournalDtPerson, String> formatter() {
+    public static @NotNull Function<PersonReference, String> formatter() {
         return x -> x == null ? ""
                 : x.getDoiType() + "-" +
                 x.getDoiNum() + "-" +
                 x.getFullName();
+    }
+
+    /**
+     * FX Accessor - getter.
+     *
+     * @return value of {@link #address}.get();
+     */
+    @Basic
+    @Column(name = "address", length = -1)
+    public final String getAddress() {
+        return address.get();
+    }
+
+    /**
+     * FX Accessor - setter.
+     *
+     * @param address value to assign into {@link #address}.
+     */
+    public final void setAddress(String address) {
+        this.address.set(address);
+    }
+
+    /**
+     * FX Accessor - property.
+     *
+     * @return property {@link #address}.
+     */
+    public final StringProperty addressProperty() {
+        return address;
     }
 
     /**
@@ -101,9 +135,9 @@ public class JournalDtPerson {
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
-            generator = "journaldt_person_id")
-    @SequenceGenerator(name = "journaldt_person_id",
-            sequenceName = "sq_journal_dt_person_id",
+            generator = "personref_id")
+    @SequenceGenerator(name = "personref_id",
+            sequenceName = "sq_person_reference_id",
             schema = "public",
             allocationSize = 1)
     public long getId() {
@@ -125,7 +159,7 @@ public class JournalDtPerson {
      * @return value of {@link #doiType}
      */
     @Basic
-    @Column(name = "doi_type", nullable = false, length = 1)
+    @Column(name = "doi_type", nullable = false, length = -1)
     public String getDoiType() {
         return doiType.get();
     }
@@ -165,7 +199,7 @@ public class JournalDtPerson {
      * @return value of {@link #fullName}
      */
     @Basic
-    @Column(name = "full_name", nullable = false)
+    @Column(name = "full_name", nullable = false, length = -1)
     public String getFullName() {
         return fullName.get();
     }
@@ -246,11 +280,12 @@ public class JournalDtPerson {
 
     @Override
     public boolean equals(Object o) {
-        return o instanceof JournalDtPerson that && Objects.equals(getId(), that.getId());
+        return o instanceof PersonReference that && Objects.equals(getId(), that.getId());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getId());
     }
+
 }

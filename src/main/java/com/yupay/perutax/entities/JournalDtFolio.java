@@ -30,7 +30,7 @@ import java.util.Objects;
  * @version 1.0
  */
 @Entity
-@Table(name = "journal_dt_folio")
+@Table(name = "journal_dt_folio", schema = "public")
 @PrimaryKeyJoinColumn(name = "id")
 public class JournalDtFolio {
     /**
