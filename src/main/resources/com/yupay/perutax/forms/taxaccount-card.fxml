@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <!--
   ~  Perutax - Taxation software for Peru.
   ~     Copyright (C) 2021-2022  Ingenieria Informatica Yupay SACS
@@ -22,8 +19,11 @@
   ~     along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <DialogPane fx:id="top" headerText="Información de la Cuenta Contable" maxHeight="-Infinity" maxWidth="-Infinity"
-            minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="400.0"
             xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.yupay.perutax.forms.TaxAccountCard">
     <padding>
@@ -36,6 +36,7 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
             </columnConstraints>
             <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
                 <RowConstraints minHeight="10.0" vgrow="NEVER"/>
                 <RowConstraints minHeight="10.0" vgrow="NEVER"/>
                 <RowConstraints minHeight="10.0" vgrow="NEVER"/>
@@ -71,12 +72,17 @@
             <ComboBox fx:id="cboGrpCost" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
                       prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="5"
                       onKeyReleased="#groupCostKeyReleased"/>
+            <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                   text="Clase de Venta:" GridPane.rowIndex="6"/>
+            <ComboBox fx:id="cboSaleClass" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                      prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="6"
+                      onKeyReleased="#saleClassKeyReleased"/>
             <CheckBox fx:id="chkUsable" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
                       mnemonicParsing="false" prefHeight="32.0" text="Usable" GridPane.columnIndex="1"
-                      GridPane.rowIndex="6"/>
+                      GridPane.rowIndex="7"/>
             <CheckBox fx:id="chkTrash" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
                       mnemonicParsing="false" prefHeight="32.0" text="Basurero" GridPane.columnIndex="1"
-                      GridPane.rowIndex="7"/>
+                      GridPane.rowIndex="8"/>
         </GridPane>
     </content>
     <ButtonType fx:constant="APPLY"/>

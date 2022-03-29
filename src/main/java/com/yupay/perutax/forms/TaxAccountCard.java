@@ -18,10 +18,7 @@
 
 package com.yupay.perutax.forms;
 
-import com.yupay.perutax.entities.AccountNature;
-import com.yupay.perutax.entities.CostGroup;
-import com.yupay.perutax.entities.Currenci;
-import com.yupay.perutax.entities.TaxAccount;
+import com.yupay.perutax.entities.*;
 import com.yupay.perutax.forms.inner.AmountDecimalConverter;
 import com.yupay.perutax.forms.inner.BaseChangeListener;
 import com.yupay.perutax.forms.inner.NumericFormatter;
@@ -91,6 +88,12 @@ public class TaxAccountCard extends Dialog<TaxAccount> {
      * FXML component injected from taxaccount-card.fxml
      */
     @FXML
+    private ComboBox<SaleTotalClass> cboSaleClass;
+
+    /**
+     * FXML component injected from taxaccount-card.fxml
+     */
+    @FXML
     private ComboBox<AccountNature> cboNature;
 
     /**
@@ -151,6 +154,7 @@ public class TaxAccountCard extends Dialog<TaxAccount> {
         cboCurrency.setItems(Currenci.observable());
         cboGrpCost.setItems(CostGroup.observable());
         cboNature.setItems(AccountNature.observable());
+        cboSaleClass.setItems(SaleTotalClass.observable());
         value.addListener(new ValueChanged());
     }
     //</editor-fold>
@@ -167,6 +171,18 @@ public class TaxAccountCard extends Dialog<TaxAccount> {
         if (!event.isConsumed()
                 && event.isControlDown()
                 && event.getCode() == KeyCode.DELETE) cboGrpCost.setValue(null);
+    }
+
+    /**
+     * FXML event handler.
+     *
+     * @param event the event object.
+     */
+    @FXML
+    void saleClassKeyReleased(@NotNull KeyEvent event) {
+        if (!event.isConsumed()
+                && event.isControlDown()
+                && event.getCode() == KeyCode.DELETE) cboSaleClass.setValue(null);
     }
     //</editor-fold>
 
@@ -211,7 +227,7 @@ public class TaxAccountCard extends Dialog<TaxAccount> {
         cboCurrency.setDisable(!creator);
         txtBalance.setEditable(false);
         cboGrpCost.setDisable(!writable);
-        chkUsable.setDisable(!creator);
+        chkUsable.setDisable(!writable);
         chkTrash.setDisable(!writable);
         return this;
     }
@@ -237,6 +253,7 @@ public class TaxAccountCard extends Dialog<TaxAccount> {
             cboGrpCost.valueProperty().bindBidirectional(value.groupCostProperty());
             chkUsable.selectedProperty().bindBidirectional(value.usableProperty());
             chkTrash.selectedProperty().bindBidirectional(value.trashProperty());
+            cboSaleClass.valueProperty().bindBidirectional(value.saleClassProperty());
         }
 
         @Override
@@ -249,12 +266,13 @@ public class TaxAccountCard extends Dialog<TaxAccount> {
             cboGrpCost.valueProperty().unbindBidirectional(value.groupCostProperty());
             chkUsable.selectedProperty().unbindBidirectional(value.usableProperty());
             chkTrash.selectedProperty().unbindBidirectional(value.trashProperty());
+            cboSaleClass.valueProperty().unbindBidirectional(value.saleClassProperty());
         }
 
         @Override
         protected void clear() {
             clearFormatters("", fmtID, fmtName);
-            clearComboBoxes(cboNature, cboCurrency, cboGrpCost);
+            clearComboBoxes(cboNature, cboCurrency, cboGrpCost, cboSaleClass);
             clearCheckBoxes(chkUsable, chkTrash);
             txtBalance.setText("");
         }

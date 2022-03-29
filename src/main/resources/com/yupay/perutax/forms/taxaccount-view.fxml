@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.Scene?>
-<?import javafx.stage.Stage?>
 <!--
   ~  Perutax - Taxation software for Peru.
   ~     Copyright (C) 2021-2022  Ingenieria Informatica Yupay SACS
@@ -23,6 +18,11 @@
   ~     along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Scene?>
+<?import javafx.stage.Stage?>
 <Stage fx:id="top" title="Maestra de Plan Contable" xmlns="http://javafx.com/javafx/17"
        xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yupay.perutax.forms.TaxAccountView">
     <scene>
@@ -131,6 +131,7 @@
                         <TableColumn fx:id="colGrpCost" prefWidth="150.0" text="Grupo Costo"/>
                         <TableColumn fx:id="colUsable" prefWidth="75.0" text="Usable"/>
                         <TableColumn fx:id="colTrash" prefWidth="75.0" text="Basurero"/>
+                        <TableColumn fx:id="colSaleClass" prefWidth="125.0" text="Clase Venta"/>
                     </columns>
                 </TableView>
             </VBox>

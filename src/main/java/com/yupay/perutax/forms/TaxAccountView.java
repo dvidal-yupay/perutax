@@ -18,10 +18,7 @@
 
 package com.yupay.perutax.forms;
 
-import com.yupay.perutax.entities.AccountNature;
-import com.yupay.perutax.entities.CostGroup;
-import com.yupay.perutax.entities.Currenci;
-import com.yupay.perutax.entities.TaxAccount;
+import com.yupay.perutax.entities.*;
 import com.yupay.perutax.entities.functionals.TaxAccountParser;
 import com.yupay.perutax.forms.flows.ImportFileFlow;
 import com.yupay.perutax.forms.flows.InsertOneFlow;
@@ -136,6 +133,12 @@ public class TaxAccountView {
      * FXML control injected from taxaccount-view.fxml
      */
     @FXML
+    private TableColumn<TaxAccount, SaleTotalClass> colSaleClass;
+
+    /**
+     * FXML control injected from taxaccount-view.fxml
+     */
+    @FXML
     private TableView<TaxAccount> tblData;
 
     /**
@@ -166,6 +169,7 @@ public class TaxAccountView {
         amountTableColumns(colBalance);
         objectTableColumn(colCurrency, Objects::toString);
         objectTableColumn(colGrpCost, c -> Objects.toString(c, ""));
+        objectTableColumn(colSaleClass, c -> Objects.toString(c, ""));
         //noinspection DuplicatedCode
         objectTableColumn(colNature, Objects::toString);
         columnValueFactory(colID, TaxAccount::idProperty);
@@ -176,6 +180,7 @@ public class TaxAccountView {
         columnValueFactory(colCurrency, TaxAccount::currencyProperty);
         columnValueFactory(colGrpCost, TaxAccount::groupCostProperty);
         columnValueFactory(colNature, TaxAccount::natureProperty);
+        columnValueFactory(colSaleClass, TaxAccount::saleClassProperty);
 
         setupTableFilter(tblData,
                 data,

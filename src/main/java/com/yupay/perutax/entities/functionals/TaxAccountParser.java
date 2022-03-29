@@ -44,7 +44,7 @@ public class TaxAccountParser implements Function<String, TaxAccount> {
         var parts = str.split("[|;]", -1);
         var r = new TaxAccount();
         r.setId(parts[0]);
-        r.setName(parts[1]);
+        r.setName(parts[1].toUpperCase());
         r.setNature(AccountNature.valueOf(parts[2]));
         r.setCurrency(Currenci.valueOf(parts[3]));
         if (!parts[4].isBlank()) r.setGroupCost(CostGroup.valueOf(parts[4]));
