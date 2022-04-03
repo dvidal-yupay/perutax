@@ -24,6 +24,7 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import org.eclipse.persistence.annotations.UuidGenerator;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
@@ -63,6 +64,25 @@ public class MeasureUnit {
      */
     private final BooleanProperty trash =
             new SimpleBooleanProperty(this, "trash");
+
+    /**
+     * Default empty constructor.
+     */
+    public MeasureUnit() {
+    }
+
+    /**
+     * Constructor to copy another instance.
+     *
+     * @param another the instance to copy.
+     */
+    public MeasureUnit(@NotNull MeasureUnit another) {
+        setId(another.getId());
+        setName(another.getName());
+        setSymbol(another.getSymbol());
+        setTaxId(another.getTaxId());
+        setTrash(another.isTrash());
+    }
 
     /**
      * Public accessor - getter.

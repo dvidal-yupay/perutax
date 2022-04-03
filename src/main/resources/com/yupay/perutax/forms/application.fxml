@@ -38,6 +38,7 @@
                 <MenuItem mnemonicParsing="false" onAction="#masterSubdiary" text="Subdiarios"/>
                 <MenuItem mnemonicParsing="false" onAction="#masterTypeDOIAction" text="Tipos de D.O.I."/>
                 <MenuItem mnemonicParsing="false" onAction="#masterTypeFolio" text="Tipos de Folio"/>
+                <MenuItem mnemonicParsing="false" onAction="#masterMUnitAction" text="Unidades de Medida"/>
                 <SeparatorMenuItem mnemonicParsing="false"/>
                 <MenuItem mnemonicParsing="false" onAction="#masterTaxPeriod" text="Períodos Tributarios"/>
                 <MenuItem mnemonicParsing="false" onAction="#masterCorrelative" text="Vista de Correlativos"/>

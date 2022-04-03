@@ -152,6 +152,16 @@ public class PeruTaxFX {
      * @param event the event object.
      */
     @FXML
+    void masterMUnitAction(@NotNull ActionEvent event) {
+        if (!event.isConsumed()) Forms.munitView().show();
+    }
+
+    /**
+     * FXML event handler.
+     *
+     * @param event the event object.
+     */
+    @FXML
     void masterSubdiary(@NotNull ActionEvent event) {
         if (!event.isConsumed()) Forms.subdiaryView().show();
     }

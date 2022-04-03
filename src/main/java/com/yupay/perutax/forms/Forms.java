@@ -293,4 +293,24 @@ public final class Forms {
         return load("journal-view.fxml", JournalView::new);
     }
 
+    /**
+     * Static factory for a munit-card.fxml form.
+     *
+     * @return the controller class.
+     */
+    @NotNull
+    public static MunitCard munitCard() {
+        return load("munit-card.fxml", MunitCard::new);
+    }
+
+    /**
+     * Static factory for a munit-view.fxml form.
+     *
+     * @return the controller class.
+     */
+    @NotNull
+    public static MunitView munitView() {
+        return load("munit-view.fxml", MunitView::new);
+    }
+
 }

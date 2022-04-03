@@ -165,6 +165,16 @@ public final class DAO {
     }
 
     /**
+     * Factory of entity DAO implementation.
+     *
+     * @return a new DAO for Measurement units.
+     */
+    @Contract("->new")
+    public static @NotNull DAOBase<MeasureUnit, DAOMUnit> mUnit() {
+        return new DAOMUnit();
+    }
+
+    /**
      * Utility method to fetch a DAO implementation for a given tClass.
      *
      * @param tClass the given tClass for required entity.
@@ -199,6 +209,8 @@ public final class DAO {
             return (DAOBase<T, U>) journalSS();
         } else if (tClass == Journal.class) {
             return (DAOBase<T, U>) journal();
+        } else if (tClass == MeasureUnit.class) {
+            return (DAOBase<T, U>) mUnit();
         } else {
             throw new NoSuchElementException("Cannot identify a DAO implementation for " + tClass);
         }
