@@ -24,34 +24,37 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.text.ParseException;
 
-import static com.yupay.perutax.forms.FormUtils.DF_PERU;
+import static com.yupay.perutax.forms.FormUtils.DF_RATE;
+import static java.math.RoundingMode.HALF_UP;
 
 /**
- * String converter to parse/format BigDecimal values in format #,##0.00
+ * String converter implementation to parse and format 0.00% values.
  *
  * @author InfoYupay SACS
  * @version 1.0
  */
-public class AmountDecimalConverter extends StringConverter<BigDecimal> {
-
+public class RateDecimalConverter extends StringConverter<BigDecimal> {
     @Override
     @Contract("null->!null")
-    public @NotNull String toString(@Nullable BigDecimal object) {
+    @NotNull
+    public String toString(@Nullable BigDecimal object) {
         return object == null
                 ? ""
-                : DF_PERU.format(object);
+                : DF_RATE.format(object);
     }
 
     @Override
     @Contract("null->null")
-    public @Nullable BigDecimal fromString(String string) {
+    @Nullable
+    public BigDecimal fromString(@Nullable String string) {
         if (string == null || string.isBlank()) return null;
         try {
-            return DF_PERU.parse(string.strip()) instanceof BigDecimal bd
-                    ? bd : BigDecimal.ZERO.setScale(2, RoundingMode.UNNECESSARY);
+            var txt = string.strip();
+            if (!txt.endsWith("%")) txt += "%";
+            return DF_RATE.parse(txt) instanceof BigDecimal bd
+                    ? bd : BigDecimal.ZERO.setScale(4, HALF_UP);
         } catch (ParseException e) {
             return null;
         }

@@ -24,33 +24,34 @@
     <persistence-unit name="PUperutax">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <!--Enums-->
-        <class>com.yupay.perutax.entities.Currenci</class>
         <class>com.yupay.perutax.entities.AccountNature</class>
         <class>com.yupay.perutax.entities.CostGroup</class>
-        <class>com.yupay.perutax.entities.SubdiaryRole</class>
+        <class>com.yupay.perutax.entities.Currenci</class>
         <class>com.yupay.perutax.entities.SaleTotalClass</class>
+        <class>com.yupay.perutax.entities.SubdiaryRole</class>
 
         <!--Entities-->
-        <class>com.yupay.perutax.entities.Country</class>
-        <class>com.yupay.perutax.entities.Person</class>
-        <class>com.yupay.perutax.entities.TypeDOI</class>
         <class>com.yupay.perutax.entities.Correlative</class>
         <class>com.yupay.perutax.entities.CostCenter</class>
-        <class>com.yupay.perutax.entities.TaxAccount</class>
-        <class>com.yupay.perutax.entities.TaxPeriod</class>
-        <class>com.yupay.perutax.entities.XRate</class>
-        <class>com.yupay.perutax.entities.TypeFolio</class>
+        <class>com.yupay.perutax.entities.Country</class>
+        <class>com.yupay.perutax.entities.FolioFile</class>
         <class>com.yupay.perutax.entities.Journal</class>
         <class>com.yupay.perutax.entities.JournalDt</class>
         <class>com.yupay.perutax.entities.JournalDtFolio</class>
-        <class>com.yupay.perutax.entities.PersonReference</class>
-        <class>com.yupay.perutax.entities.Subdiary</class>
         <class>com.yupay.perutax.entities.JournalSnapshot</class>
         <class>com.yupay.perutax.entities.MeasureUnit</class>
+        <class>com.yupay.perutax.entities.Person</class>
+        <class>com.yupay.perutax.entities.PersonReference</class>
         <class>com.yupay.perutax.entities.Product</class>
         <class>com.yupay.perutax.entities.Sale</class>
         <class>com.yupay.perutax.entities.SaleLine</class>
         <class>com.yupay.perutax.entities.SaleScheme</class>
         <class>com.yupay.perutax.entities.SaleTotal</class>
+        <class>com.yupay.perutax.entities.Subdiary</class>
+        <class>com.yupay.perutax.entities.TaxAccount</class>
+        <class>com.yupay.perutax.entities.TaxPeriod</class>
+        <class>com.yupay.perutax.entities.TypeDOI</class>
+        <class>com.yupay.perutax.entities.TypeFolio</class>
+        <class>com.yupay.perutax.entities.XRate</class>
     </persistence-unit>
 </persistence>

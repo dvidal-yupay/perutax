@@ -150,6 +150,11 @@ public class Sale {
     private final ListProperty<SaleTotal> totals =
             new SimpleListProperty<>(this, "totals", FXCollections.observableArrayList());
     /**
+     * Physical (document) representation and/or source.
+     */
+    private final ObjectProperty<FolioFile> file =
+            new SimpleObjectProperty<>(this, "file");
+    /**
      * A sale is reverted when the folio has been granted to the user,
      * but later the sale was reverted (returns, pricing errors, etc).
      * Every reverted sale should be referenced by another sale in the
@@ -164,6 +169,35 @@ public class Sale {
      */
     private BooleanProperty voided =
             new SimpleBooleanProperty(this, "voided");
+
+    /**
+     * FX Accessor - getter.
+     *
+     * @return value of {@link #file}.get();
+     */
+    @JoinColumn(name = "folio_file")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    public final FolioFile getFile() {
+        return file.get();
+    }
+
+    /**
+     * FX Accessor - setter.
+     *
+     * @param file value to assign into {@link #file}.
+     */
+    public final void setFile(FolioFile file) {
+        this.file.set(file);
+    }
+
+    /**
+     * FX Accessor - property.
+     *
+     * @return property {@link #file}.
+     */
+    public final ObjectProperty<FolioFile> fileProperty() {
+        return file;
+    }
 
     /**
      * Public accessor - getter.

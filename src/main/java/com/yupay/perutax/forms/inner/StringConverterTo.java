@@ -19,7 +19,10 @@
 package com.yupay.perutax.forms.inner;
 
 import javafx.util.StringConverter;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
 import java.util.function.Function;
 
 /**
@@ -30,6 +33,18 @@ import java.util.function.Function;
  * @version 1.0
  */
 public class StringConverterTo<T> extends StringConverter<T> {
+    /**
+     * Creates a new instance with the default mapping function
+     * that is a lambda Objects::toString
+     *
+     * @param <T> type erasure of converted object.
+     * @return a new converter.
+     */
+    @Contract(" -> new")
+    public static <T> @NotNull StringConverterTo<T> newDefault() {
+        return new StringConverterTo<>(Objects::toString);
+    }
+
     /**
      * The string function to map a T into String.
      * The value passed to the function is never null.

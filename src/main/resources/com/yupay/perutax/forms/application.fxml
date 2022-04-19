@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.Scene?>
 <!--
   ~  Perutax - Taxation software for Peru.
   ~     Copyright (C) 2021-2022  Ingenieria Informatica Yupay SACS
@@ -21,6 +18,9 @@
   ~     along with this program.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Scene?>
 <Scene fx:id="top" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
        fx:controller="com.yupay.perutax.forms.PeruTaxFX">
     <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
@@ -45,6 +45,9 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Contabilidad">
                 <MenuItem mnemonicParsing="false" onAction="#accountJournal" text="Libro Diario"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Ventas">
+                <MenuItem mnemonicParsing="false" onAction="#saleScheme" text="Esquemas"/>
             </Menu>
             <Menu mnemonicParsing="false" text="Ayuda">
                 <MenuItem mnemonicParsing="false" text="Acerca de..."/>

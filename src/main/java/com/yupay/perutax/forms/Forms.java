@@ -313,4 +313,24 @@ public final class Forms {
         return load("munit-view.fxml", MunitView::new);
     }
 
+    /**
+     * Static factory for a sale_scheme-view.fxml form.
+     *
+     * @return the controller class.
+     */
+    @NotNull
+    public static SaleSchemeView saleSchemeView() {
+        return load("sale_scheme-view.fxml", SaleSchemeView::new);
+    }
+
+    /**
+     * Static factory for a sale_scheme-card.fxml form.
+     *
+     * @return the controller class.
+     */
+    @NotNull
+    public static SaleSchemeCard saleSchemeCard() {
+        return load("sale_scheme-card.fxml", SaleSchemeCard::new);
+    }
+
 }

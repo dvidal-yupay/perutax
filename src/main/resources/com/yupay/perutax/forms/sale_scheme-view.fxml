@@ -5,16 +5,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.Scene?>
 <?import javafx.stage.Stage?>
-<Stage xmlns:fx="http://javafx.com/fxml/1" fx:id="top" title="Maestra de Unidades de Medida"
-       xmlns="http://javafx.com/javafx/17" fx:controller="com.yupay.perutax.forms.MunitView">
+<Stage xmlns:fx="http://javafx.com/fxml/1" fx:id="top" title="Maestra de Esquemas de Venta"
+       xmlns="http://javafx.com/javafx/18" fx:controller="com.yupay.perutax.forms.SaleSchemeView">
     <scene>
         <Scene>
             <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
-                  minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+                  minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0">
                 <ToolBar>
                     <Button contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity"
-                            minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                            onAction="#reloadAction" prefHeight="32.0" prefWidth="32.0">
+                            minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#reloadAction"
+                            prefHeight="32.0" prefWidth="32.0">
                         <tooltip>
                             <Tooltip maxWidth="300.0" text="Recargar desde la base de datos." wrapText="true">
                                 <graphic>
@@ -26,17 +26,16 @@
                             </Tooltip>
                         </tooltip>
                         <graphic>
-                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true"
-                                       preserveRatio="true">
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                 <Image url="@png/icons8-sync-24.png"/>
                             </ImageView>
                         </graphic>
                     </Button>
                     <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity"
-                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                            mnemonicParsing="false" onAction="#createAction" prefHeight="32.0" prefWidth="32.0">
+                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                            onAction="#createAction" prefHeight="32.0" prefWidth="32.0">
                         <tooltip>
-                            <Tooltip maxWidth="300.0" text="Crear nueva unidad de medida." wrapText="true">
+                            <Tooltip maxWidth="300.0" text="Crear nuevo esquema de venta." wrapText="true">
                                 <graphic>
                                     <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true"
                                                preserveRatio="true">
@@ -46,18 +45,16 @@
                             </Tooltip>
                         </tooltip>
                         <graphic>
-                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true"
-                                       preserveRatio="true">
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                 <Image url="@png/icons8-add-row-24.png"/>
                             </ImageView>
                         </graphic>
                     </Button>
                     <Button contentDisplay="GRAPHIC_ONLY" layoutX="46.0" layoutY="10.0" maxHeight="-Infinity"
-                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                            mnemonicParsing="false" onAction="#editAction" prefHeight="32.0" prefWidth="32.0">
+                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                            onAction="#editAction" prefHeight="32.0" prefWidth="32.0">
                         <tooltip>
-                            <Tooltip maxWidth="300.0" text="Editar unidad de medida seleccionada."
-                                     wrapText="true">
+                            <Tooltip maxWidth="300.0" text="Editar esquema de venta seleccionado." wrapText="true">
                                 <graphic>
                                     <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true"
                                                preserveRatio="true">
@@ -67,26 +64,35 @@
                             </Tooltip>
                         </tooltip>
                         <graphic>
-                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true"
-                                       preserveRatio="true">
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                 <Image url="@png/icons8-edit-row-24.png"/>
                             </ImageView>
                         </graphic>
                     </Button>
                     <Separator orientation="VERTICAL"/>
-                    <CheckBox fx:id="chkFilter" maxHeight="-Infinity" minHeight="-Infinity"
-                              mnemonicParsing="false" prefHeight="32.0" text="Filtrar:"/>
-                    <TextField fx:id="txtFilter" maxHeight="-Infinity" minHeight="-Infinity"
-                               prefColumnCount="15" prefHeight="32.0" promptText="¿Qué quieres encontrar?"/>
+                    <CheckBox fx:id="chkFilter" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false"
+                              prefHeight="32.0" text="Filtrar:"/>
+                    <TextField fx:id="txtFilter" maxHeight="-Infinity" minHeight="-Infinity" prefColumnCount="15"
+                               prefHeight="32.0" promptText="¿Qué quieres encontrar?"/>
                 </ToolBar>
-                <TableView fx:id="tblData" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS"
-                           onMouseClicked="#tableClicked">
+                <TableView fx:id="tblData" onMouseClicked="#tableClicked" tableMenuButtonVisible="true"
+                           VBox.vgrow="ALWAYS">
                     <columns>
-                        <TableColumn fx:id="colID" editable="false" prefWidth="250.0" text="Object ID"
-                                     visible="false"/>
-                        <TableColumn fx:id="colTaxID" editable="false" prefWidth="150.0" text="Código"/>
-                        <TableColumn fx:id="colDescription" editable="false" prefWidth="200.0" text="Nombre"/>
-                        <TableColumn fx:id="colSymbol" editable="false" prefWidth="150.0" text="Símbolo"/>
+                        <TableColumn fx:id="colID" editable="false" prefWidth="250.0" text="Object ID" visible="false"/>
+                        <TableColumn fx:id="colTitle" editable="false" prefWidth="150.0" text="Título"/>
+                        <TableColumn prefWidth="75.0" text="Tributo">
+                            <columns>
+                                <TableColumn fx:id="colRate" editable="false" prefWidth="100.0" text="Porcentaje"/>
+                                <TableColumn fx:id="colFee" editable="false" prefWidth="100.0" text="Tarifa"/>
+                            </columns>
+                        </TableColumn>
+                        <TableColumn prefWidth="75.0" text="Clase Total">
+                            <columns>
+                                <TableColumn fx:id="colClassBase" editable="false" prefWidth="100.0" text="Base"/>
+                                <TableColumn fx:id="colClassTax" editable="false" prefWidth="100.0" text="Impuesto"/>
+                            </columns>
+                        </TableColumn>
+                        <TableColumn fx:id="colFactID" editable="false" prefWidth="100.0" text="e-Factura"/>
                         <TableColumn fx:id="colTrash" editable="false" prefWidth="75.0" text="Basurero"/>
                     </columns>
                 </TableView>

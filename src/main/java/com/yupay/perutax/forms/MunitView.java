@@ -12,6 +12,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 
@@ -114,6 +115,8 @@ public class MunitView {
         setupTableFilter(tblData, data, new TextFilter(),
                 txtFilter.textProperty(),
                 chkFilter.selectedProperty());
+
+
     }
 
     /**
@@ -141,13 +144,7 @@ public class MunitView {
     @FXML
     void editAction(@NotNull ActionEvent event) {
         if (!event.isConsumed()) {
-            new EditSelectionTrigger<MeasureUnit>()
-                    .withCloner(MeasureUnit::new)
-                    .withErrorText("Ha ocurrido un error al actualizar la unidad de medida.")
-                    .withOnSuccess(FormUtils.upsertList(data))
-                    .withUserInput(i -> Forms.munitCard().editor(i).showAndWait())
-                    .withView(tblData)
-                    .run();
+            editSelected();
             event.consume();
         }
     }
@@ -166,6 +163,17 @@ public class MunitView {
     }
 
     /**
+     * FXML Event handler.
+     *
+     * @param event the event object.
+     */
+    @FXML
+    void tableClicked(@NotNull MouseEvent event) {
+        if (!event.isConsumed()
+                && event.getClickCount() > 1) editSelected();
+    }
+
+    /**
      * Loads from the database into the TableView.
      */
     private void loadData() {
@@ -174,6 +182,19 @@ public class MunitView {
                 .forEach(data::add)
                 .onError(ErrorAlert.easy("Ocurrió un error al cargar las unidades de medida."))
                 .execute();
+    }
+
+    /**
+     * Delegated method to process the edit selected item command.
+     */
+    private void editSelected() {
+        new EditSelectionTrigger<MeasureUnit>()
+                .withCloner(MeasureUnit::new)
+                .withErrorText("Ha ocurrido un error al actualizar la unidad de medida.")
+                .withOnSuccess(FormUtils.upsertList(data))
+                .withUserInput(i -> Forms.munitCard().editor(i).showAndWait())
+                .withView(tblData)
+                .run();
     }
 
     /**

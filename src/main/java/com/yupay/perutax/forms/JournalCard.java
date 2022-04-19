@@ -72,19 +72,19 @@ public class JournalCard extends Dialog<Journal> {
     /**
      * The formatter for total amount text field. - debit (FC)
      */
-    fmtDebitFC = AmountDecimalConverter.formatter(),
+    fmtDebitFC = new AmountDecimalFormatter(),
     /**
      * The formatter for total amount text field. - credit (FC)
      */
-    fmtCreditFC = AmountDecimalConverter.formatter(),
+    fmtCreditFC = new AmountDecimalFormatter(),
     /**
      * The formatter for total amount text field. - credit (SC)
      */
-    fmtCreditSC = AmountDecimalConverter.formatter(),
+    fmtCreditSC = new AmountDecimalFormatter(),
     /**
      * The formatter for total amount text field. - debit (SC)
      */
-    fmtDebitSC = AmountDecimalConverter.formatter();
+    fmtDebitSC = new AmountDecimalFormatter();
     /**
      * Flag to check if the {@link #value} is adjusting when some
      * events or change listeners are triggered.

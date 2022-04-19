@@ -21,6 +21,7 @@ package com.yupay.perutax.entities;
 import jakarta.persistence.*;
 import javafx.beans.property.*;
 import org.eclipse.persistence.annotations.UuidGenerator;
+import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -81,6 +82,29 @@ public class SaleScheme {
      */
     private final StringProperty factoringId =
             new SimpleStringProperty(this, "factoringId");
+
+    /**
+     * Default constructor (JPA use).
+     */
+    public SaleScheme() {
+    }
+
+    /**
+     * Copy constructor that takes all
+     * fields values from another instance.
+     *
+     * @param another the another (source) instance.
+     */
+    public SaleScheme(@NotNull SaleScheme another) {
+        setAmountClass(another.getAmountClass());
+        setFactoringId(another.getFactoringId());
+        setId(another.getId());
+        setTaxClass(another.getTaxClass());
+        setTaxFee(another.getTaxFee());
+        setTaxRate(another.getTaxRate());
+        setTitle(another.getTitle());
+        setTrash(another.isTrash());
+    }
 
     /**
      * Public accessor - getter.

@@ -20,10 +20,10 @@ package com.yupay.perutax.forms;
 
 import com.yupay.perutax.entities.*;
 import com.yupay.perutax.entities.functionals.TaxAccountParser;
+import com.yupay.perutax.forms.flows.EditSelectionTrigger;
 import com.yupay.perutax.forms.flows.ImportFileFlow;
 import com.yupay.perutax.forms.flows.InsertOneFlow;
 import com.yupay.perutax.forms.flows.SelectAllFlow;
-import com.yupay.perutax.forms.flows.UpdateOneFlow;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -309,25 +309,16 @@ public class TaxAccountView {
      * Edits the selected item in a TaxAccount card form.
      */
     private void editSelected() {
-        var selected = tblData.getSelectionModel().getSelectedItem();
-        if (selected == null) {
-            FluentAlert.err()
-                    .withTitle("Error")
-                    .withHeader("Necesitas seleccionar un elemento.")
-                    .withContent("Para poder editar un elemento, primero debes seleccionarlo " +
-                            "en la tabla de la vista maestra.")
-                    .defaultButtons()
-                    .show();
-        } else {
-            Forms.taxAccountCard()
-                    .withMode(FormMode.EDITOR)
-                    .withValue(new TaxAccount(selected))
-                    .showAndWait()
-                    .ifPresent(new UpdateOneFlow<TaxAccount>()
-                            .withOnSuccess(i -> upsertList(i, data))
-                            .withOnFail(easy("No se pudo actualizar la cuenta contable."))
-                            .asConsumer());
-        }
+        new EditSelectionTrigger<TaxAccount>()
+                .withCloner(TaxAccount::new)
+                .withUserInput(x -> Forms.taxAccountCard()
+                        .withMode(FormMode.EDITOR)
+                        .withValue(x)
+                        .showAndWait())
+                .withView(tblData)
+                .withErrorText("Ocurrió un error al actualizar cuenta contable.")
+                .withOnSuccess(upsertList(data))
+                .run();
     }
 
     /**

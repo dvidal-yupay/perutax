@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<DialogPane xmlns:fx="http://javafx.com/fxml/1" fx:id="top" prefHeight="450.0" prefWidth="450.0"
+            xmlns="http://javafx.com/javafx/18" fx:controller="com.yupay.perutax.forms.SaleSchemeCard">
+    <content>
+        <GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                  prefHeight="405.0" prefWidth="450.0" vgap="5.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="200.0"/>
+                <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="200.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+            </rowConstraints>
+            <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                  spacing="5.0" GridPane.columnSpan="2147483647">
+                <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                       text="Object ID:"/>
+                <Hyperlink fx:id="lnkID" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                           onMouseClicked="#lnkidAction" prefHeight="32.0" text="b942bb4b-69f6-4355-b7f0-5f5c80224617"/>
+            </HBox>
+            <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                   text="Título:" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtTitle" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                       prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                   prefHeight="32.0" text="Tributo" GridPane.columnSpan="2" GridPane.rowIndex="2"/>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                   prefHeight="32.0" text="Porcentaje" GridPane.rowIndex="3"/>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                   prefHeight="32.0" text="Tasa Fija" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            <TextField fx:id="txtRate" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                       prefHeight="32.0" GridPane.rowIndex="4"/>
+            <TextField fx:id="txtFee" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                       prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                   prefHeight="32.0" text="Clase de Totales" GridPane.columnSpan="2" GridPane.rowIndex="5"/>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                   prefHeight="32.0" text="Base Imponible" GridPane.rowIndex="6"/>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                   prefHeight="32.0" text="Tributo" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+            <ComboBox fx:id="cboClassBase" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                      prefHeight="32.0" GridPane.rowIndex="7"/>
+            <ComboBox fx:id="cboClassTax" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                      prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+            <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="32.0"
+                   text="e-Factura:" GridPane.rowIndex="8"/>
+            <TextField fx:id="txtFactID" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                       prefHeight="32.0" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+            <CheckBox fx:id="chkTrash" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                      mnemonicParsing="false" prefHeight="32.0" text="Basurero" GridPane.columnIndex="1"
+                      GridPane.rowIndex="9"/>
+        </GridPane>
+    </content>
+    <ButtonType fx:constant="APPLY"/>
+    <ButtonType fx:constant="CANCEL"/>
+</DialogPane>

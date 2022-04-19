@@ -90,7 +90,12 @@ public final class FormUtils {
      * Decimal format to parse/format big decimals using
      * {@link #DFS_PERU} and pattern #,##0.00
      */
-    public static final DecimalFormat DF_PERU = new DecimalFormat("#,##0.00;###0.00", DFS_PERU);
+    public static final DecimalFormat DF_PERU = new DecimalFormat("#,##0.00", DFS_PERU);
+    /**
+     * Decimal format to parse/format big decimals using
+     * {@link #DFS_PERU} and pattern 0.00%
+     */
+    public static final DecimalFormat DF_RATE = new DecimalFormat("0.00%", DFS_PERU);
     /**
      * DateTime formatter that only shows a date: dd/MM/uuuu
      */
@@ -105,6 +110,7 @@ public final class FormUtils {
     //Setup some formatters.
     static {
         DF_PERU.setParseBigDecimal(true);
+        DF_RATE.setParseBigDecimal(true);
     }
 
     /**
@@ -355,6 +361,30 @@ public final class FormUtils {
             int scale, @NotNull TableColumn<S, BigDecimal> column) {
         column.setCellFactory(TextFieldTableCell.forTableColumn(
                 new FixedDecimalConverter(scale)));
+    }
+
+    /**
+     * Utility method to create and set a text field table cell factory
+     * for a BigDcimal TableColumn using a converter to show in format 0.00%
+     *
+     * @param column the table column.
+     * @param <S>    table view type erasure.
+     */
+    static <S> void percentTableColumns(@NotNull TableColumn<S, BigDecimal> column) {
+        column.setCellFactory(TextFieldTableCell.forTableColumn(
+                new RateDecimalConverter()));
+    }
+
+    /**
+     * Utility method to create and set a text field table cell factory
+     * for many BigDcimal TableColumns using a converter to show in format 0.00%
+     *
+     * @param columns the table columns.
+     * @param <S>     table view type erasure.
+     */
+    @SafeVarargs
+    static <S> void percentTableColumns(@NotNull TableColumn<S, BigDecimal> @NotNull ... columns) {
+        Stream.of(columns).forEach(FormUtils::percentTableColumns);
     }
 
     /**

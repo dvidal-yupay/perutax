@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" author="Ingenieria Informatica Yupay SACS" last-position="838,714" last-zoom="1" max-obj-count="26"
+<dbmodel pgmodeler-ver="1.0.0-alpha" use-changelog="false" author="Ingenieria Informatica Yupay SACS" last-position="0,0" last-zoom="0.9" max-obj-count="27"
 	 default-schema="public"
 	 layers="commons,journal"
 	 active-layers="0,1"
@@ -107,7 +107,7 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 <table name="person" layers="0,1" collapse-mode="2" max-obj-count="15" z-value="0">
 	<schema name="public"/>
 	<tag name="commons"/>
-	<position x="100" y="1160"/>
+	<position x="100" y="1180"/>
 	<column name="id" not-null="true">
 		<type name="char" length="36"/>
 	</column>
@@ -817,7 +817,7 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	</label>
 </relationship>
 
-<table name="sale" layers="0" collapse-mode="2" max-obj-count="26" z-value="0">
+<table name="sale" layers="0" collapse-mode="1" max-obj-count="27" z-value="0">
 	<schema name="public"/>
 	<tag name="sale"/>
 	<position x="1320" y="720"/>
@@ -1223,7 +1223,7 @@ c6aed091-eea7-4077-bf2e-b041ed215de8•YARDA CUADRADA•YDK•YRD2•/false/]]>
 <table name="sale_total" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
 	<schema name="public"/>
 	<tag name="sale"/>
-	<position x="1320" y="1340"/>
+	<position x="1340" y="1520"/>
 	<column name="id" not-null="true" sequence="public.sq_sale_total_id">
 		<type name="bigint" length="0"/>
 	</column>
@@ -1275,6 +1275,38 @@ c6aed091-eea7-4077-bf2e-b041ed215de8•YARDA CUADRADA•YDK•YRD2•/false/]]>
 	<columns names="folio_type,folio_serie,folio_num" ref-type="src-columns"/>
 </constraint>
 
+<table name="folio_file" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="1880" y="740"/>
+	<column name="id" not-null="true">
+		<type name="char" length="36"/>
+	</column>
+	<column name="pdf" not-null="true">
+		<type name="bytea" length="0"/>
+	</column>
+	<column name="xml">
+		<type name="text" length="0"/>
+	</column>
+	<column name="cdr">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="folio_file_pk" type="pk-constr" table="public.folio_file">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<relationship name="sale_has_file" type="rel11" layers="0"
+	 src-col-pattern="folio_file"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#7d11be"
+	 src-table="public.folio_file"
+	 dst-table="public.sale"
+	 src-required="false" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT"/>
+
 <constraint name="journal_reverted_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
 	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.journal" table="public.journal">
 	<columns names="reverted_by" ref-type="src-columns"/>
@@ -1292,9 +1324,9 @@ c6aed091-eea7-4077-bf2e-b041ed215de8•YARDA CUADRADA•YDK•YRD2•/false/]]>
 	 dst-table="public.journal" reference-fk="journal_reverted_fk"
 	 src-required="false" dst-required="false">
 	<line>
-		<position x="1015.59" y="379.717"/>
-	<position x="1015.59" y="249"/>
-	<position x="923.06" y="249"/>
+		<position x="1083.46" y="403.175"/>
+	<position x="1083.46" y="227"/>
+	<position x="953.638" y="227"/>
 	</line>
 </relationship>
 
@@ -1303,9 +1335,9 @@ c6aed091-eea7-4077-bf2e-b041ed215de8•YARDA CUADRADA•YDK•YRD2•/false/]]>
 	 dst-table="public.sale" reference-fk="sale_modified_fk"
 	 src-required="false" dst-required="false">
 	<line>
-		<position x="1550.32" y="878.917"/>
-	<position x="1550.32" y="709"/>
-	<position x="1466.21" y="709"/>
+		<position x="1615.06" y="918.241"/>
+	<position x="1615.06" y="687"/>
+	<position x="1494.7" y="687"/>
 	</line>
 </relationship>
 

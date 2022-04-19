@@ -175,6 +175,19 @@ public class PeruTaxFX {
     void accountJournal(@NotNull ActionEvent event) {
         if (!event.isConsumed()) Forms.journalView().show();
     }
+
+    /**
+     * FXML event handler.
+     *
+     * @param event the event object.
+     */
+    @FXML
+    void saleScheme(@NotNull ActionEvent event) {
+        if (!event.isConsumed()) {
+            Forms.saleSchemeView().show();
+            event.consume();
+        }
+    }
     //</editor-fold>
 
     //<editor-fold desc="Public API.">
