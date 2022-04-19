@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'application'
-    id 'org.openjfx.javafxplugin' version '0.0.10'
+    id 'org.openjfx.javafxplugin' version '0.0.12'
 }
 
 group 'com.yupay'
@@ -15,7 +15,7 @@ sourceCompatibility = '17'
 targetCompatibility = '17'
 
 javafx {
-    version = '17.0.0.1'
+    version = '18'
     modules = ['javafx.fxml', 'javafx.media', 'javafx.web']
 }
 
@@ -35,7 +35,7 @@ dependencies {
     //noinspection GradlePackageUpdate
     implementation 'org.eclipse.persistence:eclipselink:3.0.1'
     // https://mvnrepository.com/artifact/io.projectreactor/reactor-core
-    implementation 'io.projectreactor:reactor-core:3.4.14'
+    implementation 'io.projectreactor:reactor-core:3.4.16'
     // https://mvnrepository.com/artifact/com.github.shadskii/reactorfx
     implementation 'com.github.shadskii:reactorfx:2.0.0'
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
@@ -43,13 +43,13 @@ dependencies {
 
 
     //IntelliJ Annotations tools.
-    implementation 'org.jetbrains:annotations:22.0.0'
+    implementation 'org.jetbrains:annotations:23.0.0'
 
     //Testing framework
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
     // https://mvnrepository.com/artifact/io.projectreactor/reactor-test
-    testImplementation 'io.projectreactor:reactor-test:3.4.14'
+    testImplementation 'io.projectreactor:reactor-test:3.4.16'
 }
 
 test {

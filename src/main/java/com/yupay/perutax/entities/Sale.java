@@ -160,15 +160,50 @@ public class Sale {
      * Every reverted sale should be referenced by another sale in the
      * modified field.
      */
-    private BooleanProperty reverted =
+    private final BooleanProperty reverted =
             new SimpleBooleanProperty(this, "reverted");
     /**
      * A voided sale is meant to be ignored. It's a state reserved
      * for special ocasions (ie: the folio paper got broken while printing,
      * the electronic folio was corrupted before sending to validation, etc).
      */
-    private BooleanProperty voided =
+    private final BooleanProperty voided =
             new SimpleBooleanProperty(this, "voided");
+
+    /**
+     * TODO: document spotInfo
+     */
+    private final ObjectProperty<SPOTInfo> spotInfo =
+            new SimpleObjectProperty<>(this, "spotInfo");
+
+    /**
+     * FX Accessor - getter.
+     *
+     * @return value of {@link #spotInfo}.get();
+     */
+    @JoinColumn(name = "spot")
+    @OneToOne(cascade = CascadeType.ALL)
+    public final SPOTInfo getSpotInfo() {
+        return spotInfo.get();
+    }
+
+    /**
+     * FX Accessor - setter.
+     *
+     * @param spotInfo value to assign into {@link #spotInfo}.
+     */
+    public final void setSpotInfo(SPOTInfo spotInfo) {
+        this.spotInfo.set(spotInfo);
+    }
+
+    /**
+     * FX Accessor - property.
+     *
+     * @return property {@link #spotInfo}.
+     */
+    public final ObjectProperty<SPOTInfo> spotInfoProperty() {
+        return spotInfo;
+    }
 
     /**
      * FX Accessor - getter.

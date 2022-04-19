@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="1.0.0-alpha" use-changelog="false" author="Ingenieria Informatica Yupay SACS" last-position="0,0" last-zoom="0.9" max-obj-count="27"
+<dbmodel pgmodeler-ver="1.0.0-alpha" use-changelog="false" author="Ingenieria Informatica Yupay SACS" last-position="512,711" last-zoom="0.75" max-obj-count="30"
 	 default-schema="public"
 	 layers="commons,journal"
 	 active-layers="0,1"
@@ -817,7 +817,7 @@ US•ESTADOS UNIDOS••9249•FALSE]]>
 	</label>
 </relationship>
 
-<table name="sale" layers="0" collapse-mode="1" max-obj-count="27" z-value="0">
+<table name="sale" layers="0" collapse-mode="1" max-obj-count="28" z-value="0">
 	<schema name="public"/>
 	<tag name="sale"/>
 	<position x="1320" y="720"/>
@@ -1223,7 +1223,7 @@ c6aed091-eea7-4077-bf2e-b041ed215de8•YARDA CUADRADA•YDK•YRD2•/false/]]>
 <table name="sale_total" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
 	<schema name="public"/>
 	<tag name="sale"/>
-	<position x="1340" y="1520"/>
+	<position x="1640" y="1520"/>
 	<column name="id" not-null="true" sequence="public.sq_sale_total_id">
 		<type name="bigint" length="0"/>
 	</column>
@@ -1307,6 +1307,106 @@ c6aed091-eea7-4077-bf2e-b041ed215de8•YARDA CUADRADA•YDK•YRD2•/false/]]>
 	upd-action="RESTRICT"
 	del-action="RESTRICT"/>
 
+<table name="spot_scheme" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="840" y="1560"/>
+	<column name="id" not-null="true">
+		<type name="char" length="36"/>
+	</column>
+	<column name="title" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="typeID" not-null="true">
+		<type name="char" length="2"/>
+	</column>
+	<column name="itemID" not-null="true">
+		<type name="char" length="3"/>
+	</column>
+	<column name="rate" not-null="true">
+		<type name="decimal" length="5" precision="4"/>
+	</column>
+	<column name="trash" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+	</column>
+	<constraint name="spot_type_pk" type="pk-constr" table="public.spot_scheme">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<usertype name="spot_role" configuration="enumeration">
+	<schema name="public"/>
+	<enumeration label="SUPPLIER"/>
+	<enumeration label="CUSTOMER"/>
+</usertype>
+
+<sequence name="sq_spot_info_id" cycle="false" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
+	<schema name="public"/>
+</sequence>
+
+<table name="spot_info" layers="0" collapse-mode="2" max-obj-count="10" z-value="0">
+	<schema name="public"/>
+	<tag name="commons"/>
+	<position x="1280" y="1460"/>
+	<column name="id" not-null="true" sequence="public.sq_spot_info_id">
+		<type name="bigint" length="36"/>
+	</column>
+	<column name="amount" not-null="true">
+		<type name="decimal" length="14" precision="2"/>
+	</column>
+	<column name="batch">
+		<type name="char" length="6"/>
+	</column>
+	<column name="paymentId">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="paymentDate">
+		<type name="date" length="0"/>
+	</column>
+	<column name="selfPaid">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="remarks">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="role" not-null="true">
+		<type name="public.spot_role" length="0"/>
+	</column>
+	<constraint name="spot_info_pk" type="pk-constr" table="public.spot_info">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="scheme" index="8"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="spot_scheme_fk" index="0"/>
+	</customidxs>
+</table>
+
+<relationship name="sale_has_spotinfo" type="rel11" layers="0"
+	 src-col-pattern="spot"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#5fa776"
+	 src-table="public.spot_info"
+	 dst-table="public.sale"
+	 src-required="false" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT"/>
+
+<relationship name="spotinfo_scheme" type="rel1n" layers="0"
+	 src-col-pattern="scheme"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#a4a74c"
+	 src-table="public.spot_scheme"
+	 dst-table="public.spot_info"
+	 src-required="true" dst-required="false"
+	upd-action="RESTRICT"
+	del-action="RESTRICT"/>
+
 <constraint name="journal_reverted_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
 	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="public.journal" table="public.journal">
 	<columns names="reverted_by" ref-type="src-columns"/>
@@ -1335,7 +1435,7 @@ c6aed091-eea7-4077-bf2e-b041ed215de8•YARDA CUADRADA•YDK•YRD2•/false/]]>
 	 dst-table="public.sale" reference-fk="sale_modified_fk"
 	 src-required="false" dst-required="false">
 	<line>
-		<position x="1615.06" y="918.241"/>
+		<position x="1615.06" y="926.108"/>
 	<position x="1615.06" y="687"/>
 	<position x="1494.7" y="687"/>
 	</line>
